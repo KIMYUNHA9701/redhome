@@ -50,4 +50,11 @@ public class MainController {
     public String viewStore() {
         return "store";
     }
+
+    @RequestMapping(value = "/board", method = RequestMethod.GET)
+    public String viewBoard(){
+        return "board";
+    }
+
+
 }
