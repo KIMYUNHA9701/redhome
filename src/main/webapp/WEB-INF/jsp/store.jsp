@@ -23,7 +23,7 @@
 				<div class="store_item_img">
 					<a href="/storeInfo">
 						<div class="store_item_imgScale">
-							<img alt="" src="../../img/img1.JPG">
+							<img alt="" src="../../img/product_img1.JPG">
 						</div>
 					</a>
 				</div>
@@ -32,11 +32,11 @@
 						<span class="store_item_header_brand">한샘</span>
 					</h1>
 					<h1>
-						<span class="store_item_header_name">컴포트 2단 분리수거함 80L 대용량</span>
+						<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
 					</h1>
 					<h1>
 						<span class="store_item_header_sale">40%</span> <span
-							class="store_item_header_price">279,000</span>
+							class="store_item_header_price">99,000</span>
 					</h1>
 					<h1>
 						<span class="store_item_header_scope">4.3</span> <span
@@ -48,7 +48,7 @@
 				<div class="store_item_img">
 					<a href="../../jsp/store.jsp">
 						<div class="store_item_imgScale">
-							<img alt="" src="../../img/img1.JPG">
+							<img alt="" src="../../img/product_img1.JPG">
 						</div>
 					</a>
 				</div>
@@ -57,11 +57,11 @@
 						<span class="store_item_header_brand">한샘</span>
 					</h1>
 					<h1>
-						<span class="store_item_header_name">컴포트 2단 분리수거함 80L 대용량</span>
+						<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
 					</h1>
 					<h1>
 						<span class="store_item_header_sale">40%</span> <span
-							class="store_item_header_price">279,000</span>
+							class="store_item_header_price">99,000</span>
 					</h1>
 					<h1>
 						<span class="store_item_header_scope">4.3</span> <span
@@ -73,7 +73,7 @@
 				<div class="store_item_img">
 					<a href="../../jsp/store.jsp">
 						<div class="store_item_imgScale">
-							<img alt="" src="../../img/img1.JPG">
+							<img alt="" src="../../img/product_img1.JPG">
 						</div>
 					</a>
 				</div>
@@ -82,11 +82,11 @@
 						<span class="store_item_header_brand">한샘</span>
 					</h1>
 					<h1>
-						<span class="store_item_header_name">컴포트 2단 분리수거함 80L 대용량</span>
+						<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
 					</h1>
 					<h1>
 						<span class="store_item_header_sale">40%</span> <span
-							class="store_item_header_price">279,000</span>
+							class="store_item_header_price">99,000</span>
 					</h1>
 					<h1>
 						<span class="store_item_header_scope">4.3</span> <span
@@ -98,7 +98,7 @@
 				<div class="store_item_img">
 					<a href="../../jsp/store.jsp">
 						<div class="store_item_imgScale">
-							<img alt="" src="../../img/img1.JPG">
+							<img alt="" src="../../img/product_img1.JPG">
 						</div>
 					</a>
 				</div>
@@ -107,11 +107,11 @@
 						<span class="store_item_header_brand">한샘</span>
 					</h1>
 					<h1>
-						<span class="store_item_header_name">컴포트 2단 분리수거함 80L 대용량</span>
+						<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
 					</h1>
 					<h1>
 						<span class="store_item_header_sale">40%</span> <span
-							class="store_item_header_price">279,000</span>
+							class="store_item_header_price">99,000</span>
 					</h1>
 					<h1>
 						<span class="store_item_header_scope">4.3</span> <span
@@ -150,7 +150,7 @@
 			<div class="store_item_img">
 				<a href="../../jsp/store.jsp">
 					<div class="store_item_imgScale">
-						<img alt="" src="../../img/img1.JPG">
+						<img alt="" src="../../img/product_img1.JPG">
 					</div>
 				</a>
 			</div>
@@ -159,10 +159,10 @@
 					<span class="store_item_header_brand">한샘</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_name">컴포트 2단 분리수거함 80L 대용량</span>
+					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_price">279,000</span>
+					<span class="store_item_header_price">99,000</span>
 				</h1>
 				<h1>
 					<span class="store_item_header_scope">4.3</span> <span
@@ -174,7 +174,7 @@
 			<div class="store_item_img">
 				<a href="../../jsp/store.jsp">
 					<div class="store_item_imgScale">
-						<img alt="" src="../../img/img1.JPG">
+						<img alt="" src="../../img/product_img1.JPG">
 					</div>
 				</a>
 			</div>
@@ -183,10 +183,10 @@
 					<span class="store_item_header_brand">한샘</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_name">컴포트 2단 분리수거함 80L 대용량</span>
+					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_price">279,000</span>
+					<span class="store_item_header_price">99,000</span>
 				</h1>
 				<h1>
 					<span class="store_item_header_scope">4.3</span> <span
@@ -198,7 +198,7 @@
 			<div class="store_item_img">
 				<a href="../../jsp/store.jsp">
 					<div class="store_item_imgScale">
-						<img alt="" src="../../img/img1.JPG">
+						<img alt="" src="../../img/product_img1.JPG">
 					</div>
 				</a>
 			</div>
@@ -207,10 +207,10 @@
 					<span class="store_item_header_brand">한샘</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_name">컴포트 2단 분리수거함 80L 대용량</span>
+					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_price">279,000</span>
+					<span class="store_item_header_price">99,000</span>
 				</h1>
 				<h1>
 					<span class="store_item_header_scope">4.3</span> <span
@@ -222,7 +222,7 @@
 			<div class="store_item_img">
 				<a href="../../jsp/store.jsp">
 					<div class="store_item_imgScale">
-						<img alt="" src="../../img/img1.JPG">
+						<img alt="" src="../../img/product_img1.JPG">
 					</div>
 				</a>
 			</div>
@@ -231,10 +231,10 @@
 					<span class="store_item_header_brand">한샘</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_name">컴포트 2단 분리수거함 80L 대용량</span>
+					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_price">279,000</span>
+					<span class="store_item_header_price">99,000</span>
 				</h1>
 				<h1>
 					<span class="store_item_header_scope">4.3</span> <span
@@ -249,7 +249,7 @@
 				<div class="store_item_img">
 					<a href="../../jsp/store.jsp">
 						<div class="store_item_imgScale">
-							<img alt="" src="../../img/img1.JPG">
+							<img alt="" src="../../img/product_img1.JPG">
 						</div>
 					</a>
 				</div>
@@ -259,10 +259,10 @@
 					<span class="store_item_header_brand">한샘</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_name">컴포트 2단 분리수거함 80L 대용량</span>
+					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_price">279,000</span>
+					<span class="store_item_header_price">99,000</span>
 				</h1>
 				<h1>
 					<span class="store_item_header_scope">4.3</span> <span
@@ -275,7 +275,7 @@
 			<div class="store_item_img">
 				<a href="../../jsp/store.jsp">
 					<div class="store_item_imgScale">
-						<img alt="" src="../../img/img1.JPG">
+						<img alt="" src="../../img/product_img1.JPG">
 					</div>
 				</a>
 			</div>
@@ -284,10 +284,10 @@
 					<span class="store_item_header_brand">한샘</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_name">컴포트 2단 분리수거함 80L 대용량</span>
+					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_price">279,000</span>
+					<span class="store_item_header_price">99,000</span>
 				</h1>
 				<h1>
 					<span class="store_item_header_scope">4.3</span> <span
@@ -299,7 +299,7 @@
 			<div class="store_item_img">
 				<a href="../../jsp/store.jsp">
 					<div class="store_item_imgScale">
-						<img alt="" src="../../img/img1.JPG">
+						<img alt="" src="../../img/product_img1.JPG">
 					</div>
 				</a>
 			</div>
@@ -308,10 +308,10 @@
 					<span class="store_item_header_brand">한샘</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_name">컴포트 2단 분리수거함 80L 대용량</span>
+					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_price">279,000</span>
+					<span class="store_item_header_price">99,000</span>
 				</h1>
 				<h1>
 					<span class="store_item_header_scope">4.3</span> <span
@@ -323,7 +323,7 @@
 			<div class="store_item_img">
 				<a href="../../jsp/store.jsp">
 					<div class="store_item_imgScale">
-						<img alt="" src="../../img/img1.JPG">
+						<img alt="" src="../../img/product_img1.JPG">
 					</div>
 				</a>
 			</div>
@@ -332,10 +332,10 @@
 					<span class="store_item_header_brand">한샘</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_name">컴포트 2단 분리수거함 80L 대용량</span>
+					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
 				</h1>
 				<h1>
-					<span class="store_item_header_price">279,000</span>
+					<span class="store_item_header_price">99,000</span>
 				</h1>
 				<h1>
 					<span class="store_item_header_scope">4.3</span> <span
