@@ -25,7 +25,6 @@ public class MainController {
         return "index";
     }
 
-
     @RequestMapping(value = "/top", method = RequestMethod.GET)
     public String viewTop() {
         return "top";
@@ -34,6 +33,16 @@ public class MainController {
     @RequestMapping(value = "/banner", method = RequestMethod.GET)
     public String viewBanner() {
         return "banner";
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String viewLogin() {
+        return "login";
+    }
+
+    @RequestMapping(value = "/signup", method = RequestMethod.GET)
+    public String viewSignup() {
+        return "signup";
     }
 
     @RequestMapping(value = "/storeInfo", method = RequestMethod.GET)
@@ -52,9 +61,27 @@ public class MainController {
     }
 
     @RequestMapping(value = "/board", method = RequestMethod.GET)
-    public String viewBoard(){
+    public String viewBoard() {
         return "board";
     }
 
+    @RequestMapping(value = "/cart", method = RequestMethod.GET)
+    public String viewCart() {
+        return "cart";
+    }
 
+    @RequestMapping(value = "/mypage", method = RequestMethod.GET)
+    public String viewMypage() {
+        return "mypage";
+    }
+
+    @RequestMapping(value = "/mypage/photo", method = RequestMethod.GET)
+    public String viewMypagePhoto() {
+        return "photo";
+    }
+
+    @RequestMapping(value = "/mypage/video", method = RequestMethod.GET)
+    public String viewMypageVideo() {
+        return "video";
+    }
 }
