@@ -22,6 +22,11 @@
                 $(this).css({ background:"white" , color:"black" });
             });
 
+            $(".questions-filter__actions__new-question").click(function(){
+                location.href='/question';
+            });
+
+
         });
 
 
@@ -52,7 +57,15 @@
                                 class="icon icon-pointer-x-bold-dark clear clear-active hide"
                                 aria-hidden="false" role="button"></span>
                             <div class="questions-header__form__search__input">
-                                <img src="/web/img/ohsu_2.PNG"
+                                <select id="questionCategory_filters"  name="questionCategory"  onchange="">
+                                    <option class="filter-select__list__entry active"
+                                            selected="selected" value="recent">선택하세요  ▼ </option>
+                                    <option class="filter-select__list__entry" value="product">상품</option>
+                                    <option class="filter-select__list__entry" value="order_pay">주문/결제</option>
+                                    <option class="filter-select__list__entry" value="delivery">배송</option>
+                                    <option class="filter-select__list__entry" value="cancel_back_exchange">취소/반품/교환</option>
+                                </select>
+                                <img src="../../img/ohsu_2.PNG"
                                      style="position: absolute; padding-top: 21px; padding-left: 21px;">
                                 <input type="text" name="query"
                                        id="questions-header__form__search" value=""
@@ -84,7 +97,7 @@
             </div>
             <div class="questions-filter__actions">
                 <button class="set-reply btn btn-normal btn-sm" href="/questions?page=1&amp;reply=not_yet">답변을 기다리는 질문</button>
-                <button class="questions-filter__actions__new-question btn btn-priority btn-sm" href="/questions/new">질문하기</button>
+                <button class="questions-filter__actions__new-question btn btn-priority btn-sm" href="/question">질문하기</button>
             </div>
 
 

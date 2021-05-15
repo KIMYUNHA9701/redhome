@@ -25,7 +25,6 @@ public class MainController {
         return "index";
     }
 
-
     @RequestMapping(value = "/top", method = RequestMethod.GET)
     public String viewTop() {
         return "top";
@@ -35,6 +34,7 @@ public class MainController {
     public String viewBanner() {
         return "banner";
     }
+
 
     @RequestMapping(value = "/storeInfo", method = RequestMethod.GET)
     public String viewStoreInfo() {
@@ -52,9 +52,16 @@ public class MainController {
     }
 
     @RequestMapping(value = "/board", method = RequestMethod.GET)
-    public String viewBoard(){
+    public String viewBoard() {
         return "board";
     }
+
+
+    @RequestMapping(value = "/question", method = RequestMethod.GET)
+    public String viewQuestion() {
+        return "question";
+    }
+
 
 
 }
