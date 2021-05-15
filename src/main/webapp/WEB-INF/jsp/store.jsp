@@ -23,7 +23,7 @@
 				<div class="store_item_img">
 					<a href="/storeInfo">
 						<div class="store_item_imgScale">
-							<img alt="" src="../../img/product_img1.JPG">
+							<img alt="" src="../../img/product_img1.webp">
 						</div>
 					</a>
 				</div>
@@ -48,7 +48,7 @@
 				<div class="store_item_img">
 					<a href="../../jsp/store.jsp">
 						<div class="store_item_imgScale">
-							<img alt="" src="../../img/product_img1.JPG">
+							<img alt="" src="../../img/product_img1.webp">
 						</div>
 					</a>
 				</div>
@@ -73,7 +73,7 @@
 				<div class="store_item_img">
 					<a href="../../jsp/store.jsp">
 						<div class="store_item_imgScale">
-							<img alt="" src="../../img/product_img1.JPG">
+							<img alt="" src="../../img/product_img1.webp">
 						</div>
 					</a>
 				</div>
@@ -98,7 +98,7 @@
 				<div class="store_item_img">
 					<a href="../../jsp/store.jsp">
 						<div class="store_item_imgScale">
-							<img alt="" src="../../img/product_img1.JPG">
+							<img alt="" src="../../img/product_img1.webp">
 						</div>
 					</a>
 				</div>
@@ -150,7 +150,7 @@
 			<div class="store_item_img">
 				<a href="../../jsp/store.jsp">
 					<div class="store_item_imgScale">
-						<img alt="" src="../../img/product_img1.JPG">
+						<img alt="" src="../../img/product_img1.webp">
 					</div>
 				</a>
 			</div>
@@ -174,7 +174,7 @@
 			<div class="store_item_img">
 				<a href="../../jsp/store.jsp">
 					<div class="store_item_imgScale">
-						<img alt="" src="../../img/product_img1.JPG">
+						<img alt="" src="../../img/product_img1.webp">
 					</div>
 				</a>
 			</div>
@@ -198,7 +198,7 @@
 			<div class="store_item_img">
 				<a href="../../jsp/store.jsp">
 					<div class="store_item_imgScale">
-						<img alt="" src="../../img/product_img1.JPG">
+						<img alt="" src="../../img/product_img1.webp">
 					</div>
 				</a>
 			</div>
@@ -222,7 +222,7 @@
 			<div class="store_item_img">
 				<a href="../../jsp/store.jsp">
 					<div class="store_item_imgScale">
-						<img alt="" src="../../img/product_img1.JPG">
+						<img alt="" src="../../img/product_img1.webp">
 					</div>
 				</a>
 			</div>
@@ -249,7 +249,7 @@
 				<div class="store_item_img">
 					<a href="../../jsp/store.jsp">
 						<div class="store_item_imgScale">
-							<img alt="" src="../../img/product_img1.JPG">
+							<img alt="" src="../../img/product_img1.webp">
 						</div>
 					</a>
 				</div>
@@ -275,7 +275,7 @@
 			<div class="store_item_img">
 				<a href="../../jsp/store.jsp">
 					<div class="store_item_imgScale">
-						<img alt="" src="../../img/product_img1.JPG">
+						<img alt="" src="../../img/product_img1.webp">
 					</div>
 				</a>
 			</div>
@@ -299,7 +299,7 @@
 			<div class="store_item_img">
 				<a href="../../jsp/store.jsp">
 					<div class="store_item_imgScale">
-						<img alt="" src="../../img/product_img1.JPG">
+						<img alt="" src="../../img/product_img1.webp">
 					</div>
 				</a>
 			</div>
@@ -323,7 +323,7 @@
 			<div class="store_item_img">
 				<a href="../../jsp/store.jsp">
 					<div class="store_item_imgScale">
-						<img alt="" src="../../img/product_img1.JPG">
+						<img alt="" src="../../img/product_img1.webp">
 					</div>
 				</a>
 			</div>

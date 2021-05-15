@@ -56,6 +56,15 @@ public class MainController {
         return "board";
     }
 
+    @RequestMapping(value = "/cart", method = RequestMethod.GET)
+    public String viewCart() {
+        return "cart";
+    }
+
+    @RequestMapping(value = "/mypage", method = RequestMethod.GET)
+    public String viewMypage() {
+        return "mypage";
+    }
 
     @RequestMapping(value = "/question", method = RequestMethod.GET)
     public String viewQuestion() {
@@ -63,5 +72,13 @@ public class MainController {
     }
 
 
+    @RequestMapping(value = "/mypage/photo", method = RequestMethod.GET)
+    public String viewMypagePhoto() {
+        return "photo";
+    }
 
+    @RequestMapping(value = "/mypage/video", method = RequestMethod.GET)
+    public String viewMypageVideo() {
+        return "video";
+    }
 }
