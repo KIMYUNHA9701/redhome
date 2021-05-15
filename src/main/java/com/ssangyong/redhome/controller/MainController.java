@@ -72,16 +72,16 @@ public class MainController {
 
     @RequestMapping(value = "/mypage", method = RequestMethod.GET)
     public String viewMypage() {
-        return "mypage";
+        return "/mypage/mypage";
     }
 
     @RequestMapping(value = "/mypage/photo", method = RequestMethod.GET)
     public String viewMypagePhoto() {
-        return "photo";
+        return "/mypage/contents/photo";
     }
 
     @RequestMapping(value = "/mypage/video", method = RequestMethod.GET)
     public String viewMypageVideo() {
-        return "video";
+        return "/mypage/contents/video";
     }
 }
