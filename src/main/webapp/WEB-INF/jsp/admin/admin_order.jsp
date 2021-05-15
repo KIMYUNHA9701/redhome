@@ -8,7 +8,7 @@
     <title>Insert title here</title>
 </head>
 <body>
-    <h1>회원관리페이지</h1>
+    <h1>주문관리페이지</h1>
     ${orders}
 </body>
 </html>

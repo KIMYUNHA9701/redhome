@@ -1,11 +1,8 @@
 package com.ssangyong.redhome.bean;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-@Getter @Setter @AllArgsConstructor @ToString
+@Getter @Setter @AllArgsConstructor @NoArgsConstructor @ToString
 public class Member {
     //아이디
     private String member_id;

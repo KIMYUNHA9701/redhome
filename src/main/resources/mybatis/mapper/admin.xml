@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssangyong.redhome.dao.AdminMapper">
+
+    <select id="idCheckAdmin" parameterType="String" resultType="com.ssangyong.redhome.bean.Admin">
+        SELECT * FROM ADMIN WHERE ADMIN_ID = #{VALUE}
+    </select>
+
+</mapper>
+

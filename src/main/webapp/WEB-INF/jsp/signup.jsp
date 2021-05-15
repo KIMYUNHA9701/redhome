@@ -463,7 +463,7 @@
                 return false;
             }
 
-            if(!frm.password2.value || frm.password2.value){
+            if(!frm.password2.value || frm.password2.value == ""){
                 alert("비밀번호(확인)를 입력하세요");
                 frm.password2.focus();
                 return false;
@@ -503,6 +503,7 @@
             }
 
             frm.method = "post";
+            frm.action = "/signup";
             frm.submit();
         }
     </script>
@@ -610,7 +611,7 @@
                                 <span class="email-input__domain">
                                     <select class="form-control empty" name="birth1">
                                         <option value="" disabled="">선택해주세요</option>
-                                        <c:forEach var="i" begin="1900" end="2021">
+                                        <c:forEach var="i" begin="1930" end="2021">
                                             <option value="${i}">${i}</option>
                                         </c:forEach>
                                     </select>

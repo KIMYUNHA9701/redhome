@@ -84,4 +84,6 @@ public class MainController {
     public String viewMypageVideo() {
         return "/mypage/contents/video";
     }
+
+
 }

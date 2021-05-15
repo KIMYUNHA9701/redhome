@@ -6,5 +6,13 @@
         SELECT * FROM MEMBER WHERE MEMBER_ID = #{VALUE}
     </select>
 
+    <insert id="insertMember" parameterType="com.ssangyong.redhome.bean.Member">
+        INSERT INTO MEMBER(MEMBER_ID, MEMBER_PWD, MEMBER_NAME, MEMBER_TEL, MEMBER_EMAIL, MEMBER_REG, MEMBER_ADDR, MEMBER_BIRTH, MEMBER_POINT, LEVEL_NUM)
+        VALUES(#{member_id},#{member_pwd},#{member_name},#{member_tel},#{member_email},SYSDATE,#{member_addr},#{member_birth},0,0)
+    </insert>
+
+    <select id="selectAllMember" resultType="com.ssangyong.redhome.bean.Member">
+        SELECT * FROM MEMBER
+    </select>
 </mapper>
 
