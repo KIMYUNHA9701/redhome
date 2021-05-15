@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<link rel="stylesheet" type="text/css" href="../../css/storeInfo.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/storeInfo2.css"/>
 </head>
 <body>
    <div class="layout">

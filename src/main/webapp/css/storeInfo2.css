@@ -1,7 +1,4 @@
-@charset "EUC-KR";
-
-
-<!-- ÀüÃ¼Æ² -->
+<!-- ì „ì²´í‹€ -->
 .layout {
     display: -webkit-box;
     display: -webkit-flex;
@@ -30,7 +27,7 @@
 }
 
 
-<!-- º»¹® -->
+<!-- ë³¸ë¬¸ -->
 .production-selling {
     position: relative;
     min-height: 1px;
@@ -822,7 +819,7 @@ selling-header__price__coupon, .production-selling-header__price__price {
 }
 
 .production-selling-header__delivery__disclaimer::before {
-    content: "¡¤";
+    content: "Â·";
     position: absolute;
     top: 0px;
     left: 0px;
@@ -1546,7 +1543,7 @@ li:first-child>.production-selling-navigation__item {
     }
 }
 .production-selling-description__delivery-notice li:before {
-    content: "¡¤";
+    content: "Â·";
     margin-right: 4px;
 }
 
@@ -1867,7 +1864,7 @@ li:first-child>.production-selling-navigation__item {
     margin-right: 4px;
 }
 
-<!-- ¸®ºä -->
+<!-- ë¦¬ë·° -->
 
 
 .production-selling-section {
@@ -2553,7 +2550,7 @@ li:first-child>.production-selling-navigation__item {
     border: none;
     background-color: transparent;
     border-radius: 4px;
-    font-family: Noto Sans KR,Noto Sans CJK KR,¸¼Àº °íµñ,Malgun Gothic,sans-serif;
+    font-family: Noto Sans KR,Noto Sans CJK KR,ë§‘ì€ ê³ ë”•,Malgun Gothic,sans-serif;
     font-size: 15px;
     font-weight: 700;
     line-height: 1;
@@ -2810,7 +2807,7 @@ li:first-child>.production-selling-navigation__item {
     word-wrap: break-word;
 }
 
-<!-- »çÀÌµå ¹Ù -->
+<!-- ì‚¬ì´ë“œ ë°” -->
 
 .production-selling__detail__sidebar {
     position: relative;
@@ -2880,7 +2877,7 @@ li:first-child>.production-selling-navigation__item {
 }
 
 
-<!-- ÆäÀÌÁö ÇÏ´Ü -->
+<!-- íŽ˜ì´ì§€ í•˜ë‹¨ -->
 .layout>.layout-footer {
     margin-top: auto;
 }
@@ -3018,7 +3015,7 @@ ol, ul {
     line-height: 16px;
 }
 
-<!-- ºÎÆ®½ºÆ®·¦ -->
+<!-- ë¶€íŠ¸ìŠ¤íŠ¸ëž© -->
 .col-12 {
     position: relative;
     width: 100%;
@@ -3359,7 +3356,7 @@ ol, ul {
     }
 }
 
-<!-- °øÅë ÅÂ±× -->
+<!-- ê³µí†µ íƒœê·¸ -->
 
 fieldset, img {
     border: 0;
@@ -3380,5 +3377,5 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 
 a {
     color: inherit;
-    text-decoration : none;
+    text-decoration: none;
 }
