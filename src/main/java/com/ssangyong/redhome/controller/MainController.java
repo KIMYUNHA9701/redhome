@@ -30,6 +30,11 @@ public class MainController {
         return "top";
     }
 
+    @RequestMapping(value = "/top2", method = RequestMethod.GET)
+    public String viewTop2() {
+        return "top2";
+    }
+
     @RequestMapping(value = "/banner", method = RequestMethod.GET)
     public String viewBanner() {
         return "banner";
@@ -72,16 +77,21 @@ public class MainController {
 
     @RequestMapping(value = "/mypage", method = RequestMethod.GET)
     public String viewMypage() {
-        return "mypage";
+        return "/mypage/mypage";
     }
 
-    @RequestMapping(value = "/mypage/photo", method = RequestMethod.GET)
+    @RequestMapping(value = "/mypage/contents/new/photo", method = RequestMethod.GET)
     public String viewMypagePhoto() {
-        return "photo";
+        return "/mypage/contents/photo";
     }
 
-    @RequestMapping(value = "/mypage/video", method = RequestMethod.GET)
+    @RequestMapping(value = "/mypage/contents/new/video", method = RequestMethod.GET)
     public String viewMypageVideo() {
-        return "video";
+        return "/mypage/contents/video";
+    }
+
+    @RequestMapping(value = "/main", method = RequestMethod.GET)
+    public String viewMain() {
+        return "main";
     }
 }

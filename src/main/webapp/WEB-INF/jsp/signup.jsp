@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -437,6 +438,74 @@
         }
 
     </style>
+    <script>
+        function signUp(){
+            alert("회원가입!!");
+            var frm = document.frm;
+            console.log("id : " +  frm.id.value);
+            console.log("password : " +  frm.password.value);
+            console.log("password2 : " +  frm.password2.value);
+            console.log("name : " +  frm.name.value);
+            console.log("tel : " +  frm.tel1.value + " - " + frm.tel2.value + " - " + frm.tel3.value);
+            console.log("email : " + frm.email1.value + "@" + frm.email2.value);
+            console.log("address : " + frm.address.value);
+            console.log("birth : " + frm.birth1.value + "년 " + frm.birth2.value + "월 " + frm.birth3.value + "일");
+
+            if(!frm.id.value || frm.id.value == ""){
+                alert("아이디를 입력하세요");
+                frm.id.focus();
+                return false;
+            }
+
+            if(!frm.password.value || frm.password.value == ""){
+                alert("비밀번호를 입력하세요");
+                frm.password.focus();
+                return false;
+            }
+
+            if(!frm.password2.value || frm.password2.value){
+                alert("비밀번호(확인)를 입력하세요");
+                frm.password2.focus();
+                return false;
+            }
+
+            if(frm.password.value != frm.password2.value){
+                alert("비밀번호와 비밀번호(확인)가 일치하지 않습니다");
+                frm.password2.value = "";
+                frm.password2.focus();
+                return false;
+            }
+
+            if(!frm.name.value || frm.name.value == ""){
+                alert("이름을 입력하세요");
+                frm.name.focus();
+                return false;
+            }
+
+            if(!frm.tel2.value || frm.tel2.value == "" || !frm.tel3.value || frm.tel3.value == "" ){
+                alert("휴대폰번호를 입력하세요");
+                frm.tel2.value = "";
+                frm.tel3.value = "";
+                frm.tel2.focus();
+                return false;
+            }
+
+            if(!frm.email1.value || frm.email1.value == ""){
+                alert("이메일을 입력하세요");
+                frm.email1.focus();
+                return false;
+            }
+
+            if(!frm.address.value || frm.address.value == ""){
+                alert("주소를 입력하세요");
+                frm.address.focus();
+                return false;
+            }
+
+            frm.method = "post";
+            frm.submit();
+        }
+    </script>
 </head>
 
 <body>
@@ -453,17 +522,62 @@
                         <li class="user-sign-up__sns__list__item"><a href="/users/auth/naver"><svg width="48" height="48" viewBox="0 0 48 48" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><path fill="#00C63B" d="M0 24C0 10.745 10.745 0 24 0s24 10.745 24 24-10.745 24-24 24S0 37.255 0 24z"></path><path fill="#FFF" d="M21 25.231V34h-7V15h7l6 8.769V15h7v19h-7l-6-8.769z"></path></g></svg></a></li>
                     </ol>
                 </div>
-                <form class="user-sign-up__form">
+                <form class="user-sign-up__form" name="frm">
+                    <div class="user-sign-up-form__form-group">
+                        <div class="user-sign-up-form__form-group__label">아이디</div>
+                        <div class="user-sign-up-form__form-group__description">다른 유저와 겹치지 않는 아이디 입력해주세요.</div>
+                        <div class="user-sign-up-form__form-group__input">
+                            <input type="text" placeholder="아이디" class="form-control" value="" name="id">
+                        </div>
+                    </div>
+                    <div class="user-sign-up-form__form-group">
+                        <div class="user-sign-up-form__form-group__label">비밀번호</div>
+                        <div class="user-sign-up-form__form-group__description">8자 이상 입력해주세요.</div>
+                        <div class="user-sign-up-form__form-group__input">
+                            <input type="password" placeholder="비밀번호" class="form-control" value="" name="password">
+                        </div>
+                    </div>
+                    <div class="user-sign-up-form__form-group">
+                        <div class="user-sign-up-form__form-group__label">비밀번호 확인</div>
+                        <div class="user-sign-up-form__form-group__input">
+                            <input type="password" placeholder="비밀번호 확인" class="form-control" value="" name="password2">
+                        </div>
+                    </div>
+                    <div class="user-sign-up-form__form-group">
+                        <div class="user-sign-up-form__form-group__label">이름</div>
+                        <div class="user-sign-up-form__form-group__description">이름을 입력해주세요.</div>
+                        <div class="user-sign-up-form__form-group__input">
+                            <input placeholder="이름" class="form-control" value="" name="name">
+                        </div>
+                    </div>
+                    <div class="user-sign-up-form__form-group">
+                        <div class="user-sign-up-form__form-group__label">휴대폰번호</div>
+                        <div class="user-sign-up-form__form-group__input">
+                            <div class="input-group email-input">
+                                <span class="email-input__local">
+                                    <input class="form-control" size="1" value="010" name="tel1">
+                                </span>
+                                <span class="email-input__separator">-</span>
+                                <span class="email-input__local">
+                                    <input class="form-control" size="1" value="" name="tel2">
+                                </span>
+                                <span class="email-input__separator">-</span>
+                                <span class="email-input__local">
+                                    <input class="form-control" size="1" value="" name="tel3">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="user-sign-up-form__form-group">
                         <div class="user-sign-up-form__form-group__label">이메일</div>
                         <div class="user-sign-up-form__form-group__input">
                             <div class="input-group email-input">
                                 <span class="email-input__local">
-                                    <input class="form-control" placeholder="이메일" size="1" value="">
+                                    <input class="form-control" placeholder="이메일" size="1" value="" name="email1">
                                 </span>
                                 <span class="email-input__separator">@</span>
                                 <span class="email-input__domain">
-                                    <select class="form-control empty">
+                                    <select class="form-control empty" name="email2">
                                         <option value="" disabled="">선택해주세요</option>
                                         <option value="naver.com">naver.com</option>
                                         <option value="hanmail.net">hanmail.net</option>
@@ -483,25 +597,55 @@
                         </div>
                     </div>
                     <div class="user-sign-up-form__form-group">
-                        <div class="user-sign-up-form__form-group__label">비밀번호</div>
-                        <div class="user-sign-up-form__form-group__description">8자 이상 입력해주세요.</div>
+                        <div class="user-sign-up-form__form-group__label">주소</div>
+                        <div class="user-sign-up-form__form-group__description">주소를 입력해주세요.</div>
                         <div class="user-sign-up-form__form-group__input">
-                            <input type="password" placeholder="비밀번호" class="form-control" value="">
+                            <input placeholder="주소" class="form-control" value="" name="address">
                         </div>
                     </div>
                     <div class="user-sign-up-form__form-group">
-                        <div class="user-sign-up-form__form-group__label">비밀번호 확인</div>
+                        <div class="user-sign-up-form__form-group__label">생년월일</div>
                         <div class="user-sign-up-form__form-group__input">
-                            <input type="password" placeholder="비밀번호 확인" class="form-control" value="">
+                            <div class="input-group email-input">
+                                <span class="email-input__domain">
+                                    <select class="form-control empty" name="birth1">
+                                        <option value="" disabled="">선택해주세요</option>
+                                        <c:forEach var="i" begin="1900" end="2021">
+                                            <option value="${i}">${i}</option>
+                                        </c:forEach>
+                                    </select>
+                                    <button class="email-input__domain__expand" aria-label="초기화" type="button" tabindex="-1">
+                                        <svg class="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" style="fill: currentcolor;"><path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
+                                    </button>
+                                </span>
+                                <span class="email-input__separator">-</span>
+                                <span class="email-input__domain">
+                                    <select class="form-control empty" name="birth2">
+                                        <option value="" disabled="">선택해주세요</option>
+                                        <c:forEach var="i" begin="1" end="12">
+                                            <option value="${i}">${i}</option>
+                                        </c:forEach>
+                                    </select>
+                                    <button class="email-input__domain__expand" aria-label="초기화" type="button" tabindex="-1">
+                                        <svg class="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" style="fill: currentcolor;"><path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
+                                    </button>
+                                </span>
+                                <span class="email-input__separator">-</span>
+                                <span class="email-input__domain">
+                                    <select class="form-control empty" name="birth3">
+                                        <option value="" disabled="">선택해주세요</option>
+                                        <c:forEach var="i" begin="1" end="31">
+                                            <option value="${i}">${i}</option>
+                                        </c:forEach>
+                                    </select>
+                                    <button class="email-input__domain__expand" aria-label="초기화" type="button" tabindex="-1">
+                                        <svg class="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" style="fill: currentcolor;"><path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
+                                    </button>
+                                </span>
+                            </div>
                         </div>
                     </div>
-                    <div class="user-sign-up-form__form-group">
-                        <div class="user-sign-up-form__form-group__label">별명</div>
-                        <div class="user-sign-up-form__form-group__description">다른 유저와 겹치지 않는 별명을 입력해주세요. (2~15자)</div>
-                        <div class="user-sign-up-form__form-group__input">
-                            <input placeholder="별명 (2~15자)" class="form-control" value="">
-                        </div>
-                    </div>
+
                     <div class="user-sign-up-form__form-group">
                         <div class="user-sign-up-form__form-group__label">약관 동의</div>
                         <div class="user-sign-up-form__form-group__input">
@@ -552,9 +696,9 @@
 
                         </div>
                     </div>
-                    <button class="user-sign-up__submit" type="submit">회원가입 완료</button>
+                    <button class="user-sign-up__submit" type="button" onclick="signUp()">회원가입 완료</button>
                 </form>
-                <p class="user-sign-up__sign-in">이미 아이디가 있으신가요?<a href="/users/sign_in" class="user-sign-up__sign-in__link">로그인</a></p>
+                <p class="user-sign-up__sign-in">이미 아이디가 있으신가요?<a href="/login" class="user-sign-up__sign-in__link">로그인</a></p>
             </div>
 
         </section>

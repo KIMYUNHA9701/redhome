@@ -1,30 +1,40 @@
 package com.ssangyong.redhome.bean;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter @Setter @AllArgsConstructor @ToString
 public class Member {
-    private String id;
-    private String password;
+    //아이디
+    private String member_id;
 
-    public String getId() {
-        return id;
-    }
+    //비밀번호
+    private String member_pwd;
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    //이름
+    private String member_name;
 
-    public String getPassword() {
-        return password;
-    }
+    //휴대폰번호
+    private String member_tel;
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    //이메일
+    private String member_email;
 
-    @Override
-    public String toString() {
-        return "Member{" +
-                "id='" + id + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
+    //가입날짜
+    private String member_reg;
+
+    //주소
+    private String member_addr;
+
+    //생일
+    private String member_birth;
+
+    //포인트
+    private int member_point;
+
+    //레벨번호
+    private int level_num;
+
 }

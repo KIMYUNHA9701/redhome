@@ -3,7 +3,7 @@
 <mapper namespace="com.ssangyong.redhome.dao.MemberMapper">
 
     <select id="idCheckMember" parameterType="String" resultType="com.ssangyong.redhome.bean.Member">
-        SELECT * FROM MEMBER WHERE ID = #{VALUE}
+        SELECT * FROM MEMBER WHERE MEMBER_ID = #{VALUE}
     </select>
 
 </mapper>

@@ -1,14 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
 <link href="../../css/banner.css" rel="stylesheet">
 <script type="text/javascript" src="../../js/banner.js?after"></script>
 </head>
 <body>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 	<div id="slider-wrap">
     <ul id="slider">
         <li>
@@ -29,28 +29,28 @@
 
         <li>
         	<div>
-        		<h1>µùµ¿ - ÀÔÁ¡Çß¾î¿ä	</h1>
+        		<h1>ë”©ë™ - ì…ì í–ˆì–´ìš”	</h1>
         		<br>
-        		<h1>ÀÌ¹øÁÖ ½Å±Ô ºê·£µå	</h1>
+        		<h1>ì´ë²ˆì£¼ ì‹ ê·œ ë¸Œëœë“œ	</h1>
         		<br>
-        		<h4>&nbsp;·ĞÄª ±â³ä ÀüÇ°¸ñ Æ¯°¡ ~4/18</h4>
+        		<h4>&nbsp;ë¡ ì¹­ ê¸°ë… ì „í’ˆëª© íŠ¹ê°€ ~4/18</h4>
         	</div>
             <img src="../../img/banner_img5.png">
         </li>
-        
+
          <li>
             <img src="../../img/banner_img6.png">
         </li>
     </ul>
 
-    <div class="slider-btns" id="next"><span>¢º</span></div>
-    <div class="slider-btns" id="previous"><span>¢¸</span></div>
+    <div class="slider-btns" id="next"><span>â–¶</span></div>
+    <div class="slider-btns" id="previous"><span>â—€</span></div>
 
     <div id="slider-pagination-wrap">
         <ul>
         </ul>
     </div>
 </div>
-    
+
 </body>
 </html>

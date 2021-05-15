@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class MemberController {
@@ -21,19 +22,28 @@ public class MemberController {
         return "loginEx";
     }
 
+    //로그인 프로세스
     @RequestMapping(value = "/loginEx", method = RequestMethod.POST)
-    public String viewLoginSuccess(Model model, @RequestParam String user_id, @RequestParam String user_pw) {
+    public String viewLoginSuccess(HttpSession session,Model model, @RequestParam String id, @RequestParam String password) {
 
-        Member member = memberService.selectMemberById(user_id, user_pw);
+        Member member = memberService.selectMemberById(id, password);
         if (member == null){
             System.out.println("NULL!!!!!!");
-            return "redirect:loginEx";
+            return "redirect:login";
         }
         else {
-            model.addAttribute("member", member);
+            session.setAttribute("member",member);
+            session.setMaxInactiveInterval(600);
             System.out.println("member = " + member);
-            return "loginExSuccess";
+            return "main";
         }
+    }
+
+    //로그아웃 프로세스
+    @RequestMapping(value = "/logOut", method = RequestMethod.GET)
+    public String logOutProcess(HttpSession session){
+        session.removeAttribute("member");
+        return "main";
     }
 
 }

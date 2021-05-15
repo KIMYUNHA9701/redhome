@@ -39,14 +39,11 @@
 							</div>
 						</div>
 					</div>
-					<a href="#" class="layout-navigation-bar-icon noDeco" style="margin:5px 22px; padding:7px;">
-						<img src="../../img/ohsu_3.PNG" style="width:50px; height:40px;">
-					</a>
 					<div class="layout-navigation-bar-login">
-						<a class="layout-navigation-bar-login__item noDeco" href="#">
+						<a class="layout-navigation-bar-login__item noDeco" href="/login">
 							로그인
 						</a>
-						<a class="layout-navigation-bar-login__item noDeco" href="#">
+						<a class="layout-navigation-bar-login__item noDeco" href="/signup">
 							회원가입
 						</a>
 					</div>

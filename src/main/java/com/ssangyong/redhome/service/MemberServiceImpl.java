@@ -18,7 +18,7 @@ public class MemberServiceImpl implements MemberService{
             return null;
         }
         else {
-            if(member.getPassword().equals(pw)){
+            if(member.getMember_pwd().equals(pw)){
                 return member;
             }
         }
