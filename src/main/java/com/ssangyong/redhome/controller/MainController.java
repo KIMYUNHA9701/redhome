@@ -84,4 +84,10 @@ public class MainController {
     public String viewMypageVideo() {
         return "/mypage/contents/video";
     }
+
+    @RequestMapping(value = "/question", method = RequestMethod.GET)
+    public String viewQuestion() {
+        return "question";
+    }
+
 }
