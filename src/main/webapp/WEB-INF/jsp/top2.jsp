@@ -115,7 +115,7 @@
             <ul class="layout-navigation-bar-user-menu">
                 <li class="layout-navigation-bar-user-menu__item-wrap">
                     <li class="layout-navigation-bar-user-menu__item-wrap">
-                        <a class="layout-navigation-bar-user-menu__item" href="/users/13093528">마이페이지</a>
+                        <a class="layout-navigation-bar-user-menu__item" href="/mypage">마이페이지</a>
                     </li>
                 </li>
                 <li class="layout-navigation-bar-user-menu__item-wrap">

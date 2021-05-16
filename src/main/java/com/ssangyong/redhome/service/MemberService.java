@@ -11,4 +11,8 @@ public interface MemberService {
     Member makeMember(Map<String,String> map);
 
     List<Member> selectAllMember();
+
+    Member editMember(Map<String,String> map);
+
+    void deleteMember(String id);
 }

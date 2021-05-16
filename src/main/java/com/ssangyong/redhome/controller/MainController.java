@@ -70,11 +70,6 @@ public class MainController {
         return "cart";
     }
 
-    @RequestMapping(value = "/mypage", method = RequestMethod.GET)
-    public String viewMypage() {
-        return "/mypage/mypage";
-    }
-
     @RequestMapping(value = "/mypage/photo", method = RequestMethod.GET)
     public String viewMypagePhoto() {
         return "/mypage/contents/photo";
@@ -89,5 +84,6 @@ public class MainController {
     public String viewQuestion() {
         return "question";
     }
+
 
 }

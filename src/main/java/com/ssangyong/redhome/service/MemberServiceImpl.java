@@ -70,4 +70,15 @@ public class MemberServiceImpl implements MemberService{
     public List<Member> selectAllMember() {
         return memberRepository.selectAllMember();
     }
+
+    @Override
+    public Member editMember(Map<String, String> map) {
+        memberRepository.updateMember(map);
+        return memberRepository.idCheckMember(map.get("id"));
+    }
+
+    @Override
+    public void deleteMember(String id) {
+        memberRepository.deleteMember(id);
+    }
 }

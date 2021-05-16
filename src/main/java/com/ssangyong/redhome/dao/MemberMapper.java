@@ -17,4 +17,9 @@ public interface MemberMapper {
     //멤버전체 가져오기
     List<Member> selectAllMember();
 
+    //멤버수정
+    void updateMember(Map<String,String> map);
+
+    //멤버삭제
+    void deleteMember(String id);
 }

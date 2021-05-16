@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,7 +9,12 @@
     <link rel="stylesheet" type="text/css" href="../../css/mypage/mypage.css"/>
 </head>
 <body>
-    <jsp:include page="../top.jsp" flush="false" />
+    <c:if test="${member eq null}">
+        <jsp:include page="../top.jsp" flush="false" />
+    </c:if>
+    <c:if test="${member ne null}">
+        <jsp:include page="../top2.jsp" flush="false" />
+    </c:if>
     <main role="main">
         <div class="page">
             <div class="user-show-layout">
@@ -16,10 +22,10 @@
                     <div class="myhome-nav myhome-nav--owner">
                         <nav class="page-navigation myhome-nav__owner">
                             <ul style="transform: translateX(0px);">
-                                <li class="page-navigation__item"><a class="active" href="/users/13093528" target="_self">프로필</a></li>
+                                <li class="page-navigation__item"><a class="active" href="#" target="_self">프로필</a></li>
                                 <li class="page-navigation__item"><a class="" href="/user_shopping_pages/order_list" target="_self">나의 쇼핑</a></li>
                                 <li class="page-navigation__item"><a class="" href="/production_reviews/write" target="_self">나의 리뷰</a></li>
-                                <li class="page-navigation__item"><a class="" href="/users/13093528/edit" target="_self">설정</a></li>
+                                <li class="page-navigation__item"><a class="" href="/mypage/edit" target="_self">설정</a></li>
                             </ul>
                         </nav>
                         <nav class="page-navigation myhome-nav__contents">

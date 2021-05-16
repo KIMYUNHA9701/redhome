@@ -14,5 +14,20 @@
     <select id="selectAllMember" resultType="com.ssangyong.redhome.bean.Member">
         SELECT * FROM MEMBER
     </select>
+
+    <update id="updateMember" parameterType="java.util.Map">
+        UPDATE MEMBER
+        SET
+            MEMBER_EMAIL = #{email},
+            MEMBER_NAME = #{name},
+            MEMBER_ADDR = #{address},
+            MEMBER_TEL = #{tel},
+            MEMBER_BIRTH = #{birth}
+        WHERE MEMBER_ID = #{id}
+    </update>
+
+    <delete id="deleteMember" parameterType="String">
+        DELETE FROM MEMBER WHERE MEMBER_ID = #{VALUE}
+    </delete>
 </mapper>
 
