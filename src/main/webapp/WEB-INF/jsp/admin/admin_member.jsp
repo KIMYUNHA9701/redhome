@@ -13,6 +13,21 @@
 <body>
     <div class="container">
         <h2>회원관리페이지</h2>
+        <br>
+        <div>
+            <select name="query">
+                <option selected value="" >선택해주세요.</option>
+                <option value="아이디">아이디</option>
+                <option value="이름">이름</option>
+                <option value="이메일">이메일</option>
+                <option value="주소">주소</option>
+                <option value="생일">생일</option>
+                <option value="레벨">레벨</option>
+            </select>
+            <input type="text" name="search">
+            <button>검색</button>
+        </div>
+        <br><br>
         <table class="table table-hover">
             <thead>
             <tr>

@@ -2,8 +2,12 @@ package com.ssangyong.redhome.controller;
 
 import com.ssangyong.redhome.bean.Admin;
 import com.ssangyong.redhome.bean.Member;
+import com.ssangyong.redhome.bean.Product;
+import com.ssangyong.redhome.bean.Shopping_order;
 import com.ssangyong.redhome.service.AdminService;
 import com.ssangyong.redhome.service.MemberService;
+import com.ssangyong.redhome.service.OrderService;
+import com.ssangyong.redhome.service.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +25,12 @@ public class AdminController {
 
     @Resource(name = "memberservice")
     MemberService memberService;
+
+    @Resource(name = "productservice")
+    ProductService productService;
+
+    @Resource(name = "orderservice")
+    OrderService orderService;
 
     //관리자 홈
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
@@ -58,13 +68,42 @@ public class AdminController {
 
     //상품관리페이지
     @RequestMapping(value = "/admin_product", method = RequestMethod.GET)
-    public String viewProducts(){
+    public String viewProducts(Model model){
+
+        List<Product> products = productService.selectAllProduct();
+        model.addAttribute("products",products);
         return "/admin/admin_product";
+    }
+
+    //상품등록페이지
+    @RequestMapping(value = "/admin_product/new", method = RequestMethod.GET)
+    public String newProduct(){
+        return "/admin/product/regist";
+    }
+
+    //상품등록
+    @RequestMapping(value = "/admin_product/new", method = RequestMethod.POST)
+    public String registProduct(Product product){
+        System.out.println(product);
+        productService.insertProduct(product);
+        return "redirect:/admin_product";
+    }
+
+    //상품삭제
+    @RequestMapping(value = "/admin_product/delete", method = RequestMethod.GET)
+    public String deleteProduct(String no){
+        System.out.println("no : " + no);
+        int num = Integer.parseInt(no);
+        productService.deleteProduct(num);
+        return "redirect:/admin_product";
     }
 
     //주문관리페이지
     @RequestMapping(value = "/admin_order", method = RequestMethod.GET)
-    public String viewOrders(){
+    public String viewOrders(Model model){
+
+        List<Shopping_order> orders = orderService.selectAllOrder();
+        model.addAttribute("orders",orders);
         return "/admin/admin_order";
     }
 
