@@ -407,9 +407,15 @@
             cursor: pointer;
         }
 
-        .button--color-blue {
+        /*.button--color-blue {
             background-color: #35c5f0;
             border-color: #35c5f0;
+            color: #fff;
+        }*/
+
+        .button--color-red {
+            background-color: #ed4a4a;
+            border-color: #ed4a4a;
             color: #fff;
         }
 
@@ -981,7 +987,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <button class="button button--color-blue button--size-30 button--shape-4 edit-user-info__form-item__delete" type="button">
+                                    <button class="button button--color-red button--size-30 button--shape-4 edit-user-info__form-item__delete" type="button">
                                         <svg viewBox="0 0 20 20" preserveAspectRatio="xMidYMid meet"><defs><filter id="delete-a" width="134.3%" height="175%" x="-17.1%" y="-37.5%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3"></feGaussianBlur><feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0.182857143 0 0 0 0 0.205714286 0 0 0 0 0.22 0 0 0 0.2 0"></feColorMatrix><feMerge><feMergeNode in="shadowMatrixOuter1"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter><path id="delete-b" d="M11 3.83v10c0 .92-.75 1.67-1.67 1.67H2.67c-.92 0-1.67-.75-1.67-1.67v-10h10zM8.08.5l.84.83h2.91V3H.17V1.33h2.91L3.92.5h4.16z"></path></defs><g fill="none" fill-rule="evenodd" filter="url(#delete-a)" transform="translate(4 2)"><mask id="delete-c" fill="#fff"><use xlink:href="#delete-b"></use></mask><g fill="#FFF" mask="url(#delete-c)"><path d="M-4-2h20v20H-4z"></path></g></g></svg>
                                         삭제
                                     </button>
@@ -1004,7 +1010,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="button button--color-blue button--size-50 button--shape-4 edit-user-info__submit" type="button" onclick="editSubmit()">회원 정보 수정</button>
+                <button class="button button--color-red button--size-50 button--shape-4 edit-user-info__submit" type="button" onclick="editSubmit()">회원 정보 수정</button>
             </form>
         </div>
     </div>

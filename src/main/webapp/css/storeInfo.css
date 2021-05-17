@@ -622,6 +622,7 @@
     font-size: 0;
 }
 
+
 .production-selling-header__review__icon>svg {
     margin-right: 1px;
     width: 13px;
@@ -635,6 +636,7 @@
         height: 16px;
     }
 }
+
 
 .production-selling-header__review__text {
     margin-left: 4px;
