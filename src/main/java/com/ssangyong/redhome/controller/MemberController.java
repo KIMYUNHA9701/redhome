@@ -56,21 +56,8 @@ public class MemberController {
 
     //회원가입 프로세스
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
-    public String signupProcess(String id, String password, String name,String tel1,String tel2,String tel3,String email1,String email2,String address,String birth1,String birth2,String birth3){
-        Map<String,String> imsi = new HashMap<>();
-        imsi.put("id",id);
-        imsi.put("password",password);
-        imsi.put("name",name);
-        imsi.put("tel1",tel1);
-        imsi.put("tel2",tel2);
-        imsi.put("tel3",tel3);
-        imsi.put("email1",email1);
-        imsi.put("email2",email2);
-        imsi.put("address",address);
-        imsi.put("birth1",birth1);
-        imsi.put("birth2",birth2);
-        imsi.put("birth3",birth3);
-        Member member = memberService.makeMember(imsi);
+    public String signupProcess(@RequestParam Map<String,String> map){
+        Member member = memberService.makeMember(map);
         System.out.println(member);
 
         return "redirect:main";
@@ -92,26 +79,12 @@ public class MemberController {
 
     //회원수정 프로세스
     @RequestMapping(value = "/editMember", method = RequestMethod.POST)
-    public String editMemberProcess(HttpSession session,String email1,String email22,String name,String address, String tel0, String tel1, String tel2, String birth11, String birth22,String birth33){
-        System.out.println("email : " + email1 + "@" + email22);
-        System.out.println("name : " + name);
-        System.out.println("address : " + address);
-        System.out.println("tel : " + tel0 + "-" + tel1 + "-" + tel2);
-        System.out.println("birth : " + birth11 + "/" + birth22 + "/" + birth33);
-        System.out.println("birth22 : " + birth22);
-
+    public String editMemberProcess(HttpSession session,@RequestParam Map<String,String> paramMap){
         Member member = (Member)session.getAttribute("member");
+        paramMap.put("id",member.getMember_id());
 
-        Map<String,String> map = new HashMap<>();
-        map.put("email",email1+"@"+email22);
-        map.put("name",name);
-        map.put("address",address);
-        map.put("tel",tel0+tel1+tel2);
-        map.put("birth",birth11.substring(2,4) + "/" + birth22 + "/" + birth33);
-        map.put("id",member.getMember_id());
-
-        System.out.println(map);
-        Member updatedMember = memberService.editMember(map);
+        System.out.println(paramMap);
+        Member updatedMember = memberService.editMember(paramMap);
 
         session.setAttribute("member",updatedMember);
 

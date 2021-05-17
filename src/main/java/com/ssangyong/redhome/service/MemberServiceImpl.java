@@ -73,6 +73,12 @@ public class MemberServiceImpl implements MemberService{
 
     @Override
     public Member editMember(Map<String, String> map) {
+        map.put("email",map.get("email1")+"@"+map.get("email22"));
+        map.put("name",map.get("name"));
+        map.put("address",map.get("address"));
+        map.put("tel",map.get("tel0")+map.get("tel1")+map.get("tel2"));
+        map.put("birth",map.get("birth11").substring(2,4) + "/" + map.get("birth22") + "/" + map.get("birth33"));
+
         memberRepository.updateMember(map);
         return memberRepository.idCheckMember(map.get("id"));
     }
