@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link href="../../css/store.css" rel="stylesheet">
 <link rel="stylesheet" href="../../css/selectbox.min.css">
 <script src="../../js/selectbox.min.js"></script>
@@ -19,6 +20,7 @@
 			<label class="today_sale_label">오늘의 딜</label>
 		</div>
 		<div class="store_items">
+		    <c:forEach var="i" begin="0" end="3" step="1">
 			<div class="store_item">
 				<div class="store_item_img">
 					<a href="/storeInfo">
@@ -29,7 +31,7 @@
 				</div>
 				<div class="store_item_header">
 					<h1>
-						<span class="store_item_header_brand">한샘</span>
+						<span class="store_item_header_brand">한샘 ${i}</span>
 					</h1>
 					<h1>
 						<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
@@ -44,82 +46,7 @@
 					</h1>
 				</div>
 			</div>
-			<div class="store_item">
-				<div class="store_item_img">
-					<a href="../../jsp/store.jsp">
-						<div class="store_item_imgScale">
-							<img alt="" src="../../img/product_img1.webp">
-						</div>
-					</a>
-				</div>
-				<div class="store_item_header">
-					<h1>
-						<span class="store_item_header_brand">한샘</span>
-					</h1>
-					<h1>
-						<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
-					</h1>
-					<h1>
-						<span class="store_item_header_sale">40%</span> <span
-							class="store_item_header_price">99,000</span>
-					</h1>
-					<h1>
-						<span class="store_item_header_scope">4.3</span> <span
-							class="store_item_header_reviewCnt">리뷰 838</span>
-					</h1>
-				</div>
-			</div>
-			<div class="store_item">
-				<div class="store_item_img">
-					<a href="../../jsp/store.jsp">
-						<div class="store_item_imgScale">
-							<img alt="" src="../../img/product_img1.webp">
-						</div>
-					</a>
-				</div>
-				<div class="store_item_header">
-					<h1>
-						<span class="store_item_header_brand">한샘</span>
-					</h1>
-					<h1>
-						<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
-					</h1>
-					<h1>
-						<span class="store_item_header_sale">40%</span> <span
-							class="store_item_header_price">99,000</span>
-					</h1>
-					<h1>
-						<span class="store_item_header_scope">4.3</span> <span
-							class="store_item_header_reviewCnt">리뷰 838</span>
-					</h1>
-				</div>
-			</div>
-			<div class="store_item">
-				<div class="store_item_img">
-					<a href="../../jsp/store.jsp">
-						<div class="store_item_imgScale">
-							<img alt="" src="../../img/product_img1.webp">
-						</div>
-					</a>
-				</div>
-				<div class="store_item_header">
-					<h1>
-						<span class="store_item_header_brand">한샘</span>
-					</h1>
-					<h1>
-						<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
-					</h1>
-					<h1>
-						<span class="store_item_header_sale">40%</span> <span
-							class="store_item_header_price">99,000</span>
-					</h1>
-					<h1>
-						<span class="store_item_header_scope">4.3</span> <span
-							class="store_item_header_reviewCnt">리뷰 838</span>
-					</h1>
-				</div>
-			</div>
-
+			</c:forEach>
 		</div>
 	</div>
 
@@ -145,205 +72,37 @@
 			</select>
 		</div>
 	</div>
-	<div class="store_items">
-		<div class="store_item">
-			<div class="store_item_img">
-				<a href="../../jsp/store.jsp">
-					<div class="store_item_imgScale">
-						<img alt="" src="../../img/product_img1.webp">
-					</div>
-				</a>
-			</div>
-			<div class="store_item_header">
-				<h1>
-					<span class="store_item_header_brand">한샘</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_price">99,000</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_scope">4.3</span> <span
-						class="store_item_header_reviewCnt">리뷰 838</span>
-				</h1>
-			</div>
-		</div>
-		<div class="store_item">
-			<div class="store_item_img">
-				<a href="../../jsp/store.jsp">
-					<div class="store_item_imgScale">
-						<img alt="" src="../../img/product_img1.webp">
-					</div>
-				</a>
-			</div>
-			<div class="store_item_header">
-				<h1>
-					<span class="store_item_header_brand">한샘</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_price">99,000</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_scope">4.3</span> <span
-						class="store_item_header_reviewCnt">리뷰 838</span>
-				</h1>
-			</div>
-		</div>
-		<div class="store_item">
-			<div class="store_item_img">
-				<a href="../../jsp/store.jsp">
-					<div class="store_item_imgScale">
-						<img alt="" src="../../img/product_img1.webp">
-					</div>
-				</a>
-			</div>
-			<div class="store_item_header">
-				<h1>
-					<span class="store_item_header_brand">한샘</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_price">99,000</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_scope">4.3</span> <span
-						class="store_item_header_reviewCnt">리뷰 838</span>
-				</h1>
-			</div>
-		</div>
-		<div class="store_item">
-			<div class="store_item_img">
-				<a href="../../jsp/store.jsp">
-					<div class="store_item_imgScale">
-						<img alt="" src="../../img/product_img1.webp">
-					</div>
-				</a>
-			</div>
-			<div class="store_item_header">
-				<h1>
-					<span class="store_item_header_brand">한샘</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_price">99,000</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_scope">4.3</span> <span
-						class="store_item_header_reviewCnt">리뷰 838</span>
-				</h1>
-			</div>
-		</div>
-	</div>
-	<div class="store_items">
-		<div class="store_item">
-			<div class="store_item_img">
-				<div class="store_item_img">
-					<a href="../../jsp/store.jsp">
-						<div class="store_item_imgScale">
-							<img alt="" src="../../img/product_img1.webp">
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="store_item_header">
-				<h1>
-					<span class="store_item_header_brand">한샘</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_price">99,000</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_scope">4.3</span> <span
-						class="store_item_header_reviewCnt">리뷰 838</span>
-				</h1>
-			</div>
-		</div>
 
-		<div class="store_item">
-			<div class="store_item_img">
-				<a href="../../jsp/store.jsp">
-					<div class="store_item_imgScale">
-						<img alt="" src="../../img/product_img1.webp">
-					</div>
-				</a>
-			</div>
-			<div class="store_item_header">
-				<h1>
-					<span class="store_item_header_brand">한샘</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_price">99,000</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_scope">4.3</span> <span
-						class="store_item_header_reviewCnt">리뷰 838</span>
-				</h1>
-			</div>
-		</div>
-		<div class="store_item">
-			<div class="store_item_img">
-				<a href="../../jsp/store.jsp">
-					<div class="store_item_imgScale">
-						<img alt="" src="../../img/product_img1.webp">
-					</div>
-				</a>
-			</div>
-			<div class="store_item_header">
-				<h1>
-					<span class="store_item_header_brand">한샘</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_price">99,000</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_scope">4.3</span> <span
-						class="store_item_header_reviewCnt">리뷰 838</span>
-				</h1>
-			</div>
-		</div>
-		<div class="store_item">
-			<div class="store_item_img">
-				<a href="../../jsp/store.jsp">
-					<div class="store_item_imgScale">
-						<img alt="" src="../../img/product_img1.webp">
-					</div>
-				</a>
-			</div>
-			<div class="store_item_header">
-				<h1>
-					<span class="store_item_header_brand">한샘</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_price">99,000</span>
-				</h1>
-				<h1>
-					<span class="store_item_header_scope">4.3</span> <span
-						class="store_item_header_reviewCnt">리뷰 838</span>
-				</h1>
-			</div>
-		</div>
-	</div>
+	    <c:forEach var="i" begin="0" end="19" step="4">
+             <div class="store_items">
+                  <c:forEach var="j" begin="0" end="3" step="1">
+                  		<div class="store_item">
+                  			<div class="store_item_img">
+                  				<a href="../../jsp/store.jsp">
+                  					<div class="store_item_imgScale">
+                  						<img alt="" src="../../img/product_img1.webp">
+                  					</div>
+                  				</a>
+                  			</div>
+                  			<div class="store_item_header">
+                  				<h1>
+                  					<span class="store_item_header_brand">한샘 ${i+j}</span>
+                  				</h1>
+                  				<h1>
+                  					<span class="store_item_header_name">1인용 컴퓨터 게이밍 책상</span>
+                  				</h1>
+                  				<h1>
+                  					<span class="store_item_header_price">99,000</span>
+                  				</h1>
+                  				<h1>
+                  					<span class="store_item_header_scope">4.3</span> <span
+                  						class="store_item_header_reviewCnt">리뷰 838</span>
+                  				</h1>
+                  			</div>
+                  		</div>
+                  </c:forEach>
+             </div>
+        </c:forEach>
 	</div>
 
 	<script type="text/javascript">
