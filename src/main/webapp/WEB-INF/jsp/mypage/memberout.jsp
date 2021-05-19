@@ -244,8 +244,8 @@
         }
 
         ._3AsCW {
-            background-color: #35c5f0;
-            border-color: #35c5f0;
+            background-color: #ed4a4a;
+            border-color: #ed4a4a;
             color: #fff;
         }
 

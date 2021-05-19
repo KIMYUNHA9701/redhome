@@ -29,12 +29,12 @@
         <div class="layout-navigation-primary" style="position:relative">
             <div class="layout-navigation-primary__content">
                 <div class="layout-navigation-primary__left">
-                    <a href="#" class="noDeco layout-navigation-logo">
-                        <img src="../../img/ohsu_1.PNG">
+                    <a href="/main" class="noDeco layout-navigation-logo">
+                        <img src="../../img/redhome_kor.jpg" style="width: 100px;">
                     </a>
                 </div>
                 <nav class="layout-navigation-primary__menu" style="display:block">
-                    <a class="layout-navigation-primary__menu__item noDeco" href="#">
+                    <a class="layout-navigation-primary__menu__item noDeco" href="/store">
                         스토어
                     </a>
                     <a class="layout-navigation-primary__menu__item noDeco" href="/board">
@@ -48,7 +48,7 @@
                                 <div class="layout-navigation-search__combobox">
                                     <div class="layout-navigation-search__input">
                                         <img src="../../img/ohsu_2.PNG" style="position:absolute; padding-top:6px; padding-left:6px;">
-                                        <input type="text" class="layout-navigation-search__input__text" placeholder="오늘의집 통합검색">
+                                        <input type="text" class="layout-navigation-search__input__text" placeholder="레드홈 통합검색">
                                     </div>
                                 </div>
                             </div>
