@@ -11,6 +11,7 @@
 .container {
     text-align: center;
     margin: 40px 20px 20px 20px;
+
 }
 
 .text-heading-1 {
@@ -27,6 +28,8 @@
     font-family: "Noto Sans KR", "Apple SD Gothic Neo", "¸¼Àº °íµñ",
     "Malgun Gothic", sans-serif;
     font-size: 13px;
+    padding-top: 15px;
+    padding-bottom: 18px;
 }
 
 .form-control {
@@ -35,13 +38,14 @@
     font-size: 14px;
     box-sizing: border-box;
     height: 40px;
-    width: 50%;
+    width: 46%;
     line-height: 40px;
-    border: solid 1px #dbdbdb;
+    border: solid 1px #bdbdbd;
     background-color: #ffffff;
     color: #424242;
     padding: 0px 50px;
     margin: 15px 15px 15px 5px;
+    border-radius: 4px;
 }
 
 
@@ -53,15 +57,18 @@
     position: absolute;
     z-index: 10;
     top: 10%;
-    left: 210px;
+    left: 290px;
     width: 130px;
     margin-top: 10px;
     padding: 11px 15px 11px;
     border-radius: 4px;
     box-shadow: 0 1px 4px 0 rgb(0 0 0);
-    color: black;
+    color: #424242;
     background-color: white;
+    font-weight: bold;
+
 }
+
 
 
 
@@ -71,20 +78,121 @@
     padding-bottom: 30px;
 }
 
+
+/*Á¤·Ä*/
+
+
+    .filter-select__header__name {
+        padding-bottom: 10px;
+        font-size: 12px;
+        color: #757575;
+    }
+
+.filter-select__header__name>.icon {
+    margin-left: 5px;
+}
+.icon {
+    background-repeat: no-repeat;
+    background-size: 400px;
+    display: inline-block;
+}
+
+.icon-pointer-angle-down-dark-sm {
+    width: 9px;
+    height: 6px;
+    background-position: top 0 left -111px;
+}
+.icon-pointer, [class*=icon-pointer-] {
+    background-image: url(https://static.ohou.se/assets/icon_map/v3/icon-pointer.png);
+}
+
+.questions-filter__filters{
+    text-align: left;
+    float: left;
+    margin-left: 50px;
+
+
+}
+
+
+    .filter-select__header__value {
+        font-size: 18px;
+        color: #000000;
+        font-weight: 500;
+    }
+
+.filter-select__header:hover{
+    text-decoration: underline;
+}
+
+
+.filter-select__list {
+    font-weight: normal;
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    left: 0;
+    width: 210px;
+    margin-top: 20px;
+    padding: 17.5px 15px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px 0 #e0e0e0;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+    transform-origin: 50% 0;
+    transition: visibility 0s ease 0.1s, opacity 0.1s, transform 0.1s;
+    font-family: "Noto Sans KR", "Apple SD Gothic Neo", "¸¼Àº °íµñ", "Malgun Gothic", sans-serif;
+
+}
+
+
+
+.filter-select__list__entry>a {
+    display: block;
+    padding: 7.5px 10px;
+    font-size: 15px;
+    border-radius: 2px;
+    color: #424242;
+
+}
+.filter-select__list__entry.active>a {
+    font-weight: bolder;
+    color: #ed4a4a;
+    font-family: "Noto Sans KR", "Apple SD Gothic Neo", "¸¼Àº °íµñ", "Malgun Gothic", sans-serif;
+
+}
+
+
+.filter-select__list.open {
+    font-size: 15px;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.1s, transform 0.1s;
+    font-family: "Noto Sans KR", "Apple SD Gothic Neo", "¸¼Àº °íµñ", "Malgun Gothic", sans-serif;
+}
+
+
+
+
+   /*¿ÞÂÊ »ó´Ü ¹öÆ°*/
+
 .set-reply{
     display: inline-block;
-    margin: 0;
+    margin-right: 5px;
     border: 1px solid #dbdbdb;
     font: inherit;
-    width: 160px;
+    width: 190px;
     box-sizing: border-box;
-    padding: 8px 0 10px;
+    padding: 8px 20px 10px;
     font-size: 15px;
     line-height: 21px;
     font-weight: 700;
     text-align: center;
-    color: #ed4a4a;
-    background-color: white;
+    color: #424242;
+    background-color: #f5f5f5;
     border-radius: 4px;
 
 }
@@ -95,7 +203,7 @@
     border: none;
     background: none;
     font: inherit;
-    width: 85px;
+    width: 120px;
     box-sizing: border-box;
     padding: 8px 0 10px;
     font-size: 15px;
@@ -105,6 +213,8 @@
     color: #fff;
     background-color: #ed4a4a;
     border-radius: 4px;
+    padding-left: 30px;
+    padding-right: 30px;
 
 }
 
@@ -117,7 +227,7 @@
 .questions-filter__content {
     border: hidden;
     padding: 20px;
-    margin: 20px  10px 20px 300px;
+    margin: 20px  10px 20px 220px;
     width: 65%;
     text-align: center;
 
@@ -129,17 +239,16 @@
 .questions-notice-list__list__entry{
 
     border: hidden;
-    margin: 5px 0;
-    padding: 18px 20px 18px 54px;
-    margin: 5px  30px 10px 160px;
+    padding: 18px 20px 18px 24px;
+    margin: 5px  30px 5px 270px;
     background-color: #f5f5f5;
     color:white;
     font-weight: bold;
     font-size: 13px;
     word-wrap: break-word;
-    width: 70%;
+    width: 60.5%;
     text-align: left;
-    border-radius: 4px;
+    border-radius: 5px;
 
 }
 
@@ -182,6 +291,7 @@ ol, ul {
 .questions-item {
     padding: 30px 0;
     border-top: 1px solid #ededed;
+
 }
 
 .questions-item__title{
@@ -199,9 +309,9 @@ ol, ul {
 
 #questions-list{
 
-    width: 70%;
+    width: 62%;
     padding: 0px 10px;
-    margin: 0px 10px 0px 220px;
+    margin: 25px 10px 0px 280px;
 
 
 }
@@ -256,7 +366,7 @@ ol, ul {
     color: #757575;
 }
 
-.questions-item__footer__date:after, .questions-item__footer__comments:after {
+.questions-item__footer__date:after{
     content: "¡¤";
     margin: 0 4px;
 }
@@ -334,7 +444,7 @@ nav.paginator>ul>li.active>a {
 
 
 
-.icon-pointer-button-square-right {
+.paging-btn-right {
     border: 1px solid #ededed;
     padding: 4px;
     border-radius: 4px;
@@ -344,7 +454,7 @@ nav.paginator>ul>li.active>a {
 
 
 
-.icon-pointer-button-square-left {
+.paging-btn-left {
     border: 1px solid #ededed;
     padding: 4px;
     border-radius: 4px;
@@ -360,6 +470,8 @@ nav.paginator>ul>li.active>a {
     width: 500px;
     background: white;
     padding: 15px;
+    padding-top: 20px;
+
 
 }
 
@@ -382,10 +494,21 @@ nav.paginator>ul>li.active>a {
     color: #424242;
     padding: 0px 5px 0px 8px;
     border-radius: 4px;
-    border: solid 1px #dbdbdb;
+    border: solid 1px #bdbdbd;
     background-color: #ffffff;
     font-weight: bold;
 
 
 
+}
+
+
+.questions-item__footer__comments{
+    color: #ed4a4a;
+    font-weight: bold;
+}
+
+#questions-paginator{
+
+    margin-bottom: 140px;
 }

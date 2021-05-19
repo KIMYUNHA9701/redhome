@@ -36,6 +36,7 @@
             margin: 0 auto;
             padding: 30px 15px 40px;
             box-sizing: border-box;
+
         }
 
         @media (min-width: 768px){

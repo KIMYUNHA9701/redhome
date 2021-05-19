@@ -54,10 +54,10 @@
                         <select id="questionCategory_filters"  name="questionCategory"  onchange="">
                             <option class="filter-select__list__entry active"
                                     selected="selected" value="recent">선택하세요  ▼ </option>
-                            <option class="filter-select__list__entry" value="product">상품</option>
-                            <option class="filter-select__list__entry" value="order_pay">주문/결제</option>
                             <option class="filter-select__list__entry" value="delivery">배송</option>
                             <option class="filter-select__list__entry" value="cancel_back_exchange">취소/반품/교환</option>
+                            <option class="filter-select__list__entry" value="product">제품</option>
+                            <option class="filter-select__list__entry" value="order_pay">주문/결제</option>
                         </select>
                     <input placeholder="제목을 적어주세요." class="form-control" maxlength="61"
                            size="1" type="text" name="question[title]" id="question_title" >

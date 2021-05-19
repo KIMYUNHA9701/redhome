@@ -8,6 +8,10 @@ import lombok.ToString;
 @Getter @Setter @AllArgsConstructor @ToString
 public class Quest {
 
+//question.jsp 에서 set
+//board.jsp, answer.jsp 에 get
+
+
     //문의번호
     private int quest_num;
 

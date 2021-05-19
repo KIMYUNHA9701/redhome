@@ -60,10 +60,6 @@ public class MainController {
         return "store";
     }
 
-    @RequestMapping(value = "/board", method = RequestMethod.GET)
-    public String viewBoard() {
-        return "board";
-    }
 
     @RequestMapping(value = "/cart", method = RequestMethod.GET)
     public String viewCart() {
@@ -80,10 +76,7 @@ public class MainController {
         return "/mypage/contents/video";
     }
 
-    @RequestMapping(value = "/question", method = RequestMethod.GET)
-    public String viewQuestion() {
-        return "question";
-    }
+
 
 
 }

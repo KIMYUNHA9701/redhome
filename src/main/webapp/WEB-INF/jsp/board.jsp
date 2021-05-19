@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <link rel="stylesheet" type="text/css" href="../../css/board.css">
     <style>
     </style>
@@ -26,8 +27,30 @@
                 location.href='/question';
             });
 
+           $(".filter-select__header").click(function (){
+                  $(".filter-select__list").css({visibility: "visible",
+               opacity: 1, transform: "none",top:"535px",left:"290px"
+                  });
+               $(".filter-select__header").dblclick(function () {
+                   $(".filter-select__list").css({visibility: "hidden",
+                       opacity: 0
+                   });
+               });
+           });
+
+            $(".filter-select__list__entry>a").mouseover(function (){
+                $(this).css({ background:"#ed4a4a",color:"white"});
+                $(this).mouseleave(function () {
+                        $("#notactiveList").css({background: "white", color: "#424242"});
+                        $("#activeList").css({background: "white", color: "#ed4a4a"});
+
+
+                });
+            });
 
         });
+
+
 
 
     </script>
@@ -42,7 +65,8 @@
         <div class="container">
             <div class="questions-header__title">
                 <h1 class="text-heading-1 text-black bold">질문과 답변</h1>
-                <p class="text-caption-1">레드홈 인테리어 고수들과 전문가들에게 조언을 받으세요.</p>
+                <p class="text-caption-1">레드홈에 궁금한 점을 문의해 보세요.&nbsp;
+                    빠르고 친절하게 답변해 드리겠습니다.</p>
             </div>
             <form id="questions-header__form" class="sticky-top"
                   action="/questions" accept-charset="utf-8" method="get">
@@ -60,10 +84,12 @@
                                 <select id="questionCategory_filters"  name="questionCategory"  onchange="">
                                     <option class="filter-select__list__entry active"
                                             selected="selected" value="recent">선택하세요  ▼ </option>
-                                    <option class="filter-select__list__entry" value="product">상품</option>
-                                    <option class="filter-select__list__entry" value="order_pay">주문/결제</option>
                                     <option class="filter-select__list__entry" value="delivery">배송</option>
                                     <option class="filter-select__list__entry" value="cancel_back_exchange">취소/반품/교환</option>
+                                    <option class="filter-select__list__entry" value="product">제품</option>
+                                    <option class="filter-select__list__entry" value="order_pay">주문/결제</option>
+
+
                                 </select>
                                 <img src="../../img/ohsu_2.PNG"
                                      style="position: absolute; padding-top: 21px; padding-left: 21px;">
@@ -83,18 +109,26 @@
 
 
 <section id="questions-filter" class="sticky-top" >
-    <div class="questions-filter__float sticky-content open"
-         data-sticky-enabled="false" style="position: relative;">
-        <div class="questions-filter__content container">
-            <div class="questions-filter__filters" >
-                <select id="questions-filter__filters"  name="field"  onchange="">
-                    <option class="filter-select__list__entry active"
-                            selected="selected" value="recent">최신순</option>
-                    <option class="filter-select__list__entry" value="popular">인기순</option>
-                    <option class="filter-select__list__entry" value="recent_comments">최근
-                        답변 순</option>
-                </select>
+    <div class="questions-filter__content container">
+        <div class="questions-filter__filters">
+            <div class="filter-select" id="questions-filter-sort" data-modal-id="questions-filter-sort-modal">
+                <dl class="filter-select__header" role="button">
+                    <dt class="filter-select__header__name">
+                        정렬<span class="icon icon-pointer-angle-down-dark-sm"></span>
+                    </dt>
+                    <dd class="filter-select__header__value">최신순</dd>
+                </dl>
+                <ul class="filter-select__list">
+
+                    <li class="filter-select__list__entry active">
+                        <a href="/questions?order=recent&amp;page=1"  id="activeList">최신순</a>
+                    </li>
+                    <li class="filter-select__list__entry " >
+                        <a href="/questions?order=recent_comments&amp;page=1" id="notactiveList">최근 답변순</a>
+                    </li>
+                </ul>
             </div>
+        </div>
             <div class="questions-filter__actions">
                 <button class="set-reply btn btn-normal btn-sm" href="/questions?page=1&amp;reply=not_yet">답변을 기다리는 질문</button>
                 <button class="questions-filter__actions__new-question btn btn-priority btn-sm" href="/question">질문하기</button>
@@ -113,17 +147,17 @@
     <ol class="questions-notice-list__list">
         <li class="questions-notice-list__list__entry">
             <a href="/questions/2378" style="text-decoration: none;">
-                <span class="title text-body-1" >📢 레드홈 인테리어 멘토를 만나보세요</span>
+                <span class="title text-body-1" >📢 &nbsp 레드홈 인테리어 멘토를 만나보세요</span>
             </a>
         </li>
         <li class="questions-notice-list__list__entry">
             <a href="/questions/3703" style="text-decoration: none;">
-                <span class="title text-body-1"  >📢 답변 이벤트 안내 및 활동 주의사항 </span>
+                <span class="title text-body-1"  >📢 &nbsp 이벤트 안내 및 활동 주의사항 </span>
             </a>
         </li>
         <li class="questions-notice-list__list__entry">
             <a href="/questions/12549" style="text-decoration: none;" >
-                <span class="title text-body-1"  > 📢 빠르고 정확한 인테리어 답변을 받는 방법은?</span>
+                <span class="title text-body-1"  > 📢 &nbsp 빠르고 정확한 인테리어 답변을 받는 방법은?</span>
             </a>
         </li>
     </ol>
@@ -134,73 +168,37 @@
 
 
 <section id="questions-list" class="container">
-    <a class="questions-item__link" href="/questions/78826?affect_id=0&amp;affect_type=QuestionIndex&amp;query=">
+
+    <c:forEach var="question" items="${boardList}">
+    <a class="questions-item__link" href="/answer" >
         <article class="questions-item">
-            <h1 class="questions-item__title text-heading-5 bold text-black">마루 위 데코타일? 타일카페트? 카페트?</h1>
-            <p class="questions-item__content text-caption-1">이사갈 월세집이 마루바닥인데 안이쁘고 틈이 많이벌어져있더라구요ㅜㅜ 데코타일을 알아보니 저희집이 무슨마루인지는모르겠는데 마루위 데코타일은 대부분 추천을안하시길래 카페트쪽으로 알아보는중인데요, 타일카페트도 바닥면이 고무라 습기문제는 똑같이 생길거같은데 역시 바닥에문제안생기려면 그냥 카페트롤같은거 재단해서 쓰는게 가장 좋을까요?</p>
-            <footer class="questions-item__footer">
-            <span class="questions-item__footer__author">
-                <span class="questions-item__footer__author__image">
-                    <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-users-profile_images1567362197_.jpeg/80/80" onerror="this.src='https://bucketplace-v2-development.s3.amazonaws.com/uploads/default_images/avatar.png'">
-                </span>
-                <span class="questions-item__footer__author__content text-caption-1">자취하고만ㄷㅏ</span>
-            </span>
-                <span class="questions-item__footer__meta text-caption-1">
-              <time datetime="2021-04-17T22:55:32+09:00" class="questions-item__footer__date text-gray">
-                방금
-              </time>
-              <span class="questions-item__footer__comments text-gray">
-                댓글
-                <span class="questions-item__footer__comments__content active">
-                  2
-                </span>
-              </span>
-              <span class="questions-item__footer__views text-gray">
-                조회
-                <span class="questions-item__footer__views__content">16</span>
-              </span>
-            </span>
-
-            </footer>
-        </article>
-    </a>
-
-
-    <a class="questions-item__link" href="/questions/80871?affect_id=0&amp;affect_type=QuestionIndex&amp;query=">
-        <article class="questions-item">
+            <c:if test="${question.quest_img ne null}">
             <div class="questions-item__image">
                 <div class="image-wrap square">
-                    <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-cards-snapshots-162010177133497316.jpeg/320/320">
+                    <img src="${question.quest_img}">
                 </div>
             </div>
-            <h1 class="questions-item__title text-heading-5 bold text-black">세탁기겸 보일러실</h1>
-            <p class="questions-item__content text-caption-1">세탁기겸 보일러실 입니다 왼쪽이 보일러요! 창문 열면 바로 옆 빌라 주차장이고 1층이라서 블라인드도 아예 안 올려요! 이제 장마 오면 혹시나 벌레 나올까봐 그런데저런 하수구에는 그 하수구 뚫는 세제 ? 부으면 안 되나요ㅜㅜㅜㅜ 저런식이면 어떻게 관리 하시는지 궁금합니다..</p>
+            </c:if>
+            <h1 class="questions-item__title text-heading-5 bold text-black">${question.quest_title}</h1>
+            <p class="questions-item__content text-caption-1">${question.quest_contents}</p>
             <footer class="questions-item__footer">
             <span class="questions-item__footer__author">
-                <span class="questions-item__footer__author__image">
-                    <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-users-profile_images-161154032953789898.jpeg/80/80" onerror="this.src='https://bucketplace-v2-development.s3.amazonaws.com/uploads/default_images/avatar.png'">
-                </span>
-                <span class="questions-item__footer__author__content text-caption-1">또뚐</span>
+                <span class="questions-item__footer__author__content text-caption-1">${question.member_id}</span>
             </span>
                 <span class="questions-item__footer__meta text-caption-1">
               <time datetime="2021-05-04T13:16:13+09:00" class="questions-item__footer__date text-gray">
-                2분 전
+                ${question.quest_date}
               </time>
               <span class="questions-item__footer__comments text-gray">
-                댓글
-                <span class="questions-item__footer__comments__content ">
-                  0
-                </span>
+                ${question.quest_state}
               </span>
-              <span class="questions-item__footer__views text-gray">
-                조회
-                <span class="questions-item__footer__views__content">2</span>
+
               </span>
             </span>
             </footer>
         </article>
     </a>
-
+    </c:forEach>
 </section>
 
 
@@ -209,7 +207,7 @@
 <div id="questions-paginator">
     <nav class="paginator" data-total="14041" data-current="2">
         <ul>
-            <li rel="prev" role="button" class="icon icon-pointer-button-square-left" style="color:#5F5F5F; font-weight: 900; ">
+            <li rel="prev" role="button" class="paging-btn-left" style="color:#5F5F5F; font-weight: 900; ">
                 <a href="#" style="text-decoration:none">${'<'}</a>
             </li>
 
@@ -245,13 +243,16 @@
                 <a class ="pagenum" href="#"> 10 </a>
             </li>
 
-            <li rel="next" role="button" class="icon icon-pointer-button-square-right" style="color:#5F5F5F; font-weight: 900; ">
+            <li rel="next" role="button" class="paging-btn-right" style="color:#5F5F5F; font-weight: 900; ">
                 <a  href="#" style="text-decoration:none ">${'>'}</a>
             </li>
         </ul>
     </nav>
 </div>
 
+
+
+  <jsp:include page="bottom.jsp" flush="false"/>
 
 </body>
 </html>
