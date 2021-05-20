@@ -55,12 +55,6 @@ public class MainController {
         return "storeInfo2";
     }
 
-    @RequestMapping(value = "/store", method = RequestMethod.GET)
-    public String viewStore() {
-        return "store";
-    }
-
-
     @RequestMapping(value = "/cart", method = RequestMethod.GET)
     public String viewCart() {
         return "cart";

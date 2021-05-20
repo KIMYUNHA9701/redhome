@@ -3,12 +3,24 @@
 <mapper namespace="com.ssangyong.redhome.dao.ProductMapper">
 
     <select id="selectAllProduct" resultType="com.ssangyong.redhome.bean.Product">
+        SELECT * FROM PRODUCT ORDER BY product_num
+    </select>
+
+    <select id="selectSaleProduct" resultType="com.ssangyong.redhome.bean.Product">
         SELECT * FROM PRODUCT
+        WHERE product_category_num = 1
+        ORDER BY product_num
+    </select>
+
+    <select id="selectCateProduct" parameterType="Integer" resultType="com.ssangyong.redhome.bean.Product">
+        SELECT * FROM PRODUCT
+        WHERE product_category_num = #{p_num}
+        ORDER BY product_num
     </select>
 
     <insert id="insertProduct" parameterType="com.ssangyong.redhome.bean.Product">
         INSERT INTO PRODUCT(PRODUCT_NUM, PRODUCT_NAME, PRODUCT_IMG, PRODUCT_PRICE, PRODUCT_QUANTITY, PRODUCT_QUANTITY_SOLD, PRODUCT_TYPE_NUM, PRODUCT_CATEGORY_NUM)
-        VALUES(#{product_num}, #{product_name}, #{product_img}, #{product_price}, #{product_quantity}, #{product_quantity_sold}, #{product_type_num}, #{product_category_num})
+        VALUES(#{product_num}, #{product_name}, #{product_img}, #{product_price}, 10, 0, #{product_type_num}, #{product_category_num})
     </insert>
 
     <delete id="deleteProduct" parameterType="Integer">

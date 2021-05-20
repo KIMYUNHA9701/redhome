@@ -20,6 +20,17 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
+    public List<Product> selectSaleProduct() {
+        return productRepository.selectSaleProduct();
+    }
+
+    @Override
+    public List<Product> selectCateProduct(int p_num) {
+
+        return productRepository.selectCateProduct(p_num);
+    }
+
+    @Override
     public void insertProduct(Product product) { productRepository.insertProduct(product); }
 
     @Override

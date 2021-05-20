@@ -10,6 +10,11 @@ public interface ProductService {
 
     List<Product> selectAllProduct();
 
+    List<Product> selectSaleProduct();
+
+    List<Product> selectCateProduct(int p_num);
+
+
     void insertProduct(Product product);
 
     void deleteProduct(int no);
