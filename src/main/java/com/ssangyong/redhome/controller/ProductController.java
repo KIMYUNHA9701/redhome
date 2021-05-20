@@ -31,8 +31,6 @@ public class ProductController {
 
             productSale.get(i).setProduct_price(salePrice);
             salePriceList.add(format.format(salePrice));
-            System.out.println(salePriceList.get(i));
-
         }
         model.addAttribute("salePrice", salePriceList);
         model.addAttribute("saleList", productSale);
@@ -43,7 +41,6 @@ public class ProductController {
             for (int i=0; i<productAll.size(); i++){
                 int price2 = productAll.get(i).getProduct_price();
                 allPriceList.add(format.format(price2));
-                System.out.println(allPriceList.get(i));
             }
             model.addAttribute("isAll", 0);
             model.addAttribute("allPrice", allPriceList);
@@ -54,7 +51,6 @@ public class ProductController {
             for (int i=0; i<productCate.size(); i++){
                 int price3 = productCate.get(i).getProduct_price();
                 CatePriceList.add(format.format(price3));
-                System.out.println(CatePriceList.get(i));
             }
             model.addAttribute("isAll", 1);
             model.addAttribute("catePrice", CatePriceList);
