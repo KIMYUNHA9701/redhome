@@ -18,4 +18,8 @@ public interface MemberService {
     Member editMember(Map<String,String> map);
 
     void deleteMember(String id);
+
+    List<Member> searchMember(Map<String,String> map);
+
+    String translateQuery(String query);
 }

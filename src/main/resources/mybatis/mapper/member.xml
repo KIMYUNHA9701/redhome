@@ -29,5 +29,13 @@
     <delete id="deleteMember" parameterType="String">
         DELETE FROM MEMBER WHERE MEMBER_ID = #{VALUE}
     </delete>
+
+    <select id="searchMember" parameterType="java.util.Map" resultType="com.ssangyong.redhome.bean.Member">
+        SELECT * FROM MEMBER
+
+        <if test="query!=null">
+            <where>${query} LIKE '%'||#{data}||'%' </where>
+        </if>
+    </select>
 </mapper>
 

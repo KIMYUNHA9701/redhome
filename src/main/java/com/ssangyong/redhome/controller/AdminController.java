@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -61,13 +62,29 @@ public class AdminController {
         return "redirect:/admin";
     }
 
-    //회원관리페이지
+    //회원관리페이지 & 회원검색
     @RequestMapping(value = "/admin_member", method = RequestMethod.GET)
-    public String viewMembers(Model model){
-        List<Member> members = memberService.selectAllMember();
-        model.addAttribute("members",members);
+    public String viewMembers(Model model,
+                              @RequestParam(required = false) String query,
+                              @RequestParam(required = false) String data){
+        List<Member> members;
+        if(query != null && data != null){
+            System.out.println("query = " + query);
+            System.out.println("data = " + data);
+            Map<String,String> map = new HashMap<>();
+            String changedQuery = memberService.translateQuery(query);
+            map.put("query",changedQuery);
+            map.put("data",data);
+            System.out.println(map);
+            members = memberService.searchMember(map);
+            System.out.println(members);
+        }else {
+            members = memberService.selectAllMember();
+        }
+        model.addAttribute("members", members);
         return "/admin/admin_member";
     }
+
 
     //상품관리페이지
     @RequestMapping(value = "/admin_product", method = RequestMethod.GET)
