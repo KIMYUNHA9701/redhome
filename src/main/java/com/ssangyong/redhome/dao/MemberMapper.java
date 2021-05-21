@@ -22,4 +22,7 @@ public interface MemberMapper {
 
     //멤버삭제
     void deleteMember(String id);
+
+    //멤버검색
+    List<Member> searchMember(Map<String,String> map);
 }

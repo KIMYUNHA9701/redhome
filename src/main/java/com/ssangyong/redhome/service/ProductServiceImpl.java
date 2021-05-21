@@ -2,11 +2,14 @@ package com.ssangyong.redhome.service;
 
 import com.ssangyong.redhome.bean.Member;
 import com.ssangyong.redhome.bean.Product;
+import com.ssangyong.redhome.bean.Review;
+import com.ssangyong.redhome.bean.Review_avg;
 import com.ssangyong.redhome.dao.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service("productservice")
 public class ProductServiceImpl implements ProductService{
@@ -25,13 +28,26 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public List<Product> selectCateProduct(int p_num) {
+    public List<Product> selectCateProduct(int c_num) {
 
-        return productRepository.selectCateProduct(p_num);
+        return productRepository.selectCateProduct(c_num);
+    }
+
+    @Override
+    public List<Review_avg> selectAvgReview() {
+        return productRepository.selectAvgReview();
+    }
+
+    @Override
+    public Product selectProduct(int no) {
+        return productRepository.selectProduct(no);
     }
 
     @Override
     public void insertProduct(Product product) { productRepository.insertProduct(product); }
+
+    @Override
+    public void editProduct(Map<String, String> map) { productRepository.updateProduct(map);}
 
     @Override
     public void deleteProduct(int no) { productRepository.deleteProduct(no);}

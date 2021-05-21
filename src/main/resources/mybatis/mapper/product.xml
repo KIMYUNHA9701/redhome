@@ -14,8 +14,20 @@
 
     <select id="selectCateProduct" parameterType="Integer" resultType="com.ssangyong.redhome.bean.Product">
         SELECT * FROM PRODUCT
-        WHERE product_category_num = #{p_num}
-        ORDER BY product_num
+        WHERE PRODUCT_CATEGORY_NUM = #{c_num}
+        ORDER BY PRODUCT_NUM
+    </select>
+
+    <select id="selectAvgReview" resultType="com.ssangyong.redhome.bean.Review_avg">
+        SELECT PRODUCT_NUM, AVG(REVIEW_GRADE) AS GRADE_AVG, COUNT(*) AS REVIEW_CNT
+        FROM REVIEW
+        GROUP BY PRODUCT_NUM
+        ORDER BY PRODUCT_NUM
+    </select>
+
+    <select id="selectProduct" parameterType="Integer" resultType="com.ssangyong.redhome.bean.Product">
+        SELECT * FROM PRODUCT
+        WHERE product_num = #{VALUE}
     </select>
 
     <insert id="insertProduct" parameterType="com.ssangyong.redhome.bean.Product">
@@ -26,4 +38,16 @@
     <delete id="deleteProduct" parameterType="Integer">
         DELETE FROM PRODUCT WHERE PRODUCT_NUM = #{VALUE}
     </delete>
+
+    <update id="updateProduct" parameterType="java.util.Map">
+        UPDATE PRODUCT
+        SET PRODUCT_NAME = #{product_name},
+            PRODUCT_IMG = #{product_img},
+            PRODUCT_PRICE = #{product_price},
+            PRODUCT_QUANTITY = #{product_quantity},
+            PRODUCT_QUANTITY_SOLD = #{product_quantity_sold},
+            PRODUCT_TYPE_NUM = #{product_type_num},
+            PRODUCT_CATEGORY_NUM = #{product_category_num}
+        WHERE product_num = #{no}
+    </update>
 </mapper>

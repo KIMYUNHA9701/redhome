@@ -1,10 +1,11 @@
 package com.ssangyong.redhome.service;
 
-import com.ssangyong.redhome.bean.Member;
 import com.ssangyong.redhome.bean.Product;
-import com.ssangyong.redhome.dao.ProductMapper;
+import com.ssangyong.redhome.bean.Review;
+import com.ssangyong.redhome.bean.Review_avg;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ProductService {
 
@@ -12,8 +13,13 @@ public interface ProductService {
 
     List<Product> selectSaleProduct();
 
-    List<Product> selectCateProduct(int p_num);
+    List<Product> selectCateProduct(int c_num);
 
+    List<Review_avg> selectAvgReview();
+
+    Product selectProduct(int no);
+
+    public void editProduct(Map<String, String> map);
 
     void insertProduct(Product product);
 

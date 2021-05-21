@@ -10,12 +10,16 @@ import com.ssangyong.redhome.service.OrderService;
 import com.ssangyong.redhome.service.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class AdminController {
@@ -58,13 +62,29 @@ public class AdminController {
         return "redirect:/admin";
     }
 
-    //회원관리페이지
+    //회원관리페이지 & 회원검색
     @RequestMapping(value = "/admin_member", method = RequestMethod.GET)
-    public String viewMembers(Model model){
-        List<Member> members = memberService.selectAllMember();
-        model.addAttribute("members",members);
+    public String viewMembers(Model model,
+                              @RequestParam(required = false) String query,
+                              @RequestParam(required = false) String data){
+        List<Member> members;
+        if(query != null && data != null){
+            System.out.println("query = " + query);
+            System.out.println("data = " + data);
+            Map<String,String> map = new HashMap<>();
+            String changedQuery = memberService.translateQuery(query);
+            map.put("query",changedQuery);
+            map.put("data",data);
+            System.out.println(map);
+            members = memberService.searchMember(map);
+            System.out.println(members);
+        }else {
+            members = memberService.selectAllMember();
+        }
+        model.addAttribute("members", members);
         return "/admin/admin_member";
     }
+
 
     //상품관리페이지
     @RequestMapping(value = "/admin_product", method = RequestMethod.GET)
@@ -88,6 +108,26 @@ public class AdminController {
         productService.insertProduct(product);
         return "redirect:/admin_product";
     }
+
+    //상품수정페이지
+    @RequestMapping(value = "/admin_product/edit/{no}", method = RequestMethod.GET)
+    public String editProduct(@PathVariable Integer no,Model model){
+        System.out.println("no = " + no);
+        Product product = productService.selectProduct(no);
+        model.addAttribute("product", product);
+        return "/admin/product/edit";
+    }
+
+    //상품수정
+    @RequestMapping(value = "/admin_product/edit/{no}", method = RequestMethod.POST)
+    public String editProductProcess(@PathVariable Integer no, @RequestParam Map<String,String> map){
+        map.put("no",no.toString());
+        System.out.println(map);
+        productService.editProduct(map);
+        return "redirect:/admin_product";
+    }
+
+
 
     //상품삭제
     @RequestMapping(value = "/admin_product/delete", method = RequestMethod.GET)

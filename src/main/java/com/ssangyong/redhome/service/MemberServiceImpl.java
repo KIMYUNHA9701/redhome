@@ -67,6 +67,11 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
+    public Member idCheckMember(String id) {
+        return memberRepository.idCheckMember(id);
+    }
+
+    @Override
     public List<Member> selectAllMember() {
         return memberRepository.selectAllMember();
     }
@@ -86,5 +91,29 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public void deleteMember(String id) {
         memberRepository.deleteMember(id);
+    }
+
+    @Override
+    public List<Member> searchMember(Map<String, String> map) {
+        return memberRepository.searchMember(map);
+    }
+
+    @Override
+    public String translateQuery(String query) {
+        switch (query){
+            case "아이디":
+                return "MEMBER_ID";
+            case "이름":
+                return "MEMBER_NAME";
+            case "이메일":
+                return "MEMBER_EMAIL";
+            case "주소":
+                return "MEMBER_ADDR";
+            case "생일":
+                return "MEMBER_BIRTH";
+            case "레벨":
+                return "LEVEL_NUM";
+        }
+        return null;
     }
 }
