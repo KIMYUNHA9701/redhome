@@ -71,6 +71,7 @@ public class MainController {
     }
 
 
-
+    @RequestMapping(value = "/payment", method = RequestMethod.GET)
+    public String viewPayment() { return "payment"; }
 
 }
