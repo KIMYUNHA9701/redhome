@@ -19,7 +19,7 @@ public class ProductController {
     ProductService productService;
 
     @RequestMapping(value = "/store", method = RequestMethod.GET)
-    public String viewStoreCategory(Model model, @RequestParam int p_num) {
+    public String viewStoreCategory(Model model, @RequestParam(required = false) Integer p_num) {
         System.out.println(p_num + "~~~~~~~~~~~~~~~~~~~~~");
 
         List<Product> productSale = productService.selectSaleProduct();
@@ -35,7 +35,7 @@ public class ProductController {
         model.addAttribute("salePrice", salePriceList);
         model.addAttribute("saleList", productSale);
 
-        if (p_num == 0) {
+        if (p_num == null || p_num == 0) {
             List<Product> productAll = productService.selectAllProduct();
             ArrayList<String> allPriceList = new ArrayList<String>();
             for (int i=0; i<productAll.size(); i++){
