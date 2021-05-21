@@ -26,6 +26,11 @@
                 return false;
             }
 
+            if(!frm.duplicated.value || frm.duplicated.value == ""){
+                alert("아이디 중복검사 해주세요!");
+                return false;
+            }
+
             if(!frm.password.value || frm.password.value == ""){
                 alert("비밀번호를 입력하세요");
                 frm.password.focus();
@@ -75,6 +80,18 @@
             frm.action = "/signup";
             frm.submit();
         }
+
+        function idcheck(){
+            var id = document.frm.id.value;
+            if(id==null || id == ''){
+                document.frm.id.focus();
+                return false;
+            }
+            var url = "/idcheck/" + id;
+            var name = "popup test";
+            var option = "width = 400, height = 250, top = 100, left = 200, location = no"
+            window.open(url, name, option);
+        }
     </script>
 </head>
 
@@ -98,7 +115,8 @@
                         <div class="user-sign-up-form__form-group__label">아이디</div>
                         <div class="user-sign-up-form__form-group__description">다른 유저와 겹치지 않는 아이디 입력해주세요.</div>
                         <div class="user-sign-up-form__form-group__input">
-                            <input type="text" placeholder="아이디" class="form-control" value="" name="id">
+                            <input type="text" placeholder="아이디" class="form-control" value="" name="id" onfocusout="idcheck()">
+                            <input type="hidden" class="form-control" value="" name="duplicated">
                         </div>
                     </div>
                     <div class="user-sign-up-form__form-group">

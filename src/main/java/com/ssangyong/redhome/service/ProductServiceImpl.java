@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service("productservice")
 public class ProductServiceImpl implements ProductService{
@@ -31,7 +32,15 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
+    public Product selectProduct(int no) {
+        return productRepository.selectProduct(no);
+    }
+
+    @Override
     public void insertProduct(Product product) { productRepository.insertProduct(product); }
+
+    @Override
+    public void editProduct(Map<String, String> map) { productRepository.updateProduct(map);}
 
     @Override
     public void deleteProduct(int no) { productRepository.deleteProduct(no);}

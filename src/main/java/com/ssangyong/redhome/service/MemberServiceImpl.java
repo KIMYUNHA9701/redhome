@@ -67,6 +67,11 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
+    public Member idCheckMember(String id) {
+        return memberRepository.idCheckMember(id);
+    }
+
+    @Override
     public List<Member> selectAllMember() {
         return memberRepository.selectAllMember();
     }

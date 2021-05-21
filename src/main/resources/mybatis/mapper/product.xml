@@ -18,6 +18,11 @@
         ORDER BY product_num
     </select>
 
+    <select id="selectProduct" parameterType="Integer" resultType="com.ssangyong.redhome.bean.Product">
+        SELECT * FROM PRODUCT
+        WHERE product_num = #{VALUE}
+    </select>
+
     <insert id="insertProduct" parameterType="com.ssangyong.redhome.bean.Product">
         INSERT INTO PRODUCT(PRODUCT_NUM, PRODUCT_NAME, PRODUCT_IMG, PRODUCT_PRICE, PRODUCT_QUANTITY, PRODUCT_QUANTITY_SOLD, PRODUCT_TYPE_NUM, PRODUCT_CATEGORY_NUM)
         VALUES(#{product_num}, #{product_name}, #{product_img}, #{product_price}, 10, 0, #{product_type_num}, #{product_category_num})
@@ -26,4 +31,16 @@
     <delete id="deleteProduct" parameterType="Integer">
         DELETE FROM PRODUCT WHERE PRODUCT_NUM = #{VALUE}
     </delete>
+
+    <update id="updateProduct" parameterType="java.util.Map">
+        UPDATE PRODUCT
+        SET PRODUCT_NAME = #{product_name},
+            PRODUCT_IMG = #{product_img},
+            PRODUCT_PRICE = #{product_price},
+            PRODUCT_QUANTITY = #{product_quantity},
+            PRODUCT_QUANTITY_SOLD = #{product_quantity_sold},
+            PRODUCT_TYPE_NUM = #{product_type_num},
+            PRODUCT_CATEGORY_NUM = #{product_category_num}
+        WHERE product_num = #{no}
+    </update>
 </mapper>

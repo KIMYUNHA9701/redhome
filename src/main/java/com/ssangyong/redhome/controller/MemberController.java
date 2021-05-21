@@ -4,6 +4,7 @@ import com.ssangyong.redhome.bean.Member;
 import com.ssangyong.redhome.service.MemberService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -61,6 +62,19 @@ public class MemberController {
         System.out.println(member);
 
         return "redirect:main";
+    }
+
+    //회원아이디 중복체크
+    @RequestMapping(value = "/idcheck/{id}", method = RequestMethod.GET)
+    public String idcheckProcess(@PathVariable String id,Model model){
+        System.out.println("id = " + id);
+        boolean duplicated = true;
+        if(memberService.idCheckMember(id) == null){
+            duplicated = false;
+        }
+
+        model.addAttribute("duplicated",duplicated);
+        return "/idcheck";
     }
 
     //마이페이지

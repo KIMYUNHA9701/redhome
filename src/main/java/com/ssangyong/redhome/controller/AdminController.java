@@ -10,12 +10,15 @@ import com.ssangyong.redhome.service.OrderService;
 import com.ssangyong.redhome.service.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class AdminController {
@@ -88,6 +91,26 @@ public class AdminController {
         productService.insertProduct(product);
         return "redirect:/admin_product";
     }
+
+    //상품수정페이지
+    @RequestMapping(value = "/admin_product/edit/{no}", method = RequestMethod.GET)
+    public String editProduct(@PathVariable Integer no,Model model){
+        System.out.println("no = " + no);
+        Product product = productService.selectProduct(no);
+        model.addAttribute("product", product);
+        return "/admin/product/edit";
+    }
+
+    //상품수정
+    @RequestMapping(value = "/admin_product/edit/{no}", method = RequestMethod.POST)
+    public String editProductProcess(@PathVariable Integer no, @RequestParam Map<String,String> map){
+        map.put("no",no.toString());
+        System.out.println(map);
+        productService.editProduct(map);
+        return "redirect:/admin_product";
+    }
+
+
 
     //상품삭제
     @RequestMapping(value = "/admin_product/delete", method = RequestMethod.GET)

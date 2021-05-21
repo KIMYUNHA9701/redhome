@@ -17,6 +17,10 @@
         function deleteProduct(no){
             location.href = "/admin_product/delete?no=" + no;
         }
+
+        function editProduct(no){
+            location.href = "/admin_product/edit/" + no;
+        }
     </script>
 </head>
 <body>
@@ -73,7 +77,7 @@
                     <td>${product.product_quantity_sold}</td>
                     <td>${product.product_type_num}</td>
                     <td>${product.product_category_num}</td>
-                    <td><button>수정</button></td>
+                    <td><button onclick="editProduct(${product.product_num})">수정</button></td>
                     <td><button onclick="deleteProduct(${product.product_num})">삭제</button></td>
                 </tr>
             </c:forEach>
