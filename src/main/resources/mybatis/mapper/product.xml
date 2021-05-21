@@ -14,8 +14,15 @@
 
     <select id="selectCateProduct" parameterType="Integer" resultType="com.ssangyong.redhome.bean.Product">
         SELECT * FROM PRODUCT
-        WHERE product_category_num = #{p_num}
-        ORDER BY product_num
+        WHERE PRODUCT_CATEGORY_NUM = #{c_num}
+        ORDER BY PRODUCT_NUM
+    </select>
+
+    <select id="selectAvgReview" resultType="com.ssangyong.redhome.bean.Review_avg">
+        SELECT PRODUCT_NUM, AVG(REVIEW_GRADE) AS GRADE_AVG, COUNT(*) AS REVIEW_CNT
+        FROM REVIEW
+        GROUP BY PRODUCT_NUM
+        ORDER BY PRODUCT_NUM
     </select>
 
     <select id="selectProduct" parameterType="Integer" resultType="com.ssangyong.redhome.bean.Product">

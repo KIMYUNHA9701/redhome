@@ -19,7 +19,7 @@
 					</a>
 				</div>
 				<nav class="layout-navigation-primary__menu" style="display:block">
-					<a class="layout-navigation-primary__menu__item noDeco" href="/store?p_num=0">
+					<a class="layout-navigation-primary__menu__item noDeco" href="/store?c_num=0">
 						스토어
 					</a>
 					<a class="layout-navigation-primary__menu__item noDeco" href="/board">
@@ -60,28 +60,28 @@
 		<div class="layout-navigation-secondary" style="position:relative">
 			<div class="layout-navigation-secondary__content">
 				<nav class="layout-navigation-secondary__menu">
-					<a class="layout-navigation-secondary__menu__item layout-navigation-secondary__menu__item--active noDeco" href="/store?p_num=0" >
+					<a class="layout-navigation-secondary__menu__item layout-navigation-secondary__menu__item--active noDeco" href="/store?c_num=0" >
 						전체
 					</a>
-					<a class="layout-navigation-secondary__menu__item noDeco" href="/store?p_num=1">
+					<a class="layout-navigation-secondary__menu__item noDeco" href="/store?c_num=1">
 						노래방
 					</a>
-					<a class="layout-navigation-secondary__menu__item noDeco" href="/store?p_num=2">
+					<a class="layout-navigation-secondary__menu__item noDeco" href="/store?c_num=2">
 						도서관
 					</a>
-					<a class="layout-navigation-secondary__menu__item noDeco" href="/store?p_num=3">
+					<a class="layout-navigation-secondary__menu__item noDeco" href="/store?c_num=3">
 						오피스
 					</a>
-					<a class="layout-navigation-secondary__menu__item noDeco" href="/store?p_num=4">
+					<a class="layout-navigation-secondary__menu__item noDeco" href="/store?c_num=4">
 						영화관
 					</a>
-					<a class="layout-navigation-secondary__menu__item noDeco" href="/store?p_num=5">
+					<a class="layout-navigation-secondary__menu__item noDeco" href="/store?c_num=5">
 						카페
 					</a>
-					<a class="layout-navigation-secondary__menu__item noDeco" href="/store?p_num=6">
+					<a class="layout-navigation-secondary__menu__item noDeco" href="/store?c_num=6">
 						헬스장
 					</a>
-					<a class="layout-navigation-secondary__menu__item noDeco" href="/store?p_num=7">
+					<a class="layout-navigation-secondary__menu__item noDeco" href="/store?c_num=7">
 						pc방
 					</a>
 				</nav>
@@ -89,8 +89,6 @@
 		</div>
 	</div>
 </header>
-<%-- <jsp:include page="banner.jsp" flush="false" /> --%>
-
 
 </body>
 </html>
