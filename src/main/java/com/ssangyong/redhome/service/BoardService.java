@@ -10,13 +10,12 @@ import java.util.List;
 
 public interface BoardService {
 
-   /* List<Quest> selectAllQuestions();*/
+
 
     Quest selectQuestion(int quest_num);
 
     Answer selectAnswer(int quest_num);
 
-   /* List<Quest> selectWaitingQuestionList();*/
 
     List<Quest> selectAllQuestions(HashMap<String,Object> map);
 

@@ -22,7 +22,7 @@
 					<a class="layout-navigation-primary__menu__item noDeco" href="/store?c_num=0">
 						스토어
 					</a>
-					<a class="layout-navigation-primary__menu__item noDeco" href="/board?reply=&pageNum=1">
+					<a class="layout-navigation-primary__menu__item noDeco" href="/board?&pageNum=1">
 						공지사항
 					</a>
 				</nav>

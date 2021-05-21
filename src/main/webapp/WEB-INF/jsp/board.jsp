@@ -237,7 +237,7 @@
 
           <%--페이지 번호--%>
           <c:forEach begin="${pageMaker.startPage}"  end = "${pageMaker.endPage}" var="num">
-              <li class="page-item ${pageMaker.cri.pageNum == num?"active":""}" id=${pageMaker.cri.pageNum == num?"pageActive":"pageNoActive"} ><a class ="page-link" id="pageNum" href="/board?pageNum=${num}">${num}</a></li>
+              <li class="page-item ${pageMaker.cri.pageNum == num?"active":""}" id=${pageMaker.cri.pageNum == num?"pageActive":"pageNoActive"} ><a class ="page-link" id="pageNum" href="/board?pageNum=${num}&reply=${reply}">${num}</a></li>
           </c:forEach>
 
           <%--다음 버튼--%>

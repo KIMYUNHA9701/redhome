@@ -2,10 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssangyong.redhome.dao.BoardMapper">
 
-    <select id="selectAllQuestions" resultType="com.ssangyong.redhome.bean.Quest">
-        SELECT * FROM quest
-        ORDER BY quest_date DESC
-    </select>
 
     <select id="selectQuestion" resultType="com.ssangyong.redhome.bean.Quest" parameterType="Integer">
         SELECT QUEST_NUM,QUEST_TITLE,QUEST_CONTENTS,QUEST_IMG,QUEST_PWD, TO_CHAR(QUEST_DATE,'YYYY"년" MM"월" dd"일" HH24:MI') As QUEST_DATE,
@@ -21,12 +17,6 @@
 
     </select>
 
-    <select id="selectWaitingQuestions" resultType="com.ssangyong.redhome.bean.Quest">
-        SELECT * FROM quest
-        WHERE quest_state = '답변대기'
-        ORDER BY quest_num DESC
-
-    </select>
 
 
     <select id="selectTotalCnt" resultType="Integer">
@@ -34,7 +24,6 @@
         select count(*)total from quest
 
     </select>
-
 
 
 
@@ -64,21 +53,5 @@
     </select>
 
 
-
-  <!--  <select id="getBoardPaging" resultType="com.ssangyong.redhome.bean.Quest" parameterType="HashMap">
-
-<![CDATA[
-        select quest_num, quest_title, quest_contents, quest_img, quest_pwd, quest_date, quest_state, quest_category_num, member_id
-        from (
-                select /*+ INDEX_DESC(quest PK_QUEST) */ rownum rn, quest_num, quest_title, quest_contents,
-                                                         quest_img, quest_pwd, quest_date, quest_state, quest_category_num, member_id
-                from quest
-                where quest_num>0 and rownum > 0 and rownum <= (#{pageNum} * #{amount})
-            )
-        where rn >(#{pageNum} - 1) * #{amount}
-
-        ]]>
-</select>
--->
 
 </mapper>

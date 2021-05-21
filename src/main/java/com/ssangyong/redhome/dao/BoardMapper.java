@@ -11,20 +11,14 @@ import java.util.List;
 @Mapper
 public interface BoardMapper {
 
-   /* //문의 전체 가져오기
-    List<Quest> selectAllQuestions();
-*/
     //특정 문의 가져오기
     Quest selectQuestion(int quest_num);
 
     //특정 답변 가져오기
     Answer selectAnswer(int quest_num);
 
-   /* //답변대기 상태인 문의 전제 가져오기
-    List<Quest> selectWaitingQuestions();*/
 
-
-    //페이징 문의 리스트 전체 가져오기
+    //문의 전체 또는 답변대기 중의 문의만 가져오기(페이징)
     List<Quest> getBoardPaging(HashMap<String,Object> map);
 
     //총 문의 수

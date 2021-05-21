@@ -16,11 +16,7 @@ public class BoardServiceImpl implements BoardService {
     @Autowired
     BoardMapper boardRepository;
 
-    /*@Override
-    public List<Quest> selectAllQuestions() {
-        List<Quest> boardList = boardRepository.selectAllQuestions();
-        return boardList;
-    }*/
+
 
     @Override
     public Quest selectQuestion(int quest_num) {
@@ -34,11 +30,6 @@ public class BoardServiceImpl implements BoardService {
         return answer;
     }
 
-    /*@Override
-    public List<Quest> selectWaitingQuestionList() {
-        List<Quest> waitingQuestionList = boardRepository.selectWaitingQuestions();
-        return waitingQuestionList;
-    }*/
 
     @Override
     public List<Quest> selectAllQuestions(HashMap<String,Object> map) {

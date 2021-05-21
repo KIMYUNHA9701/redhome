@@ -18,12 +18,6 @@ public class BoardController {
     BoardService boardService;
 
 
-   /* @GetMapping(value = "/board")
-    public String viewBoard(Criteria cri, Model model,) {
-        model.addAttribute("boardList", pagingService.selectAllQuestions(cri));
-        model.addAttribute("pageMaker", new Page(cri, pagingService.getTotalCnt()));
-        return "board";
-    }*/
 
 
     @GetMapping(value = "/board")
@@ -46,6 +40,8 @@ public class BoardController {
         return "question";
     }
 
+
+
     @GetMapping(value = "/answer")
     public String viewAnswer(Model model,@ModelAttribute("quest_num") int quest_num) {
         System.out.println(quest_num);
@@ -54,13 +50,6 @@ public class BoardController {
         return "answer";
     }
 
-    /*@GetMapping(value = "/board/waitingQuestion")
-    public String viewWaitingQuestionBoard(Model model, @ModelAttribute("reply") String reply) {
-        System.out.println(reply);
-        model.addAttribute("boardList",boardService.selectWaitingQuestionList());
-        return "board";
-    }
-*/
 
 
 }
