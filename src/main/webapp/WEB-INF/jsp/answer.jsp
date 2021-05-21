@@ -28,7 +28,7 @@
                 <div class="qna-detail__content__header-top">
                     <a class="qna-detail__content__header-subtitle" href="/questions">질문과 답변</a>
                 </div>
-                <h1 class="qna-detail__content__header-title">디퓨저 쏟아서 벽지에 얼룩졌어요</h1>
+                <h1 class="qna-detail__content__header-title">${question.quest_title}</h1>
                 <address class="qna-detail-author qna-detail__content__header-author-section">
                     <a class="qna-detail-author__profile-link" href="/users/11237952">
                         <div class="qna-detail-author__profile-link__image">
@@ -36,7 +36,7 @@
                         </div>
                         <div class="qna-detail-author__profile-link__summary">
                             <div class="qna-detail-author__profile-link__summary-section">
-                                <span class="qna-detail-author__profile-link__summary-nickname">louiejin</span>
+                                <span class="qna-detail-author__profile-link__summary-nickname">${question.member_id}</span>
                             </div>
                         </div>
                     </a>
@@ -44,7 +44,7 @@
             </header>
             <section class="qna-detail__content__body">
                 <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/162126383190177520.jpeg?gif=1&amp;w=960" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/162126383190177520.jpeg?gif=1&amp;w=1440 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/162126383190177520.jpeg?gif=1&amp;w=1920 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/162126383190177520.jpeg?gif=1&amp;w=2560 3x">
-                <p>원룸인데.. 디퓨저 쏟아서 이렇게 됬는데 혹시 이런 곳에 패브릭 포스터 같은거 붙여도 괜찮을까요..?</p>
+                <p>${question.quest_contents}</p>
             </section>
 
             <footer class="qna-detail__footer">
@@ -70,7 +70,7 @@
                     </div>
                 </aside>
                 <div class="qna-detail__footer__metadata">
-                    <time>2021년 05월 18일 00:03</time>
+                    <time>${question.quest_date}</time>
                 </div>
             </footer>
 
@@ -95,22 +95,30 @@
                         </div>
                     </form>
 
+                    <c:if test="${answer.answer_num ne null}">
                     <ul class="comment-feed__list">
                         <li class="comment-feed__list__item">
                             <article class="comment-feed__item">
                                 <p class="comment-feed__item__content">
                                     <a href="/users/13759551" class="comment-feed__item__content__author">
-                                        <img class="comment-feed__item__content__author__image" alt="3번아이디" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=36" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=72 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=72 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=144 3x">
-                                        <span class="comment-feed__item__content__author__name">3번아이디</span>
+                                        <img class="comment-feed__item__content__author__image" alt="${answer.admin_id}" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=36" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=72 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=72 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=144 3x">
+                                        <span class="comment-feed__item__content__author__name">${answer.admin_id}</span>
                                     </a>
-                                    <span class="comment-feed__item__content__content">포스터로 가리는게 간단할것같아여 </span>
+                                    <span class="comment-feed__item__content__content">${answer.answer_contents}</span>
                                 </p>
                                 <footer class="comment-feed__item__footer">
-                                    <time class="comment-feed__item__footer__time">13분 전</time>
+                                    <time class="comment-feed__item__footer__time">${answer.answer_date}</time>
                                 </footer>
+
                             </article>
                         </li>
                     </ul>
+                    </c:if>
+                    <c:if test="${answer.answer_num eq null}">
+                        <div class="question-under-investigation">
+                        <p class="question-under-investigation-p">"${question.member_id} 님의 문의가 검토중입니다."</p>
+                        </div>
+                    </c:if>
                 </section>
             </section>
         </section>
