@@ -22,4 +22,8 @@ public class Review {
 
     //내용
     private String review_contents;
+
+    //상품번호
+    private int product_num;
+
 }

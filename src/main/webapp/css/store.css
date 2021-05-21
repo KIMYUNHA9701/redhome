@@ -120,6 +120,11 @@
 	font-size: 20px;
 }
 
+.store_item_header_priceline {
+	font-weight: inherit;
+	font-size: 18px;
+}
+
 .store_item_header_scope {
 	font-weight: bold;
 	font-size: 13px;

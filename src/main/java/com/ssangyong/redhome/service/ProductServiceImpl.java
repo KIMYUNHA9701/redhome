@@ -2,6 +2,8 @@ package com.ssangyong.redhome.service;
 
 import com.ssangyong.redhome.bean.Member;
 import com.ssangyong.redhome.bean.Product;
+import com.ssangyong.redhome.bean.Review;
+import com.ssangyong.redhome.bean.Review_avg;
 import com.ssangyong.redhome.dao.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,9 +27,14 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public List<Product> selectCateProduct(int p_num) {
+    public List<Product> selectCateProduct(int c_num) {
 
-        return productRepository.selectCateProduct(p_num);
+        return productRepository.selectCateProduct(c_num);
+    }
+
+    @Override
+    public List<Review_avg> selectAvgReview() {
+        return productRepository.selectAvgReview();
     }
 
     @Override
