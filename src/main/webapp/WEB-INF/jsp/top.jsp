@@ -60,7 +60,7 @@
 		<div class="layout-navigation-secondary" style="position:relative">
 			<div class="layout-navigation-secondary__content">
 				<nav class="layout-navigation-secondary__menu">
-					<a class="layout-navigation-secondary__menu__item layout-navigation-secondary__menu__item--active noDeco" href="/store?c_num=0" >
+					<a class="layout-navigation-secondary__menu__item layout-navigation-secondary__menu__item--active noDeco" href="/store" >
 						전체
 					</a>
 					<a class="layout-navigation-secondary__menu__item noDeco" href="/store?c_num=1">

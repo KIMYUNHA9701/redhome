@@ -28,14 +28,14 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public List<Product> selectCateProduct(int c_num) {
+    public List<Product> selectCateProduct(Map<String,Object> map) {
 
-        return productRepository.selectCateProduct(c_num);
+        return productRepository.selectCateProduct(map);
     }
 
     @Override
-    public List<Review_avg> selectAvgReview() {
-        return productRepository.selectAvgReview();
+    public List<Review_avg> selectAvgReview(Map<String,Object> map) {
+        return productRepository.selectAvgReview(map);
     }
 
     @Override

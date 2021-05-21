@@ -7,16 +7,10 @@
 <title>Insert title here</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link href="../../css/store.css?" rel="stylesheet">
-<link rel="stylesheet" href="../../css/selectbox.min.css">
-<script src="../../js/selectbox.min.js"></script>
+<link rel="stylesheet" href="../../css/selectbox.min.css?">
+<script src="../../js/selectbox.min.js?"></script>
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-
-<script type="text/javascript">
-    function selectSort(){
-        alert("sort!!!!!!!");
-    }
-</script>
 </head>
 <body>
 	<jsp:include page="top.jsp" flush="false" />
@@ -33,7 +27,7 @@
 
                         <div class="store_item">
                             <div class="store_item_img">
-                                <a href="../../jsp/store.jsp">
+                                <a href="/storeInfo?p_num=${s.product_num}">
                                     <div class="store_item_imgScale">
                                         <img alt="" src="../../img/${s.product_img}">
                                     </div>
@@ -62,7 +56,7 @@
 	<br>
 
 	<div class="store_option">
-        <form action="/store?c_num=0" name="freeDel_frm">
+        <form action="/store" name="freeDel_frm">
             <div class="store_option_free">
                 <label class="switch"> <input type="checkbox"> <span
                     class="slider round"></span>
@@ -71,32 +65,38 @@
                 <p style="display: none;">무료배송</p>
             </div>
 		</form>
-		<form action="/store?c_num=0" name="productSort_frm">
+        <form action="/store" name="select_frm" method="get" onchange="javascript:selectSort();">
+            <input type="hidden" id="c_num" name="c_num" value="${c_num}">
+
             <div class="store_option_select">
-                <select name="storeOrder" id="storeOrder" class="justselect" onchange="javascript:selectSort();">
+                <select name="storeOrder" id="storeOrder" class="justselect">
+                    <option value="sort" selected disabled hidden>
+                        <c:choose>
+                            <c:when test="${sort == 'best'}">
+                                인기순
+                            </c:when>
+                            <c:when test="${sort == 'new'}">
+                                최신순
+                            </c:when>
+                            <c:when test="${sort == 'high'}">
+                                높은가격순
+                            </c:when>
+                             <c:when test="${sort == 'low'}">
+                                 낮은가격순
+                             </c:when>
+                             <c:otherwise>
+                                 최신순
+                             </c:otherwise>
+                        </c:choose>
+                    </option>
+
                     <option value="best">인기순</option>
-                    <option value="review">많은리뷰순</option>
                     <option value="new">최신순</option>
                     <option value="high">높은가격순</option>
                     <option value="low">낮은가격순</option>
                 </select>
             </div>
-            <div>
-            <script>
-                function myListener(obj) {
-                    alert(obj.value);
-                    // 선택된 option의 value가 출력된다!
-                }
-            </script>
-                <select onchange="javascript:myListener(this);">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
-		</form>
+        </form>
 	</div>
 
 
@@ -106,7 +106,7 @@
         </c:if>
                 <div class="store_item">
                     <div class="store_item_img">
-                        <a href="../../jsp/store.jsp">
+                        <a href="/storeInfo?p_num=${p.product_num}">
                             <div class="store_item_imgScale">
                                 <img alt="" src="../../img/${p.product_img}">
                             </div>
@@ -117,16 +117,11 @@
                             <span class="store_item_header_name">${p.product_name}</span>
                         </h1>
                         <h1>
-                            <c:if test="${isAll == 0 }">
-                                <span class="store_item_header_price">${allPriceList[status.index]}</span>
-                            </c:if>
-                            <c:if test="${isAll == 1 }">
-                                <span class="store_item_header_price">${CatePriceList[status.index]}</span>
-                            </c:if>
+                            <span class="store_item_header_price">${CatePriceList[status.index]}</span>
                         </h1>
                         <h1>
-                            <span class="store_item_header_scope">${reviewList[status.index].grade_avg}</span> <span
-                                class="store_item_header_reviewCnt">리뷰 ${reviewList[status.index].review_cnt}</span>
+                            <span class="store_item_header_scope">${reviewList[status.index].grade_avg}</span>
+                            <span class="store_item_header_reviewCnt">리뷰 ${reviewList[status.index].review_cnt}</span>
                         </h1>
                     </div>
                 </div>

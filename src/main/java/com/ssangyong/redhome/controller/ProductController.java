@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class ProductController {
@@ -21,14 +24,23 @@ public class ProductController {
     ProductService productService;
 
     @RequestMapping(value = "/store", method = RequestMethod.GET)
-    public String viewStoreCategory(Model model, @RequestParam int c_num) {
+    public String viewStoreCategory(Model model, @RequestParam(required = false) Integer c_num, @RequestParam(required = false) String storeOrder, HttpServletRequest request) {
         System.out.println(c_num + "~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println(storeOrder + "~~~~~~~~~~~~~~~~~~~~~");
+
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("c_num", c_num);
+        map.put("sort", storeOrder);
+
+        //select해도 기존 값 유지
+        request.setAttribute("c_num",c_num);
+        request.setAttribute("sort",storeOrder);
 
         List<Product> productSale = productService.selectSaleProduct();
         ArrayList<String> salePriceList = new ArrayList<String>();
         ArrayList<String> priceList = new ArrayList<String>();
         DecimalFormat format = new DecimalFormat("###,###,###");
-        for (int i=0; i<productSale.size(); i++){
+        for (int i = 0; i < productSale.size(); i++) {
             int price = productSale.get(i).getProduct_price();
             int salePrice = (int) (price * 0.6);
 
@@ -37,40 +49,30 @@ public class ProductController {
             //금액에 맞게 format 변경하면서 string으로 형변환
             priceList.add(format.format(price));
         }
-        model.addAttribute("salePriceList", salePriceList);
-        model.addAttribute("priceList", priceList);
-        model.addAttribute("saleList", productSale);
+        model.addAttribute("salePriceList", salePriceList); //새일가(int->string)
+        model.addAttribute("priceList", priceList); //정가(int->string)
+        model.addAttribute("saleList", productSale); //제품리스트
 
-        if (c_num == 0) {
-            List<Product> productAll = productService.selectAllProduct();
-            ArrayList<String> allPriceList = new ArrayList<String>();
-            for (int i=0; i<productAll.size(); i++){
-                int price2 = productAll.get(i).getProduct_price();
-                allPriceList.add(format.format(price2));
-            }
-            model.addAttribute("isAll", 0);
-            model.addAttribute("allPriceList", allPriceList);
-            model.addAttribute("productList", productAll);
-        } else {
-            List<Product> productCate = productService.selectCateProduct(c_num);
-            ArrayList<String> CatePriceList = new ArrayList<String>();
-            for (int i=0; i<productCate.size(); i++){
-                int price3 = productCate.get(i).getProduct_price();
-                CatePriceList.add(format.format(price3));
-            }
-            model.addAttribute("isAll", 1);
-            model.addAttribute("CatePriceList", CatePriceList);
-            model.addAttribute("productList",productCate);
+
+        List<Product> productCate = productService.selectCateProduct(map);
+        ArrayList<String> CatePriceList = new ArrayList<String>();
+        for (int i = 0; i < productCate.size(); i++) {
+            int price3 = productCate.get(i).getProduct_price();
+            CatePriceList.add(format.format(price3));
         }
+        model.addAttribute("CatePriceList", CatePriceList); //가격(int->string)
+        model.addAttribute("productList", productCate); //제품리스트
 
-        List<Review_avg> reviewList = productService.selectAvgReview();
-        for (int i=0; i<reviewList.size(); i++){
-            reviewList.get(i).setGrade_avg(Math.round(reviewList.get(i).getGrade_avg()*10)/10.0);
+
+        List<Review_avg> reviewList = productService.selectAvgReview(map);
+        for (int i = 0; i < reviewList.size(); i++) {
+            reviewList.get(i).setGrade_avg(Math.round(reviewList.get(i).getGrade_avg() * 10) / 10.0);
             //doulble 소수점 첫째자리까지만 출력
+            int num = reviewList.get(i).getProduct_num();
         }
 
-        model.addAttribute("reviewList",reviewList);
-        System.out.println(reviewList.toString());
+
+        model.addAttribute("reviewList", reviewList);
         return "store";
     }
 

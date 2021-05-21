@@ -17,10 +17,10 @@ public interface ProductMapper {
     //세일상품 가져오기
     List<Product> selectSaleProduct();
     //카테고리별전체 가져오기
-    List<Product> selectCateProduct(int c_num);
+    List<Product> selectCateProduct(Map<String,Object> map);
 
     //리뷰평균?전체 가져오기
-    List<Review_avg> selectAvgReview();
+    List<Review_avg> selectAvgReview(Map<String,Object> map);
 
     //상품하나 가져오기
     Product selectProduct(int no);
