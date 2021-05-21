@@ -5,6 +5,7 @@ import com.ssangyong.redhome.bean.Review;
 import com.ssangyong.redhome.bean.Review_avg;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ProductService {
 
@@ -15,6 +16,10 @@ public interface ProductService {
     List<Product> selectCateProduct(int c_num);
 
     List<Review_avg> selectAvgReview();
+
+    Product selectProduct(int no);
+
+    public void editProduct(Map<String, String> map);
 
     void insertProduct(Product product);
 
