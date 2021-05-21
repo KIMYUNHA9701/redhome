@@ -29,4 +29,56 @@
     </select>
 
 
+    <select id="selectTotalCnt" resultType="Integer">
+
+        select count(*)total from quest
+
+    </select>
+
+
+
+
+    <select id="getBoardPaging" resultType="com.ssangyong.redhome.bean.Quest" parameterType="java.util.HashMap" >
+
+
+        select quest_num, quest_title, quest_contents, quest_img, quest_pwd, quest_date, quest_state, quest_category_num, member_id
+        from (
+        select /*+ INDEX_DESC(quest PK_QUEST) */ rownum rn, quest_num, quest_title, quest_contents,
+        quest_img, quest_pwd, quest_date, quest_state, quest_category_num, member_id
+        from quest
+
+        <where>
+            <choose>
+                <when test='reply=="not_yet"'>
+                    <![CDATA[       quest_num>0 and quest_state = '답변대기' and rownum > 0 and rownum <= (${pageNum} * ${amount})  )  ]]>
+                </when>
+                <otherwise>
+                    <![CDATA[       quest_num>0 and rownum > 0 and rownum <= (${pageNum} * ${amount}) ) ]]>
+
+                </otherwise>
+            </choose>
+        </where>
+
+        <![CDATA[    where rn >(${pageNum} - 1) * ${amount}   ]]>
+
+    </select>
+
+
+
+  <!--  <select id="getBoardPaging" resultType="com.ssangyong.redhome.bean.Quest" parameterType="HashMap">
+
+<![CDATA[
+        select quest_num, quest_title, quest_contents, quest_img, quest_pwd, quest_date, quest_state, quest_category_num, member_id
+        from (
+                select /*+ INDEX_DESC(quest PK_QUEST) */ rownum rn, quest_num, quest_title, quest_contents,
+                                                         quest_img, quest_pwd, quest_date, quest_state, quest_category_num, member_id
+                from quest
+                where quest_num>0 and rownum > 0 and rownum <= (#{pageNum} * #{amount})
+            )
+        where rn >(#{pageNum} - 1) * #{amount}
+
+        ]]>
+</select>
+-->
+
 </mapper>

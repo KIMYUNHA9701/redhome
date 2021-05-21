@@ -409,81 +409,73 @@ ol, ul {
 
 /* ÆäÀÌÂ¡ */
 
+.paging{
+    margin-top: 50px;
+    margin-bottom: 70px;
+    text-align:center
 
-nav.paginator>ul>li>:not([rel]) {
-    margin: 0 10px;
 }
 
+.page-item{
+    display:inline-block
 
-nav.paginator>ul>li>a {
-    font-family: "Noto Sans KR", "Apple SD Gothic Neo", "¸¼Àº °íµñ",
-    "Malgun Gothic", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    width: 26px;
-    height: 26px;
-    color: black;
-    border-radius: 4px;
-    line-height: 26px;
+}
+
+#pageNoActive:hover{
+    color: #ed4a4a;
+    text-decoration: underline;
+
+}
+
+.page-item>.page-link{
+    font-size: 15px;
+    font-family: "Noto Sans KR", "Apple SD Gothic Neo", "¸¼Àº °íµñ", "Malgun Gothic", sans-serif;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+#pageNum{
+    font-size: 16px;
     text-align: center;
-    text-decoration:none;
 }
 
-
-nav.paginator>ul>li.active>a {
-    font-family: "Noto Sans KR", "Apple SD Gothic Neo", "¸¼Àº °íµñ",
-    "Malgun Gothic", sans-serif;
-    font-weight: 600;
-    font-size: 14px;
+#Previous,#Next{
+    color: #757575;
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
     padding: 4px 8px 4px 8px;
+    font-weight: bold;
+
+}
+
+.page-item.active{
+    border: 1px solid #ed4a4a;
+    border-radius: 4px;
     background-color: #ed4a4a;
-    color: #ffffff;
-    cursor: default;
-    text-decoration:none;
+    color: white;
+    font-weight: bold;
+    padding: 3px;
+
+
+
 }
-
-
-
-.paging-btn-right {
-    border: 1px solid #ededed;
-    padding: 4px;
+.page-item.active:hover{
+    border: 1px solid #ed4a4a;
     border-radius: 4px;
-    margin: -5px 0px 0px 0px  ;
+    background-color: #ed4a4a;
+    color: white;
+    font-weight: bold;
+    padding: 3px;
+
+
 
 }
 
 
 
-.paging-btn-left {
-    border: 1px solid #ededed;
-    padding: 4px;
-    border-radius: 4px;
-    margin: -5px 0px 0px 0px  ;
-}
 
 
-
-.paginator >ul{
-    position: absolute;
-    left: 50%;
-    margin-left: -200px;
-    width: 500px;
-    background: white;
-    padding: 15px;
-    padding-top: 20px;
-
-
-}
-
-.paginator li{
-    float: left;
-
-}
-
-#questions-paginator{
-    margin: 20px;
-
-}
 #questionCategory_filters{
 
     font-family: "Noto Sans KR", "Apple SD Gothic Neo", "¸¼Àº °íµñ", "Malgun Gothic", sans-serif;
@@ -500,15 +492,4 @@ nav.paginator>ul>li.active>a {
 
 
 
-}
-
-
-.questions-item__footer__comments{
-    color: #ed4a4a;
-    font-weight: bold;
-}
-
-#questions-paginator{
-
-    margin-bottom: 140px;
 }

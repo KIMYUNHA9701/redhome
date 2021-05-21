@@ -10,4 +10,6 @@ public interface OrderMapper {
 
     //주문전체 가져오기
     List<Shopping_order> selectAllOrder();
+
+
 }

@@ -30,10 +30,11 @@
 
                 $(".set-reply").click(function () {
 
-                    if(${reply eq null}) {
-                        location.href = '/board/waitingQuestion?reply=not_yet';
+                    if(${reply eq 'not_yet'}) {
+                        location.href = '/board?reply=null&pageNum=${pageMaker.cri.pageNum}';
+
                     }else {
-                        location.href = '/board';
+                        location.href = '/board?reply=not_yet&pageNum=${pageMaker.cri.pageNum}';
                     }
 
                 });
@@ -60,6 +61,9 @@
 
                 });
             });
+
+
+
 
         });
 
@@ -92,31 +96,29 @@
                                 aria-hidden="false" role="button"></span> <span
                                 class="icon icon-pointer-x-bold-dark clear clear-active hide"
                                 aria-hidden="false" role="button"></span>
+
                             <div class="questions-header__form__search__input">
-                                <select id="questionCategory_filters"  name="questionCategory"  onchange="">
-                                    <option class="filter-select__list__entry active"
-                                            selected="selected" value="recent">선택하세요  ▼ </option>
+                                <select id="questionCategory_filters"  name="questionCategory"  onchange="" >
+                                    <option class="filter-select__list__entry active" selected="selected" value="recent">선택하세요  ▼</option>
                                     <option class="filter-select__list__entry" value="delivery">배송</option>
                                     <option class="filter-select__list__entry" value="cancel_back_exchange">취소/반품/교환</option>
                                     <option class="filter-select__list__entry" value="product">제품</option>
                                     <option class="filter-select__list__entry" value="order_pay">주문/결제</option>
-
-
                                 </select>
                                 <img src="../../img/ohsu_2.PNG"
                                      style="position: absolute; padding-top: 21px; padding-left: 21px;">
                                 <input type="text" name="query"
                                        id="questions-header__form__search" value=""
                                        class="form-control" placeholder="궁금한 것을 검색해보세요."
-                                       autocomplete="off">
+                                       autocomplete="off"/>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
-    </section>
-</div>
+     </section>
+ </div>
 
 
 
@@ -142,12 +144,16 @@
             </div>
         </div>
             <div class="questions-filter__actions">
-                <c:if test="${reply eq null}">
-                    <button class="set-reply btn btn-normal btn-sm" href="/board/waitingQuestion">답변을 기다리는 질문</button>
-                </c:if>
-                <c:if test="${reply ne null}">
-                    <button class="set-reply btn btn-normal btn-sm" href="/board/waitingQuestion" style="color: white; background-color: #ed4a4a; width: 210px;"> ⅴ 답변을 기다리는 질문</button>
-                </c:if>
+                <c:choose>
+                    <c:when test="${reply eq 'not_yet'}">
+                        <button class="set-reply btn btn-normal btn-sm" href="#" style="color: white; background-color: #ed4a4a; width: 210px;"> ⅴ 답변을 기다리는 질문</button>
+                    </c:when>
+                    <c:otherwise>
+                        <button class="set-reply btn btn-normal btn-sm" href="#">답변을 기다리는 질문</button>
+                    </c:otherwise>
+                </c:choose>
+
+
                 <button class="questions-filter__actions__new-question btn btn-priority btn-sm" href="/question">질문하기</button>
             </div>
 
@@ -215,58 +221,34 @@
             </footer>
         </article>
     </a>
-    </c:forEach>
+     </c:forEach>
 </section>
 
 
 
+  <div class="paging">
+      <ul class="pagination">
+          <%-- 이전  버튼--%>
+          <c:if test="${pageMaker.prev}">
+              <li class="page-item">
+                  <a class ="page-link" id="Previous" href="#" tabindex="-1">Previous</a>
+              </li>
+          </c:if>
 
-<div id="questions-paginator">
-    <nav class="paginator" data-total="14041" data-current="2">
-        <ul>
-            <li rel="prev" role="button" class="paging-btn-left" style="color:#5F5F5F; font-weight: 900; ">
-                <a href="#" style="text-decoration:none">${'<'}</a>
-            </li>
+          <%--페이지 번호--%>
+          <c:forEach begin="${pageMaker.startPage}"  end = "${pageMaker.endPage}" var="num">
+              <li class="page-item ${pageMaker.cri.pageNum == num?"active":""}" id=${pageMaker.cri.pageNum == num?"pageActive":"pageNoActive"} ><a class ="page-link" id="pageNum" href="/board?pageNum=${num}">${num}</a></li>
+          </c:forEach>
 
-            <li id="button" role="button" class="" data-page="1">
-                <a class ="pagenum" href="#" > 1 </a>
-            </li>
+          <%--다음 버튼--%>
+          <c:if test="${pageMaker.next}">
+             <li class="page-item">
+                  <a class ="page-link" id="Next" href="#" tabindex="-1">Next</a>
+              </li>
+          </c:if>
 
-            <li role="" class="active" data-page="2">
-                <a class ="pagenum" href="#"> 2 </a>
-            </li>
-            <li role="button" class="button" data-page="3">
-                <a class ="pagenum" href="#"> 3 </a>
-            </li>
-            <li  role="button" class="button" data-page="4">
-                <a class ="pagenum" href="#"> 4 </a>
-            </li>
-            <li  role="button" class="button" data-page="5">
-                <a class ="pagenum" href="#"> 5 </a>
-            </li>
-            <li  role="button" class="button" data-page="6">
-                <a class ="pagenum" href="#"> 6 </a>
-            </li>
-            <li  role="button" class="button" data-page="7">
-                <a class ="pagenum" href="#"> 7 </a>
-            </li>
-            <li  role="button" class="button" data-page="8">
-                <a class ="pagenum" href="#"> 8 </a>
-            </li>
-            <li  role="button" class="button" data-page="9">
-                <a class ="pagenum" href="#"> 9 </a>
-            </li>
-            <li  role="button" class="button" data-page="10">
-                <a class ="pagenum" href="#"> 10 </a>
-            </li>
-
-            <li rel="next" role="button" class="paging-btn-right" style="color:#5F5F5F; font-weight: 900; ">
-                <a  href="#" style="text-decoration:none ">${'>'}</a>
-            </li>
-        </ul>
-    </nav>
-</div>
-
+      </ul>
+  </div>
 
 
   <jsp:include page="bottom.jsp" flush="false"/>

@@ -2,10 +2,12 @@ package com.ssangyong.redhome.service;
 
 import com.ssangyong.redhome.bean.Answer;
 import com.ssangyong.redhome.bean.Quest;
+import com.ssangyong.redhome.bean.paging.Criteria;
 import com.ssangyong.redhome.dao.BoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Service("boardservice")
@@ -14,11 +16,11 @@ public class BoardServiceImpl implements BoardService {
     @Autowired
     BoardMapper boardRepository;
 
-    @Override
+    /*@Override
     public List<Quest> selectAllQuestions() {
         List<Quest> boardList = boardRepository.selectAllQuestions();
         return boardList;
-    }
+    }*/
 
     @Override
     public Quest selectQuestion(int quest_num) {
@@ -32,11 +34,22 @@ public class BoardServiceImpl implements BoardService {
         return answer;
     }
 
-    @Override
+    /*@Override
     public List<Quest> selectWaitingQuestionList() {
         List<Quest> waitingQuestionList = boardRepository.selectWaitingQuestions();
         return waitingQuestionList;
+    }*/
+
+    @Override
+    public List<Quest> selectAllQuestions(HashMap<String,Object> map) {
+         List<Quest> boardPagingList = boardRepository.getBoardPaging(map);  //
+        return boardPagingList;
     }
 
+    @Override
+    public int getTotalCnt() {
+        int total = boardRepository.selectTotalCnt();
+        return total;
+    }
 
 }

@@ -3,17 +3,23 @@ package com.ssangyong.redhome.service;
 
 import com.ssangyong.redhome.bean.Answer;
 import com.ssangyong.redhome.bean.Quest;
+import com.ssangyong.redhome.bean.paging.Criteria;
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface BoardService {
 
-    List<Quest> selectAllQuestions();
+   /* List<Quest> selectAllQuestions();*/
 
     Quest selectQuestion(int quest_num);
 
     Answer selectAnswer(int quest_num);
 
-    List<Quest> selectWaitingQuestionList();
+   /* List<Quest> selectWaitingQuestionList();*/
+
+    List<Quest> selectAllQuestions(HashMap<String,Object> map);
+
+    int getTotalCnt();
 
 }

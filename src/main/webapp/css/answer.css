@@ -354,6 +354,7 @@ fieldset, img {
 
 .comment-feed__item__content__author__image{
     margin-top: 10px;
+    margin-bottom: 60px;
 }
 
 li {
@@ -434,7 +435,7 @@ li {
 
 .comment-feed__item__footer__time {
     font-weight: bolder;
-    padding-left: 42px;
+
 
 
 }
@@ -454,6 +455,7 @@ li {
 
 .comment-feed__item__content__content {
     white-space: pre-line;
+    display: block;
 
 }
 
