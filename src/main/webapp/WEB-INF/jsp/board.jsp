@@ -27,6 +27,19 @@
                 location.href='/question';
             });
 
+
+                $(".set-reply").click(function () {
+
+                    if(${reply eq null}) {
+                        location.href = '/board/waitingQuestion?reply=not_yet';
+                    }else {
+                        location.href = '/board';
+                    }
+
+                });
+
+
+
            $(".filter-select__header").click(function (){
                   $(".filter-select__list").css({visibility: "visible",
                opacity: 1, transform: "none",top:"535px",left:"290px"
@@ -49,7 +62,6 @@
             });
 
         });
-
 
 
 
@@ -130,7 +142,12 @@
             </div>
         </div>
             <div class="questions-filter__actions">
-                <button class="set-reply btn btn-normal btn-sm" href="/questions?page=1&amp;reply=not_yet">답변을 기다리는 질문</button>
+                <c:if test="${reply eq null}">
+                    <button class="set-reply btn btn-normal btn-sm" href="/board/waitingQuestion">답변을 기다리는 질문</button>
+                </c:if>
+                <c:if test="${reply ne null}">
+                    <button class="set-reply btn btn-normal btn-sm" href="/board/waitingQuestion" style="color: white; background-color: #ed4a4a; width: 210px;"> ⅴ 답변을 기다리는 질문</button>
+                </c:if>
                 <button class="questions-filter__actions__new-question btn btn-priority btn-sm" href="/question">질문하기</button>
             </div>
 
@@ -170,7 +187,7 @@
 <section id="questions-list" class="container">
 
     <c:forEach var="question" items="${boardList}">
-    <a class="questions-item__link" href="/answer" >
+    <a class="questions-item__link" href="/answer?quest_num=${question.quest_num}" >
         <article class="questions-item">
             <c:if test="${question.quest_img ne null}">
             <div class="questions-item__image">

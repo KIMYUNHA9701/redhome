@@ -7,5 +7,26 @@
         ORDER BY quest_date DESC
     </select>
 
+    <select id="selectQuestion" resultType="com.ssangyong.redhome.bean.Quest" parameterType="Integer">
+        SELECT QUEST_NUM,QUEST_TITLE,QUEST_CONTENTS,QUEST_IMG,QUEST_PWD, TO_CHAR(QUEST_DATE,'YYYY"년" MM"월" dd"일" HH24:MI') As QUEST_DATE,
+               QUEST_STATE,QUEST_CATEGORY_NUM, MEMBER_ID
+        FROM quest
+        WHERE quest_num = #{VALUE}
+    </select>
+
+
+    <select id="selectAnswer" resultType="com.ssangyong.redhome.bean.Answer" parameterType="Integer">
+        SELECT * FROM answer
+        WHERE quest_num = #{VALUE}
+
+    </select>
+
+    <select id="selectWaitingQuestions" resultType="com.ssangyong.redhome.bean.Quest">
+        SELECT * FROM quest
+        WHERE quest_state = '답변대기'
+        ORDER BY quest_num DESC
+
+    </select>
+
 
 </mapper>
