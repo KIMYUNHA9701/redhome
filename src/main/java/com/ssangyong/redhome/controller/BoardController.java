@@ -21,16 +21,15 @@ public class BoardController {
 
 
     @GetMapping(value = "/board")
-    public String viewBoard(Criteria cri, Model model, @ModelAttribute("reply") String reply ) {
-        System.out.println(cri);
-        System.out.println(reply);
+    public String viewBoard(Criteria cri, Model model, @ModelAttribute("reply") String reply, @ModelAttribute("orderType") String orderType ) {
+
         HashMap<String,Object> map = new HashMap<String,Object>();
+        map.put("orderType",orderType);
         map.put("reply",reply);
         map.put("pageNum",cri.getPageNum());
         map.put("amount",cri.getAmount());
-
         model.addAttribute("boardList", boardService.selectAllQuestions(map));
-        model.addAttribute("pageMaker", new Page(cri, boardService.getTotalCnt()));
+        model.addAttribute("pageMaker", new Page(cri, boardService.getTotalCnt(map)));
         return "board";
     }
 
@@ -43,13 +42,23 @@ public class BoardController {
 
 
     @GetMapping(value = "/answer")
-    public String viewAnswer(Model model,@ModelAttribute("quest_num") int quest_num) {
-        System.out.println(quest_num);
+    public String viewAnswer(Model model,@ModelAttribute("quest_num") int quest_num, @ModelAttribute("cri") Criteria cri,
+                             @ModelAttribute("reply") String reply, @ModelAttribute("orderType") String orderType) {
+
         model.addAttribute("question",boardService.selectQuestion(quest_num));
         model.addAttribute("answer", boardService.selectAnswer(quest_num));
         return "answer";
     }
 
+    @GetMapping(value = "/board/delete")
+    public String deleteBoard(@ModelAttribute("quest_num") int quest_num, @ModelAttribute("cri") Criteria cri,
+                              @ModelAttribute("reply") String reply, @ModelAttribute("orderType") String orderType){
+
+        boardService.deleteBoard(quest_num);
+
+        return "redirect:/board";
+
+    }
 
 
 }

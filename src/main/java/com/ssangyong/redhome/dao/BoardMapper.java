@@ -18,9 +18,17 @@ public interface BoardMapper {
     Answer selectAnswer(int quest_num);
 
 
-    //문의 전체 또는 답변대기 중의 문의만 가져오기(페이징)
+    //문의 전체 또는 답변대기 중의 문의만 가져오기 -> 최신순 정렬
     List<Quest> getBoardPaging(HashMap<String,Object> map);
 
+    //문의 전체 또는 답변대기 중의 문의만 가져오기-> 최근 답변순 정렬
+    List<Quest> getBoardPagingNewAnswer(HashMap<String,Object> map);
+
     //총 문의 수
-    int selectTotalCnt();
+    int selectTotalCnt(HashMap<String,Object> map);
+
+    //문의 글 삭제
+    void deleteBoard(int quest_num);
+
+
 }

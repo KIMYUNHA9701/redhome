@@ -33,14 +33,28 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public List<Quest> selectAllQuestions(HashMap<String,Object> map) {
-         List<Quest> boardPagingList = boardRepository.getBoardPaging(map);  //
+
+         List<Quest> boardPagingList = boardRepository.getBoardPaging(map);
+
+        String orderType = (String) map.get("orderType");
+        if(orderType.equals("newAnswer")){
+            boardPagingList = boardRepository.getBoardPagingNewAnswer(map);
+            System.out.println("최근 답변순 정렬");
+        }
+
         return boardPagingList;
     }
 
     @Override
-    public int getTotalCnt() {
-        int total = boardRepository.selectTotalCnt();
+    public int getTotalCnt(HashMap<String,Object> map) {
+        int total = boardRepository.selectTotalCnt(map);
         return total;
+    }
+
+    @Override
+    public void deleteBoard(int quest_num) {
+
+        boardRepository.deleteBoard(quest_num);
     }
 
 }

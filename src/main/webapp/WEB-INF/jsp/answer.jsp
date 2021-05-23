@@ -25,6 +25,8 @@
     <article class="qna-detail__container container">
         <section class="qna-detail__container__content">
             <header class="qna-detail__content__header-container">
+
+
                 <div class="qna-detail__content__header-top">
                     <a class="qna-detail__content__header-subtitle" href="/questions">질문과 답변</a>
                 </div>
@@ -72,6 +74,23 @@
                 <div class="qna-detail__footer__metadata">
                     <time>${question.quest_date}</time>
                 </div>
+
+                <div class="header_btn">
+                    <%--수정, 삭제는 현재 로그인 된 아이디와 해당 문의글의 작성 아이디가 같을 때만 보이게 처리할 것--%>
+                    <button type="button" class="btn btn-default modifyBtn" id="modify_btn"><a href="#">수정</a></button>
+                    <button type="button" class="btn btn-default deleteBtn" id="delete_btn"><a href="#">삭제</a></button>
+                    <button type="button" class="btn btn-default listBtn" id="boardList_btn"><a href="#">목록</a></button>
+                </div>
+
+                <%--페이지 이동을 a태그로 처리하지 않고 form  태그로 처리--%>
+                <form id='actionForm' action="/board" method='get'>
+                    <input type='hidden' name='pageNum' value='${cri.pageNum}'>
+                    <input type='hidden' name='amount' value='${cri.amount}'>
+                    <input type='hidden' name='reply' value='${reply}'>
+                    <input type='hidden' name='quest_num' value='${question.quest_num}'>
+                    <input type='hidden' name='orderType' value='${orderType}'>
+                </form>
+
             </footer>
 
 
@@ -134,6 +153,47 @@
 </main>
 
 <jsp:include page="bottom.jsp" flush="false"/>
+
+
+
+<script>
+
+    $(document).ready(function (){
+
+
+        var actionForm = $("#actionForm");
+
+        /*listBtn */
+        /*list로 갈때는 quest_num을 넘겨줄 필요 없기 때문에 해당 <input>제거하고 넘겨줌*/
+        $(".listBtn").click(function (e){
+            e.preventDefault();  /* a태그를 선택해도 이동하지 않음*/
+
+            actionForm.find("input[name='quest_num']").remove();
+            actionForm.submit();
+
+        });
+
+        /*modifyBtn*/
+        $(".modifyBtn").click(function (e){
+            e.preventDefault();
+            actionForm.attr("action","/*/board/modify*/");
+            actionForm.submit();
+
+        });
+
+
+        /*deleteBtn*/
+        $(".deleteBtn").click(function (e){
+            e.preventDefault();
+            actionForm.attr("action","/board/delete");
+            actionForm.submit();
+
+        });
+
+    });
+
+</script>
+
 
 </body>
 </html>

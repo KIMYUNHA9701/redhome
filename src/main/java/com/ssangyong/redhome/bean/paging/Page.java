@@ -28,7 +28,11 @@ public class Page {
 
         //total을 통한 endPage의 재계산
         int realEngPage = (int)(Math.ceil(  (total * 1.0)/cri.getAmount())  );
-        this.endPage = realEngPage<= endPage? realEngPage : endPage;
+        System.out.println("real:" +realEngPage);
+        System.out.println("end:" +endPage);
+        this.endPage = realEngPage <= endPage? realEngPage : endPage;
+
+        System.out.println("newend" +endPage);
 
         this.next = this.endPage < realEngPage;
     }

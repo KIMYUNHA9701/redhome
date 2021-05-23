@@ -56,21 +56,24 @@ html, body {
 
 
 .icon {
-    background-repeat: no-repeat;
-    background-size: 400px;
-    display: inline-block;
+    display: block;
 }
 
 
 .icon-etc-brand-icon-n-bi-md {
-    width: 88px;
-    height: 30px;
-    background-position: top -541px left 0;
+    background-size: 90px;
+    width: 100px;
+    height: 60px;
+
+
+   /* background-position: top -541px left 0;*/
 }
 
 .icon-etc, [class*=icon-etc-] {
-    background-image: url("https://static.ohou.se/assets/icon_map/v3/icon-etc.png");
-    margin: 40px 100px 100px 20%;
+    background-image: url("../img/redhome_kor.jpg");
+    margin-left: 20%;
+    margin-top: 30px;
+
 }
 
 
@@ -116,7 +119,7 @@ header,  main {
 
 @media (min-width: 768px) {
     h2 {
-        margin: 50px 0px 20px 20%;
+        margin: 40px 0px 20px 20%;
         font-size: 30px;
         font-family: "Noto Sans KR", "Apple SD Gothic Neo", "¸¼Àº °íµñ", "Malgun Gothic", sans-serif;
 

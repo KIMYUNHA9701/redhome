@@ -19,9 +19,24 @@
 
 
 
-    <select id="selectTotalCnt" resultType="Integer">
+    <select id="selectTotalCnt" resultType="Integer" parameterType="java.util.HashMap">
 
         select count(*)total from quest
+
+       <if test='reply=="not_yet"'>
+
+           where quest_state = '답변대기'
+
+       </if>
+        <if test='orderType=="newAnswer"'>
+
+            where  quest_num in (
+                select /*+ INDEX_DESC(answer answer_answer_num_idx) */ quest_num
+                from answer
+                where quest_num > 0)
+
+        </if>
+
 
     </select>
 
@@ -48,9 +63,34 @@
             </choose>
         </where>
 
-        <![CDATA[    where rn >(${pageNum} - 1) * ${amount}   ]]>
+        <![CDATA[    where rn >(${pageNum} - 1) * ${amount}]]>
 
     </select>
+
+    <select id="getBoardPagingNewAnswer" resultType="com.ssangyong.redhome.bean.Quest" parameterType="java.util.HashMap" >
+
+        select quest_num, quest_title, quest_contents, quest_img, quest_pwd, quest_date, quest_state, quest_category_num, member_id
+        from (
+        select /*+ INDEX_DESC(quest PK_QUEST) */ rownum rn, quest_num, quest_title, quest_contents,
+        quest_img, quest_pwd, quest_date, quest_state, quest_category_num, member_id
+        from quest
+        <![CDATA[   where quest_num>0 and quest_state = '답변완료' and rownum > 0 and rownum <= (${pageNum} * ${amount})  )  ]]>
+
+        where rn >(${pageNum} - 1) * ${amount} and quest_num in (
+        select /*+ INDEX_DESC(answer answer_answer_num_idx) */ quest_num
+        from answer
+        where quest_num > 0)
+
+
+    </select>
+
+
+    <delete id="deleteBoard" parameterType="Integer">
+
+        delete from quest where quest_num = #{value}
+
+    </delete>
+
 
 
 

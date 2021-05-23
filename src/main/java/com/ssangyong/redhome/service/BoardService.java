@@ -19,6 +19,8 @@ public interface BoardService {
 
     List<Quest> selectAllQuestions(HashMap<String,Object> map);
 
-    int getTotalCnt();
+    int getTotalCnt(HashMap<String,Object> map);
+
+    void deleteBoard(int quest_num);
 
 }
