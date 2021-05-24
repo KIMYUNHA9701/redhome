@@ -114,14 +114,17 @@
                     </div>
                     <div class="store_item_header">
                         <h1>
+                            <span class="store_item_header_name">${p.product_num}</span>
+                        </h1>
+                        <h1>
                             <span class="store_item_header_name">${p.product_name}</span>
                         </h1>
                         <h1>
                             <span class="store_item_header_price">${CatePriceList[status.index]}</span>
                         </h1>
                         <h1>
-                            <span class="store_item_header_scope">${reviewList[status.index].grade_avg}</span>
-                            <span class="store_item_header_reviewCnt">리뷰 ${reviewList[status.index].review_cnt}</span>
+                            <span class="store_item_header_scope">${reviewGradeList[status.index]}</span>
+                            <span class="store_item_header_reviewCnt">리뷰 ${reviewCntList[status.index]}</span>
                         </h1>
                     </div>
                 </div>

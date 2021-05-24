@@ -20,7 +20,7 @@ public interface ProductMapper {
     List<Product> selectCateProduct(Map<String,Object> map);
 
     //리뷰평균?전체 가져오기
-    List<Review_avg> selectAvgReview(Map<String,Object> map);
+    Review_avg selectAvgReview(int no);
 
     //상품하나 가져오기
     Product selectProduct(int no);

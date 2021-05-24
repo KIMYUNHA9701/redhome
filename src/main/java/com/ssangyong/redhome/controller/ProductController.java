@@ -33,12 +33,13 @@ public class ProductController {
         map.put("sort", storeOrder);
 
         //select해도 기존 값 유지
-        request.setAttribute("c_num",c_num);
-        request.setAttribute("sort",storeOrder);
+        request.setAttribute("c_num", c_num);
+        request.setAttribute("sort", storeOrder);
 
         List<Product> productSale = productService.selectSaleProduct();
         ArrayList<String> salePriceList = new ArrayList<String>();
         ArrayList<String> priceList = new ArrayList<String>();
+
         DecimalFormat format = new DecimalFormat("###,###,###");
         for (int i = 0; i < productSale.size(); i++) {
             int price = productSale.get(i).getProduct_price();
@@ -56,23 +57,33 @@ public class ProductController {
 
         List<Product> productCate = productService.selectCateProduct(map);
         ArrayList<String> CatePriceList = new ArrayList<String>();
+        ArrayList<Double> reviewGradeList = new ArrayList<Double>();
+        ArrayList<Integer> reviewCntList = new ArrayList<Integer>();
         for (int i = 0; i < productCate.size(); i++) {
             int price3 = productCate.get(i).getProduct_price();
             CatePriceList.add(format.format(price3));
+
+            int num = productCate.get(i).getProduct_num();
+            System.out.println(num);
+            if (productService.selectAvgReview(num) != null) {
+                System.out.println("OOOOO리뷰있음!!!");
+                //평점 소수점첫째자리까지만 자르기
+                Double grade = Math.round(productService.selectAvgReview(num).getGrade_avg() * 10) / 10.0;
+                reviewGradeList.add(grade);
+                reviewCntList.add(productService.selectAvgReview(num).getReview_cnt());
+            } else {
+                System.out.println("XXXXX리뷰없음!!!");
+                //리뷰없으면, 0으로 넣기
+                reviewGradeList.add(0.0);
+                reviewCntList.add(0);
+            }
         }
         model.addAttribute("CatePriceList", CatePriceList); //가격(int->string)
         model.addAttribute("productList", productCate); //제품리스트
 
 
-        List<Review_avg> reviewList = productService.selectAvgReview(map);
-        for (int i = 0; i < reviewList.size(); i++) {
-            reviewList.get(i).setGrade_avg(Math.round(reviewList.get(i).getGrade_avg() * 10) / 10.0);
-            //doulble 소수점 첫째자리까지만 출력
-            int num = reviewList.get(i).getProduct_num();
-        }
-
-
-        model.addAttribute("reviewList", reviewList);
+        model.addAttribute("reviewGradeList", reviewGradeList);
+        model.addAttribute("reviewCntList", reviewCntList);
         return "store";
     }
 

@@ -34,8 +34,8 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public List<Review_avg> selectAvgReview(Map<String,Object> map) {
-        return productRepository.selectAvgReview(map);
+    public Review_avg selectAvgReview(int no) {
+        return productRepository.selectAvgReview(no);
     }
 
     @Override

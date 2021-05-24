@@ -15,7 +15,7 @@ public interface ProductService {
 
     List<Product> selectCateProduct(Map<String,Object> map);
 
-    List<Review_avg> selectAvgReview(Map<String,Object> map);
+    Review_avg selectAvgReview(int no);
 
     Product selectProduct(int no);
 
