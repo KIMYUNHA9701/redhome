@@ -45,16 +45,6 @@ public class MainController {
         return "signup";
     }
 
-    @RequestMapping(value = "/storeInfo", method = RequestMethod.GET)
-    public String viewStoreInfo() {
-        return "storeInfo";
-    }
-
-    @RequestMapping(value = "/storeInfo2", method = RequestMethod.GET)
-    public String viewStoreInfo2() {
-        return "storeInfo2";
-    }
-
     @RequestMapping(value = "/cart", method = RequestMethod.GET)
     public String viewCart() {
         return "cart";

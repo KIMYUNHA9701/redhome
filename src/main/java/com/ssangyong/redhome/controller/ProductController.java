@@ -87,4 +87,11 @@ public class ProductController {
         return "store";
     }
 
+    @RequestMapping(value = "/storeInfo", method = RequestMethod.GET)
+    public String viewStoreInfo(Model model, @RequestParam Integer p_num) {
+        Product productDetail = productService.selectProduct(p_num);
+        model.addAttribute("productDetail", productDetail);
+        return "storeInfo";
+    }
+
 }
