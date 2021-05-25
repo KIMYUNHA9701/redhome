@@ -20,16 +20,15 @@
 			<label class="today_sale_label">오늘의 딜</label>
 		</div>
 		<div class="store_items">
-            <c:forEach var="s" items="${saleList}" varStatus="status">
+            <c:forEach var="s" items="${productSaleList}" varStatus="status">
                 <c:if test="${status.index%4 == 0 }">
                     <div class="store_items">
                 </c:if>
-
                         <div class="store_item">
                             <div class="store_item_img">
                                 <a href="/storeInfo?p_num=${s.product_num}">
                                     <div class="store_item_imgScale">
-                                        <img alt="" src="../../img/${s.product_img}">
+                                        <img alt="" src="../../img/productImg/${s.product_img}">
                                     </div>
                                 </a>
                             </div>
@@ -38,7 +37,7 @@
                                     <span class="store_item_header_name">${s.product_name}</span>
                                 </h1>
                                 <h1>
-                                    <span class="store_item_header_sale">40%</span>
+                                    <span class="store_item_header_sale">${s.sale_rate}%</span>
                                     <span class="store_item_header_priceline"><del>${priceList[status.index]}</del></span>
                                     <span class="store_item_header_price">${salePriceList[status.index]}</span>
                                 </h1>
@@ -108,7 +107,7 @@
                     <div class="store_item_img">
                         <a href="/storeInfo?p_num=${p.product_num}">
                             <div class="store_item_imgScale">
-                                <img alt="" src="../../img/${p.product_img}">
+                                <img alt="" src="../../img/productImg/${p.product_img}">
                             </div>
                         </a>
                     </div>

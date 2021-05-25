@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 	<link rel="stylesheet" type="text/css" href="../../css/storeInfo.css"/>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 </head>
 <body>
    <div class="layout">
@@ -26,8 +27,9 @@
 									<div class="carousel__list" style="transform: translateX(0%);">
 										<div class="carousel__list__entry production-selling-cover-image__entry" style="width: 100%">
 											<img class="production-selling-cover-image__entry__image" tabindex="0" src="../../img/productImg/${productDetail.product_img}">
+											<c:if test="${productSalePrice!='0'}">
 											<div class="production-selling-cover-image__timer--pc">
-												<a class="production-selling__timer" href="#">
+												<a  class="production-selling__timer" href="#">
 													<span class="production-selling__timer__title">
 														<svg class="production-selling__timer__title__time-icon" width="15" height="15" preserveAspectRatio="xMidYMid meet"><path fill="#FFC5C5" d="M13.125 7.5a5.625 5.625 0 10-11.25 0 5.625 5.625 0 0011.25 0zM7.5 0a7.5 7.5 0 110 15 7.5 7.5 0 010-15zm.759 3.75H6.562v4.589l3.326 2.035.805-1.45-2.434-1.5V3.75z"></path></svg>
 														오늘의딜
@@ -38,12 +40,13 @@
 													</svg>
 												</a>
 											</div>
+											</c:if>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>		
+					</div>
 					<div class="production-selling-overview__content col-12 col-md-6 col-lg-5">
 						<div class="production-selling-header">
 							<h1 class="production-selling-header__title">
@@ -96,21 +99,32 @@
 											</svg>
 										</span>
 										<span class="production-selling-header__review__text">
-											<span class="number">55</span>
+											<span class="number">${r_cnt}</span>
 											<span class="postfix">개 리뷰</span>
 										</span>
 									</a>
 								</p>
+                                <p class="production-selling-header__price">
+                                    <span class="production-selling-header__price__row">
+                                        <span class="production-selling-header__price__price-wrap">
+                                            <span class="production-selling-header__price__price">
+                                                <span class="number">${productPrice}</span>
+                                                <span class="won">원</span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </p>
+                                <c:if test="${productSalePrice!='0'}">
 								<p class="production-selling-header__price">
 									<span class="production-selling-header__price__row">
 										<span class="production-selling-header__price__discount">
-											<span class="number">76</span>
+											<span class="number">${sale_rate}</span>
 											<span class="percent">%</span>
 											&nbsp;
 										</span>
 										<span class="production-selling-header__price__price-wrap">
 											<span class="production-selling-header__price__price">
-												<span class="number">${productDetail.product_price}</span>
+												<span class="number">${productSalePrice}</span>
 												<span class="won">원</span>
 												<span class="production-selling-header__price__badge">
 													<svg class="icon" aria-label="특가" width="30" height="20" viewBox="0 0 30 20" preserveAspectRatio="xMidYMid meet"><rect width="30" height="20" fill="#F77" rx="4"></rect><path fill="#fff" d="M12.83 7.93v-.97H7.93v-.555h5.228v-.991H6.655v4.063h6.59v-.992H7.928V7.93h4.901zm-6.295 3.747v1.002h5.326v2.037h1.274v-3.04h-6.6zm7.733-.588v-1.024H5.5v1.024h8.768zM23.91 9.782V8.725h-1.405V5H21.24v9.705h1.264V9.782h1.405zm-3.954-3.79h-4.53v1.056h3.147c-.174 1.938-1.623 3.975-3.736 4.945l.773.958c2.974-1.612 4.259-4.03 4.346-6.96z"></path></svg>
@@ -119,6 +133,7 @@
 										</span>
 									</span>
 								</p>
+								</c:if>
 							</div>
 							<p class="production-selling-header__delivery production-selling-header__delivery--deal">
 								<span class="production-selling-header__delivery__type">
@@ -161,8 +176,8 @@
 								</p>
 							</div>
 							<div class="production-selling-option-form__footer">
-								<button class="button button--color-blue-inverted button--size-55 button--shape-4" type="button">장바구니</button>
-								<button class="button button--color-blue button--size-55 button--shape-4" type="button">바로구매</button>
+								<button class="button button--color-blue-inverted button--size-55 button--shape-4" type="button"><a href="/cart">장바구니</button>
+								<button class="button button--color-blue button--size-55 button--shape-4" type="button"><a href="/payment">바로구매</button>
 							</div>			
 						</div>
 					</div>
@@ -177,9 +192,8 @@
 								<a class="production-selling-navigation__item production-selling-navigation__item--active" href="#production-selling-information">상품정보</a>
 							</li>
 							<li>
-								<a class="production-selling-navigation__item" href="#production-selling-review">리뷰<span class="production-selling-navigation__item__count">55</span></a>
+								<a class="production-selling-navigation__item" href="#production-selling-review">리뷰<span class="production-selling-navigation__item__count">${r_cnt}</span></a>
 							</li>
-
 						</ol>
 					</nav>
 				</div>
@@ -207,30 +221,22 @@
 							<a id="production-selling-review"></a>
 							<section class="production-selling-section">
 								<header class="production-selling-section__header">
-									<h1 class="production-selling-section__title">리뷰 <span class="count">55</span></h1>
+									<h1 class="production-selling-section__title">리뷰 <span class="count">${r_cnt}</span></h1>
 									<div class="production-selling-section__right"></div>
 								</header>
-								<div class="production-select-dropdown">
-									<div class="production-select-dropdown__button">
-										<button class="production-select-text-button" type="button">
-											<span class="production-select-text-button__text">전체</span>
-											<svg class="production-select-text-button__icon" width="8" height="8" viewBox="0 0 8 8" preserveAspectRatio="xMidYMid meet"><path fill="#BDBDBD" d="M0 2l4 4 4-4z"></path></svg>
-										</button>
-									</div>
-								</div>
 								<div class="production-review-feed">
 									<div class="production-review-feed__header-v2">
 										<div class="production-review-feed__header-v2__stars">
 											<div class="production-review-feed__header-v2__stars__badge">
-												<span class="badge__mobile">4.7</span>
-												<span class="icon" aria-label="별점 4.7점">
+												<span class="badge__mobile">${r_grade}</span>
+												<span class="icon" aria-label="별점 ${r_grade}점">
 													<svg fill="#ed4a4a" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><defs><path id="star-path-0" d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"></path><clipPath id="star-clip-0"><rect x="0" y="0" width="24" height="24"></rect></clipPath></defs><use xlink:href="#star-path-0" fill="#DBDBDB"></use><use clip-path="url(#star-clip-0)" xlink:href="#star-path-0"></use></svg>
 													<svg fill="#ed4a4a" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><defs><path id="star-path-1" d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"></path><clipPath id="star-clip-1"><rect x="0" y="0" width="24" height="24"></rect></clipPath></defs><use xlink:href="#star-path-1" fill="#DBDBDB"></use><use clip-path="url(#star-clip-1)" xlink:href="#star-path-1"></use></svg>
 													<svg fill="#ed4a4a" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><defs><path id="star-path-2" d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"></path><clipPath id="star-clip-2"><rect x="0" y="0" width="24" height="24"></rect></clipPath></defs><use xlink:href="#star-path-2" fill="#DBDBDB"></use><use clip-path="url(#star-clip-2)" xlink:href="#star-path-2"></use></svg>
 													<svg fill="#ed4a4a" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><defs><path id="star-path-3" d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"></path><clipPath id="star-clip-3"><rect x="0" y="0" width="24" height="24"></rect></clipPath></defs><use xlink:href="#star-path-3" fill="#DBDBDB"></use><use clip-path="url(#star-clip-3)" xlink:href="#star-path-3"></use></svg>
 													<svg fill="#ed4a4a" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><defs><path id="star-path-4" d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"></path><clipPath id="star-clip-4"><rect x="0" y="0" width="16.145454545454548" height="24"></rect></clipPath></defs><use xlink:href="#star-path-4" fill="#DBDBDB"></use><use clip-path="url(#star-clip-4)" xlink:href="#star-path-4"></use></svg>
 												</span>
-												<span class="badge__pc">4.7</span>
+												<span class="badge__pc">${r_grade}</span>
 											</div>
 											<div class="production-review-feed__header-v2__stars__avg">
 												<div class="production-review-feed__header-v2__stars__avg-warp">
@@ -282,32 +288,9 @@
 										<div class="production-review-feed__filter-wrap">
 											<div class="production-review-feed__filter">
 												<div class="production-review-feed__filter__order-list">
-													<button class="production-review-feed__filter__order production-review-feed__filter__order--active" aria-pressed="true" type="button">베스트순</button>
+													<button class="production-review-feed__filter__order production-review-feed__filter__order--active" aria-pressed="true" type="button">별점순</button>
 													<button class="production-review-feed__filter__order" aria-pressed="false" type="button">최신순</button>
-													<button class="production-review-feed__filter__order production-review-feed__filter__order--photo" aria-pressed="false" type="button">
-														<svg class="icon" width="18" height="18" viewBox="0 0 18 18" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" d="M15.821 3a.67.67 0 0 1 .679.672v10.656a.67.67 0 0 1-.679.672H2.18a.67.67 0 0 1-.679-.672V3.672c0-.375.3-.672.679-.672H15.82zm-.679 1.344H2.858v8.14L7.01 7.781c.094-.125.284-.125.394 0l2.321 2.657c.048.046.063.109.048.156l-.3 1.375c-.016.11.11.172.173.094l2.369-2.579a.202.202 0 0 1 .284 0l2.842 3.094V4.344zm-2.526 3.61a1.1 1.1 0 0 1-1.105-1.095 1.1 1.1 0 0 1 1.105-1.093 1.1 1.1 0 0 1 1.105 1.093 1.1 1.1 0 0 1-1.105 1.094z"></path>
-														</svg>사진리뷰
-													</button>
 												</div>
-												<div class="production-review-feed__filter__option-list__mobile">
-													<div class="drop-down panel-drop-down filter-bar-control">
-														<button class="production-review-feed__filter__option" type="button">
-															<svg class="production-review-feed__filter__option__icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="#BDBDBD" d="M18.284 4H5.716a.7.7 0 0 0-.61.362.668.668 0 0 0 0 .724l3.963 6.978c.353.632.97 1.348.971 2.076v6.181c.002.24-.054.388.149.558.203.17.343.118.444.095l3.29-1.257c.283-.095.321-.369.317-.676v-4.9c0-.73.338-1.445.69-2.077l3.963-6.978a.668.668 0 0 0 0-.724.7.7 0 0 0-.61-.362z"></path>
-															</svg>
-															필터
-														</button>
-													</div>
-												</div>
-												<ul class="production-review-feed__filter__option-list__pc">
-													<li class="filter-bar__control-list__item">
-														<div class="drop-down panel-drop-down filter-bar-control">
-															<button class="button button--color-gray-4 button--size-50 button--shape-4 filter-bar-control__button">
-															별점
-															<svg class="icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor" preserveAspectRatio="xMidYMid meet"><path d="M6.069 6.72l4.123-3.783 1.216 1.326-5.32 4.881L.603 4.273l1.196-1.346z"></path></svg>
-															</button>
-														</div>
-													</li>
-												</ul>
 											</div>
 										</div>
 									</div>
@@ -721,44 +704,6 @@
 							</section>
 						</div>
 					</div><!-- 본문 좌측끝 -->
-					<div class="production-selling__detail__sidebar col-4">
-						<div data-sticky-enabled="true" data-sticky-disabled="false" data-sticky-always="false" data-sticky-ignore="false" data-direction="top" data-offset="133" class="sticky-container production-selling-sidebar-wrap" style="height: 193px;">
-							<div class="sticky-child production-selling-sidebar" style="position: absolute; box-sizing: border-box; height: 450px; width: 365.325px; top: px;">
-								<section class="production-selling-sidebar-content production-selling-sidebar__content">
-									<div class="production-selling-option-form production-selling-sidebar-content__option-form">
-										<div class="selling-option-form-content deal-selling-option-form-content production-selling-option-form__form">
-											<div class="production-select-dropdown">
-												<div class="production-select-dropdown__button">
-													<button class="production-select-button" type="button">
-														<div class="production-select-button__production">
-															<div class="production-select-button__production__blank">상품을 선택하세요.</div>
-															<div class="production-select-button__production__icon">
-																<svg width="1em" height="1em" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path></svg>
-															</div>
-														</div>
-													</button>
-												</div>
-											</div>
-											<ul class="selling-option-form-content__list"></ul>
-											<p class="selling-option-form-content__price">
-												<span class="selling-option-form-content__price__left">주문금액</span>
-												<span class="selling-option-form-content__price__right">
-													<span class="selling-option-form-content__price__number">0</span>원
-												</span>
-											</p>
-										</div>
-										<div class="production-selling-option-form__footer">
-											<button class="button button--color-gray-14-inverted button--size-55 button--shape-4 production-selling-sidebar-content__scrap" type="button">
-											<svg class="icon--stroke" aria-label="스크랩" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="0.5" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M11.53 18.54l-8.06 4.31A1 1 0 0 1 2 21.97V3.5A1.5 1.5 0 0 1 3.5 2h17A1.5 1.5 0 0 1 22 3.5v18.47a1 1 0 0 1-1.47.88l-8.06-4.31a1 1 0 0 0-.94 0z"></path></svg>
-											</button>
-											<button class="button button--color-blue-inverted button--size-55 button--shape-4" type="button">장바구니</button>
-											<button class="button button--color-blue button--size-55 button--shape-4" type="button">바로구매</button>
-										</div>
-									</div>
-								</section>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
