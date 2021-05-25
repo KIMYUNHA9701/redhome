@@ -90,7 +90,9 @@ public class ProductController {
     @RequestMapping(value = "/storeInfo", method = RequestMethod.GET)
     public String viewStoreInfo(Model model, @RequestParam Integer p_num) {
         Product productDetail = productService.selectProduct(p_num);
+        String imgName = "product_img"+p_num+"_1.jpg";
         model.addAttribute("productDetail", productDetail);
+        model.addAttribute("imgName", imgName);
         return "storeInfo";
     }
 

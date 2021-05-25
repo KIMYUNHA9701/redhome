@@ -25,7 +25,7 @@
 								<div class="carousel__list-wrap production-selling-cover-image__carousel-wrap">
 									<div class="carousel__list" style="transform: translateX(0%);">
 										<div class="carousel__list__entry production-selling-cover-image__entry" style="width: 100%">
-											<img class="production-selling-cover-image__entry__image" tabindex="0" src="../../img/${productDetail.product_img}">
+											<img class="production-selling-cover-image__entry__image" tabindex="0" src="../../img/productImg/${productDetail.product_img}">
 											<div class="production-selling-cover-image__timer--pc">
 												<a class="production-selling__timer" href="#">
 													<span class="production-selling__timer__title">
@@ -199,7 +199,8 @@
 									<li>주문확인 이후에는 구매 취소와 배송지 변경이 불가합니다.</li>
 								</ul>
 								<div class="production-selling-description__content">
-									<img src="../../img/product_img2_1.jpg">
+
+									<img src="../../img/productDetailImg/${imgName}">
 								</div>
 							</div>
 
