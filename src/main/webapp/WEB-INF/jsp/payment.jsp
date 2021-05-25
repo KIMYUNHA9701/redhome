@@ -1400,89 +1400,8 @@
             <header class="_3pPzh">주문/결제</header>
             <section class="_3oseG">
                 <div class="checkout-container _1cbjv">
-                    <div class="_3Pp8n">주문자</div>
-                    <div class="_1_5Vk _2lC3t"></div>
-                </div>
-                <div class="bbqwt">
-                    <div class="checkout-container _1iqF1">
-                        <div class="BenKu _3cVfV">
-                            <div class="_10zXy _2klPP">이름</div>
-                            <div class="_3cYTk">
-                                <input class="_3ASDR _1qwAY _2Zb2k" name="name" maxlength="10" value="">
-                            </div>
-                        </div>
-                        <div class="BenKu">
-                            <div class="_10zXy _2klPP">이메일</div>
-                            <div class="_3cYTk Ap00Z">
-                                <div class="_3o6FJ errored">
-                                    <div class="_3XFZl _1yjw1">
-                                        <div class="iS9OT _3XFZl _2dWiv">
-                                            <input class="_3ASDR _1qwAY _2Zb2k" type="email" placeholder="이메일" title="이메일 앞부분" maxlength="20" value="">
-                                        </div>
-                                        <span class="_1OHjy">@</span>
-                                    </div>
-                                    <div class="_1yjw1 CgVRc">
-                                        <div class="_3XFZl">
-                                            <div class="_3Bt8k">
-                                                <select class="_3ASDR _1qwAY _2Zb2k _3K8Q8 _2vleR">
-                                                    <option value="" disabled="">선택해주세요</option>
-                                                    <option value="0">naver.com</option>
-                                                    <option value="1">hanmail.net</option>
-                                                    <option value="2">daum.net</option>
-                                                    <option value="3">gmail.com</option>
-                                                    <option value="4">kakao.com</option>
-                                                    <option value="5">nate.com</option>
-                                                    <option value="6">hotmail.com</option>
-                                                    <option value="7">outlook.com</option>
-                                                    <option value="8">icloud.com</option>
-                                                    <option value="9">직접 입력</option>
-                                                </select>
-                                                <svg width="1em" height="1em" viewBox="0 0 10 10" fill="currentColor" class="IgBXR"><path d="M0 3l5 5 5-5z"></path></svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="BenKu">
-                            <div class="_10zXy">휴대전화</div>
-                            <div class="_3cYTk">
-                                <div class="_2Z2K1">
-                                    <div class="_2ixif">
-                                        <div class="_3Bt8k">
-                                            <select class="_3ASDR _1qwAY _3K8Q8" name="phone1">
-                                                <option value="" disabled="">선택</option>
-                                                <option value="0">010</option>
-                                                <option value="1">011</option>
-                                                <option value="2">016</option>
-                                                <option value="3">017</option>
-                                                <option value="4">018</option>
-                                                <option value="5">019</option>
-                                            </select>
-                                            <svg width="1em" height="1em" viewBox="0 0 10 10" fill="currentColor" class="IgBXR yPMDv"><path d="M0 3l5 5 5-5z"></path></svg>
-                                        </div>
-                                    </div>
-                                    <div class="UYZ4Z">
-                                        <input class="_3ASDR _1qwAY" type="tel" placeholder="입력해주세요" size="1" maxlength="9" value="">
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="Qz9_5">
-                                        <button class="_1eWD8 _3SroY _3VwZT _3QLQB" type="button">인증번호 발송</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="_3oseG">
-                <div class="checkout-container _1cbjv">
                     <div class="_3Pp8n">배송지</div>
                     <div class="_1_5Vk"></div>
-                    <div>
-                        <button class="_3NKjj" type="button">위와 동일하게 채우기</button>
-                    </div>
                 </div>
                 <div class="bbqwt">
                     <div class="checkout-container _1abJt">
@@ -1579,36 +1498,7 @@
                     </div>
                 </div>
             </section>
-            <section class="_3oseG">
-                <div class="checkout-container _1cbjv">
-                    <div class="_3Pp8n">개인통관고유부호 (받는 사람)</div>
-                    <div class="_1_5Vk"></div>
-                </div>
-                <div class="bbqwt">
-                    <div class="checkout-container">
-                        <input class="_3ASDR _1qwAY _2Zb2k" name="customerNumber" placeholder="P로 시작하는 13자리 입력" maxlength="13" value="">
-                        <div class="_2F5Kj">필수 입력 항목입니다.</div>
-                        <div class="_2d_IE">
-                            <a rel="noopenner noreferrer" href="https://unipass.customs.go.kr/csp/persIndex.do" target="_blank">개인통관고유부호 발급받기
-                                <svg class="_3PzVc" fill="none" viewBox="0 0 16 10" preserveAspectRatio="xMidYMid meet"><path d="M1.75.833L8 6.873l6.25-6.04L15.5 1.98 8 9.167.5 1.98 1.75.833z"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <label class="Ui16N" for="customerNumberAgree">
-                        <div class="_1N__c checkout-container">
-                            <div class="_2Y-Ih">
-                                <div class="_3zqA8">
-                                    <input type="checkbox" class="_3UImz" id="customerNumberAgree" name="customerNumberAgree" value="">
-                                    <span class="_2mDYR">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="_2UftR"><path fill="currentColor" d="M6.185 10.247l7.079-7.297 1.435 1.393-8.443 8.703L1.3 8.432l1.363-1.464z"></path></svg>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="_1l-9U">해외직구상품의 통관을 위해 개인통관고유부호 수집/이용에 동의합니다.</div>
-                        </div>
-                    </label>
-                </div>
-            </section>
+
             <section class="_3oseG">
                 <div class="checkout-container _1cbjv">
                     <div class="_3Pp8n">주문상품</div>

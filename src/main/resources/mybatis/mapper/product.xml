@@ -6,23 +6,22 @@
         SELECT * FROM PRODUCT ORDER BY product_num
     </select>
 
-    <select id="selectSaleProduct" resultType="com.ssangyong.redhome.bean.Product">
-        SELECT * FROM PRODUCT
-        WHERE product_category_num = 1
-        ORDER BY product_num
-    </select>
-
     <select id="selectCateProduct" parameterType="java.util.Map" resultType="com.ssangyong.redhome.bean.Product">
         SELECT * FROM PRODUCT
-        <if test="c_num != null">
-            <if test="c_num != 0">
-                WHERE PRODUCT_CATEGORY_NUM = #{c_num}
+        <if test="c_num != null or p_name != null">
+            WHERE
+            <if test="c_num != null and c_num != 0">
+                PRODUCT_CATEGORY_NUM = #{c_num}
+            </if>
+            <if test="p_name != null">
+                PRODUCT_NAME LIKE '%${p_name}%'
             </if>
         </if>
+
         <if test="sort != null">
             ORDER BY
             <choose>
-                <when test='sort.equals("best")'>PRODUCT_QUANTITY_SOLD</when>
+                <when test='sort.equals("best")'>PRODUCT_QUANTITY_SOLD DESC</when>
                 <when test='sort.equals("new")'>PRODUCT_NUM DESC</when>
                 <when test='sort.equals("high")'>PRODUCT_PRICE DESC</when>
                 <when test='sort.equals("low")'>PRODUCT_PRICE</when>
@@ -30,32 +29,35 @@
         </if>
     </select>
 
-    <select id="selectAvgReview" parameterType="java.util.Map" resultType="com.ssangyong.redhome.bean.Review_avg">
-        SELECT R.PRODUCT_NUM, R.GRADE_AVG, R.REVIEW_CNT
-        FROM
-        (
-        SELECT PRODUCT_NUM, AVG(REVIEW_GRADE) AS GRADE_AVG, COUNT(*) AS REVIEW_CNT
+    <select id="selectAvgReview" parameterType="Integer" resultType="com.ssangyong.redhome.bean.Review_avg">
+        SELECT PRODUCT_NUM, NVL(AVG(REVIEW_GRADE),0) AS GRADE_AVG, NVL(COUNT(*),0) AS REVIEW_CNT
         FROM REVIEW
+        WHERE PRODUCT_NUM = #{VALUE}
         GROUP BY PRODUCT_NUM
-        ) R,
-        (
-        SELECT * FROM PRODUCT
-        <if test="c_num != null">
-            <if test="c_num != 0">
-                WHERE PRODUCT_CATEGORY_NUM = #{c_num}
-            </if>
-        </if>
-        <if test="sort != null">
-            ORDER BY
-            <choose>
-                <when test='sort.equals("best")'>PRODUCT_QUANTITY_SOLD</when>
-                <when test='sort.equals("new")'>PRODUCT_NUM DESC</when>
-                <when test='sort.equals("high")'>PRODUCT_PRICE DESC</when>
-                <when test='sort.equals("low")'>PRODUCT_PRICE</when>
-            </choose>
-        </if>
-        ) P
-        WHERE R.PRODUCT_NUM = P.PRODUCT_NUM
+    </select>
+
+    <select id="selectReview" parameterType="Integer" resultType="com.ssangyong.redhome.bean.Review">
+        SELECT *
+        FROM REVIEW
+        WHERE PRODUCT_NUM = #{VALUE}
+    </select>
+
+    <select id="selectSaleList" resultType="com.ssangyong.redhome.bean.Product_sale_List">
+        select p.*, ps.sale_rate
+        from product p , product_sale ps
+        where p.product_num in (select product_num from product_sale) and p.product_num = ps.product_num
+    </select>
+
+    <select id="selectSaleOne" parameterType="Integer" resultType="com.ssangyong.redhome.bean.Product_sale">
+        SELECT *
+        FROM PRODUCT_SALE
+        WHERE PRODUCT_NUM = #{VALUE}
+    </select>
+
+    <select id="selectSaleProduct" parameterType="Integer" resultType="com.ssangyong.redhome.bean.Product">
+        SELECT *
+        FROM PRODUCT
+        WHERE product_num = ${VALUE}
     </select>
 
     <select id="selectProduct" parameterType="Integer" resultType="com.ssangyong.redhome.bean.Product">

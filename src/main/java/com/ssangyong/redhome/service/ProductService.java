@@ -1,8 +1,6 @@
 package com.ssangyong.redhome.service;
 
-import com.ssangyong.redhome.bean.Product;
-import com.ssangyong.redhome.bean.Review;
-import com.ssangyong.redhome.bean.Review_avg;
+import com.ssangyong.redhome.bean.*;
 
 import java.util.List;
 import java.util.Map;
@@ -11,15 +9,17 @@ public interface ProductService {
 
     List<Product> selectAllProduct();
 
-    List<Product> selectSaleProduct();
-
     List<Product> selectCateProduct(Map<String,Object> map);
 
-    List<Review_avg> selectAvgReview(Map<String,Object> map);
+    Review_avg selectAvgReview(int no);
 
     Product selectProduct(int no);
 
-    public void editProduct(Map<String, String> map);
+    List<Product_sale_List> selectSaleList();
+
+    Product_sale selectSaleOne(int no);
+
+    void editProduct(Map<String, String> map);
 
     void insertProduct(Product product);
 

@@ -180,11 +180,11 @@
             <address class="layout-footer__cs">
                 <div class="layout-footer__cs__row">
                     <a class="layout-footer__cs__link" href="#">
-                        고객센터>
+                        고객센터
                     </a>
                 </div>
                 <div class="layout-footer__cs__row">
-                    <a class="layout-footer__cs__tel" href="#">1670-0876</a>
+                    <a class="layout-footer__cs__tel" href="#">1670-1234</a>
                 </div>
                 <span class="layout-footer__cs__time">평일 09:00 ~ 18:00 (주말 &amp; 공휴일 제외)</span>
             </address>
@@ -229,42 +229,42 @@
                     <dt>
                         상호명
                     </dt>
-                    <dd>(주)버킷플레이스</dd>
+                    <dd>(주)윤하우스</dd>
                 </a>
                 <span class="layout-footer__info__item">
 							<dt>
 								이메일
 							</dt>
-							<dd>(고객문의)<a href="mailto:cs@bucketplace.net"> cs@bucketplace.net </a>(제휴문의)<a href="mailto:contact@bucketplace.net"> contact@bucketplace.net</a></dd>
+							<dd>(고객문의)<a href="mailto:cs@redhome.net"> cs@redhome.net </a>(제휴문의)<a href="mailto:contact@redhome.net"> contact@bucketplace.net</a></dd>
 						</span>
                 <span class="layout-footer__info__item">
 							<dt>대표이사</dt>
-							<dd>이승재</dd>
+							<dd>김윤하</dd>
 						</span>
                 <span class="layout-footer__info__item">
 							<dt>사업자등록번호</dt>
-							<dd>119-86-91245</dd>
+							<dd>119-86-123456</dd>
 						</span>
                 <span class="layout-footer__info__item">
 							<dt>통신판매업신고번호</dt>
-							<dd>제2018-서울서초-0580호</dd>
+							<dd>제2021-서울서초-0580호</dd>
 						</span>
                 <span class="layout-footer__info__item">
 							<dt>주소</dt>
-							<dd>서울 서초구 서초대로74길 4 삼성생명서초타워 27층</dd>
+							<dd>서울특별시 강남구 테헤란로 132 한독약품빌딩 8층</dd>
 						</span>
             </dl>
             <dl class="layout-footer__info">
 						<span class="layout-footer__info__item">
 							<dt>우리은행 채무지급보증안내</dt>
-							<dd>(주)버킷플레이스는 고객님이 현금결제한&nbsp; 금액에 대해 우리은행과 채무지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.&nbsp;<a class="layout-footer__info__item__link" href="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161646429944190689.jpg?gif=1&amp;w=1440" target="_blank" rel="noopener noreferrer">서비스가입사실 확인</a></dd>
+							<dd>(주)윤하우스는 고객님이 현금결제한&nbsp; 금액에 대해 우리은행과 채무지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.&nbsp;<a class="layout-footer__info__item__link" href="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161646429944190689.jpg?gif=1&amp;w=1440" target="_blank" rel="noopener noreferrer">서비스가입사실 확인</a></dd>
 						</span>
             </dl>
             <span class="layout-footer__info">
-						<span class="layout-footer__info__item">(주)버킷플레이스는 통신판매중개자로서 통신판매의 당사자가 아니며, 입점업체가 등록한 상품, 상품정보 및 거래에 대하여 (주)버킷플레이스는 일체 책임을 지지 않습니다.</span>
+						<span class="layout-footer__info__item">(주)윤하우스는 통신판매중개자로서 통신판매의 당사자가 아니며, 입점업체가 등록한 상품, 상품정보 및 거래에 대하여 (주)윤하우스는 일체 책임을 지지 않습니다.</span>
 					</span>
         </address>
-        <p class="layout-footer__copyright">Copyright 2014. bucketplace, Co., Ltd. All rights reserved</p>
+        <p class="layout-footer__copyright">Copyright 2021. redhome, Co., Ltd. All rights reserved</p>
     </div>
 </footer>
 </body>

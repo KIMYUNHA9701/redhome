@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 	<link rel="stylesheet" type="text/css" href="../../css/storeInfo.css"/>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 </head>
 <body>
    <div class="layout">
@@ -14,11 +15,9 @@
 			<div class="production-selling-overview container">
 				<nav class="commerce-category-breadcrumb-wrap production-selling-overview__category">
 					<ol class="commerce-category-breadcrumb">
-						<li class="commerce-category-breadcrumb__entry"><a class="link" href="/store/category?category=0&amp;affect_type= ProductSaleDetail&amp;affect_id=691947">가구</a><svg class="icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" preserveAspectRatio="xMidYMid meet"><path d="M4.95 4L2.12 1.19l.7-.71 3.54 3.54-3.53 3.53-.7-.7z"></path></svg></li>
-						<li class="commerce-category-breadcrumb__entry"><a class="link" href="/store/category?category=0_6&amp;affect_type= ProductSaleDetail&amp;affect_id=691947">주방가구</a><svg class="icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" preserveAspectRatio="xMidYMid meet"><path d="M4.95 4L2.12 1.19l.7-.71 3.54 3.54-3.53 3.53-.7-.7z"></path></svg></li>
-						<li class="commerce-category-breadcrumb__entry"><a class="link" href="/store/category?category=0_6_7&amp;affect_type= ProductSaleDetail&amp;affect_id=691947">식탁</a><svg class="icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" preserveAspectRatio="xMidYMid meet"><path d="M4.95 4L2.12 1.19l.7-.71 3.54 3.54-3.53 3.53-.7-.7z"></path></svg></li>
-						<li class="commerce-category-breadcrumb__entry"><a class="link" href="/store/category?category=0_6_7_1&amp;affect_type= ProductSaleDetail&amp;affect_id=691947">식탁단품</a></li>
-					</ol>
+						<li class="commerce-category-breadcrumb__entry"><a class="link" href="/store/category?category=0&amp;affect_type= ProductSaleDetail&amp;affect_id=691947">PC방</a><svg class="icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" preserveAspectRatio="xMidYMid meet"><path d="M4.95 4L2.12 1.19l.7-.71 3.54 3.54-3.53 3.53-.7-.7z"></path></svg></li>
+						<li class="commerce-category-breadcrumb__entry"><a class="link" href="/store/category?category=0_6&amp;affect_type= ProductSaleDetail&amp;affect_id=691947">책상</a><svg class="icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" preserveAspectRatio="xMidYMid meet"><path d="M4.95 4L2.12 1.19l.7-.71 3.54 3.54-3.53 3.53-.7-.7z"></path></svg></li>
+				</ol>
 				</nav>
 				<div class="production-selling-overview__container row">
 					<div class="production-selling-overview__cover-image-wrap col-12 col-md-6 col-lg-7">
@@ -27,9 +26,10 @@
 								<div class="carousel__list-wrap production-selling-cover-image__carousel-wrap">
 									<div class="carousel__list" style="transform: translateX(0%);">
 										<div class="carousel__list__entry production-selling-cover-image__entry" style="width: 100%">
-											<img class="production-selling-cover-image__entry__image" tabindex="0" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/161294321872157127.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/161294321872157127.jpg?gif=1&amp;w=960&amp;h=960&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/161294321872157127.jpg?gif=1&amp;w=1280&amp;h=1280&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/161294321872157127.jpg?gif=1&amp;w=1920&amp;h=1920&amp;c=c&amp;webp=1 3x">
+											<img class="production-selling-cover-image__entry__image" tabindex="0" src="../../img/productImg/${productDetail.product_img}">
+											<c:if test="${productSalePrice!='0'}">
 											<div class="production-selling-cover-image__timer--pc">
-												<a class="production-selling__timer" href="#">
+												<a  class="production-selling__timer" href="#">
 													<span class="production-selling__timer__title">
 														<svg class="production-selling__timer__title__time-icon" width="15" height="15" preserveAspectRatio="xMidYMid meet"><path fill="#FFC5C5" d="M13.125 7.5a5.625 5.625 0 10-11.25 0 5.625 5.625 0 0011.25 0zM7.5 0a7.5 7.5 0 110 15 7.5 7.5 0 010-15zm.759 3.75H6.562v4.589l3.326 2.035.805-1.45-2.434-1.5V3.75z"></path></svg>
 														오늘의딜
@@ -40,56 +40,17 @@
 													</svg>
 												</a>
 											</div>
+											</c:if>
 										</div>
 									</div>
 								</div>
-								<ul class="production-selling-cover-image__list">
-									<li class="production-selling-cover-image__list__item">
-										<button class="production-selling-cover-image__list__btn production-selling-cover-image__list__btn--selected" type="button" aria-label="7개 중 1번째 항목">
-											<img class="image" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/161294321872157127.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/161294321872157127.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/161294321872157127.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/161294321872157127.jpg?gif=1&amp;w=240&amp;h=240&amp;c=c&amp;webp=1 3x">											
-										</button>
-									</li>							
-									<li class="production-selling-cover-image__list__item">
-										<button class="production-selling-cover-image__list__btn" type="button" aria-label="7개 중 2번째 항목">
-											<img class="image" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161251177210999908.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161251177210999908.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161251177210999908.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161251177210999908.jpg?gif=1&amp;w=240&amp;h=240&amp;c=c&amp;webp=1 3x">
-										</button>
-									</li>
-									<li class="production-selling-cover-image__list__item">
-										<button class="production-selling-cover-image__list__btn" type="button" aria-label="7개 중 3번째 항목">
-											<img class="image" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285610649185115.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285610649185115.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285610649185115.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285610649185115.jpg?gif=1&amp;w=240&amp;h=240&amp;c=c&amp;webp=1 3x">
-										</button>
-									</li>
-									<li class="production-selling-cover-image__list__item">
-										<button class="production-selling-cover-image__list__btn" type="button" aria-label="7개 중 4번째 항목">
-											<img class="image" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285642826041373.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285642826041373.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285642826041373.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285642826041373.jpg?gif=1&amp;w=240&amp;h=240&amp;c=c&amp;webp=1 3x">
-										</button>
-									</li>
-									<li class="production-selling-cover-image__list__item">
-										<button class="production-selling-cover-image__list__btn" type="button" aria-label="7개 중 5번째 항목">
-											<img class="image" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285667624210443.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285667624210443.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285667624210443.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285667624210443.jpg?gif=1&amp;w=240&amp;h=240&amp;c=c&amp;webp=1 3x">
-										</button>
-									</li>
-									<li class="production-selling-cover-image__list__item">
-										<button class="production-selling-cover-image__list__btn" type="button" aria-label="7개 중 6번째 항목">
-											<img class="image" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285690279401908.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285690279401908.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285690279401908.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285690279401908.jpg?gif=1&amp;w=240&amp;h=240&amp;c=c&amp;webp=1 3x">
-										</button>
-									</li>
-									<li class="production-selling-cover-image__list__item">
-										<button class="production-selling-cover-image__list__btn" type="button" aria-label="7개 중 7번째 항목">
-											<img class="image" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161407081577252990.jpg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161407081577252990.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161407081577252990.jpg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161407081577252990.jpg?gif=1&amp;w=240&amp;h=240&amp;c=c&amp;webp=1 3x">
-										</button>
-									</li>
-								</ul>
 							</div>
 						</div>
-					</div>		
+					</div>
 					<div class="production-selling-overview__content col-12 col-md-6 col-lg-5">
 						<div class="production-selling-header">
 							<h1 class="production-selling-header__title">
-								<p class="production-selling-header__title__brand-wrap">
-									<a class="production-selling-header__title__brand" href="#">보니애가구</a>									
-								</p>
-								<span class="production-selling-header__title__name">헤네시 화이트 반타원/원형 원목 테이블 6종</span>
+								<span class="production-selling-header__title__name">${productDetail.product_name}</span>
 							</h1>
 							<div class="production-selling-header__content production-selling-header__content--deal">
 								<div class="production-selling-header__action">
@@ -129,7 +90,7 @@
 											<svg fill="#ed4a4a" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
 												<defs><path id="star-path-3" d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"></path><clipPath id="star-clip-3"><rect x="0" y="0" width="24" height="24"></rect></clipPath></defs>
 												<use xlink:href="#star-path-3" fill="#DBDBDB"></use>
-												<use clip-path="url(#star-clip-3)" xlink:href="#star-path-3"></use>
+												<use clip-path="url(#star-clip-3)" xlink:href="#star-path-3"></use>ㄹ
 											</svg>
 											<svg fill="#ed4a4a" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
 												<defs><path id="star-path-4" d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"></path><clipPath id="star-clip-4"><rect x="0" y="0" width="16.145454545454548" height="24"></rect></clipPath></defs>
@@ -138,23 +99,33 @@
 											</svg>
 										</span>
 										<span class="production-selling-header__review__text">
-											<span class="number">55</span>
+											<span class="number">${r_cnt}</span>
 											<span class="postfix">개 리뷰</span>
 										</span>
 									</a>
 								</p>
+                                <p class="production-selling-header__price">
+                                    <span class="production-selling-header__price__row">
+                                        <span class="production-selling-header__price__price-wrap">
+                                            <span class="production-selling-header__price__price">
+                                                <span class="number">${productPrice}</span>
+                                                <span class="won">원</span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </p>
+                                <c:if test="${productSalePrice!='0'}">
 								<p class="production-selling-header__price">
 									<span class="production-selling-header__price__row">
 										<span class="production-selling-header__price__discount">
-											<span class="number">76</span>
+											<span class="number">${sale_rate}</span>
 											<span class="percent">%</span>
 											&nbsp;
 										</span>
 										<span class="production-selling-header__price__price-wrap">
 											<span class="production-selling-header__price__price">
-												<span class="number">98,000</span>
+												<span class="number">${productSalePrice}</span>
 												<span class="won">원</span>
-												<span class="won"> 외</span>
 												<span class="production-selling-header__price__badge">
 													<svg class="icon" aria-label="특가" width="30" height="20" viewBox="0 0 30 20" preserveAspectRatio="xMidYMid meet"><rect width="30" height="20" fill="#F77" rx="4"></rect><path fill="#fff" d="M12.83 7.93v-.97H7.93v-.555h5.228v-.991H6.655v4.063h6.59v-.992H7.928V7.93h4.901zm-6.295 3.747v1.002h5.326v2.037h1.274v-3.04h-6.6zm7.733-.588v-1.024H5.5v1.024h8.768zM23.91 9.782V8.725h-1.405V5H21.24v9.705h1.264V9.782h1.405zm-3.954-3.79h-4.53v1.056h3.147c-.174 1.938-1.623 3.975-3.736 4.945l.773.958c2.974-1.612 4.259-4.03 4.346-6.96z"></path></svg>
 												</span>
@@ -162,6 +133,7 @@
 										</span>
 									</span>
 								</p>
+								</c:if>
 							</div>
 							<p class="production-selling-header__delivery production-selling-header__delivery--deal">
 								<span class="production-selling-header__delivery__type">
@@ -177,17 +149,6 @@
 									<span class="production-selling-header__delivery__disclaimer">제주도/도서산간 지역 배송 불가</span>
 								</span>
 							</p>
-							<a class="production-selling-header__seller production-selling-header__seller--simple" href="/brand_pages/18/home?affect_type=ProductSaleDetail&amp;affect_id=691947">
-								<span class="production-selling-header__seller__text">
-									<svg class="icon" width="20" height="20" fill="currentColor" viewBox="0 0 20 20" preserveAspectRatio="xMidYMid meet">
-										<path d="M16.67 3.33H3.33V5h13.34V3.33zm.83 8.34V10l-.83-4.17H3.33L2.5 10v1.67h.83v5h8.34v-5H15v5h1.67v-5h.83zM10 15H5v-3.33h5V15z"></path>
-									</svg> 
-									<!-- -->
-									보니애가구
-									<!-- --> 
-									브랜드홈
-								</span>
-							</a>
 						</div>
 						<div class="production-selling-option-form production-selling-overview__option-form">
 							<div class="selling-option-form-content deal-selling-option-form-content production-selling-option-form__form">
@@ -215,17 +176,11 @@
 								</p>
 							</div>
 							<div class="production-selling-option-form__footer">
-								<button class="button button--color-blue-inverted button--size-55 button--shape-4" type="button">장바구니</button>
-								<button class="button button--color-blue button--size-55 button--shape-4" type="button">바로구매</button>
+								<button class="button button--color-blue-inverted button--size-55 button--shape-4" type="button"><a href="/cart">장바구니</a></button>
+								<button class="button button--color-blue button--size-55 button--shape-4" type="button"><a href="/payment">바로구매</a></button>
 							</div>			
 						</div>
-						<div class="production-selling-overview__promotion-banner">
-							<a class="production-selling-promotion-banner" href="#">
-								<img class="production-selling-promotion-banner__image production-selling-promotion-banner__image--pc" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/admins/production_promotions/event/161821025911292222.jpg?gif=1&amp;w=480&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/admins/production_promotions/event/161821025911292222.jpg?gif=1&amp;w=720&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/admins/production_promotions/event/161821025911292222.jpg?gif=1&amp;w=960&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/admins/production_promotions/event/161821025911292222.jpg?gif=1&amp;w=1440&amp;webp=1 3x">
-								<img class="production-selling-promotion-banner__image production-selling-promotion-banner__image--mobile" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/admins/production_promotions/event/161821026329046902.jpg?gif=1&amp;w=240&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/admins/production_promotions/event/161821026329046902.jpg?gif=1&amp;w=360&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/admins/production_promotions/event/161821026329046902.jpg?gif=1&amp;w=480&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/admins/production_promotions/event/161821026329046902.jpg?gif=1&amp;w=720&amp;webp=1 3x">							
-							</a>
-						</div>
-					</div>		
+					</div>
 				</div>
 			</div>
 			<div class="production-selling-navigation-border"></div>
@@ -237,16 +192,7 @@
 								<a class="production-selling-navigation__item production-selling-navigation__item--active" href="#production-selling-information">상품정보</a>
 							</li>
 							<li>
-								<a class="production-selling-navigation__item" href="#production-selling-review">리뷰<span class="production-selling-navigation__item__count">55</span></a>
-							</li>
-							<li>
-								<a class="production-selling-navigation__item" href="#production-selling-question">문의<span class="production-selling-navigation__item__count">91</span></a>
-							</li>
-							<li>
-								<a class="production-selling-navigation__item" href="#production-selling-delivery">배송/환불</a>
-							</li>
-							<li>
-								<a class="production-selling-navigation__item" href="#production-selling-suggestion">추천</a>
+								<a class="production-selling-navigation__item" href="#production-selling-review">리뷰<span class="production-selling-navigation__item__count">${r_cnt}</span></a>
 							</li>
 						</ol>
 					</nav>
@@ -259,134 +205,6 @@
 				<div class="production-selling-detail-wrap row">
 					<div class="production-selling__detail__content col-12 col-lg-8">
 						<div class="production-selling-content">
-							<div class="production-selling-content__card-gallery">
-								<section class="production-selling-section">
-									<header class="production-selling-section__header">
-										<h1 class="production-selling-section__title">
-											유저들의 스타일링샷 
-											<span class="count">41</span>
-										</h1>
-										<div class="production-selling-section__right">
-											<a href="/productions/691947/used_card?deal_id=691947">
-												<svg class="gallery__right-arrow" viewBox="0 0 8 14" preserveAspectRatio="xMidYMid meet"><g fill="currentcolor" fill-rule="evenodd" transform="translate(-4 -1)"><path d="M4 13.1L9 8 4 2.9l1.5-1.6L12 8l-6.5 6.7z"></path></g></svg>
-											</a>
-										</div>
-									</header>
-									<div class="used-card-gallery">
-										<div class="carousel used-card-gallery__carousel" role="region" aria-roledescription="carousel">
-											<div class="carousel__list-wrap used-card-gallery__carousel-wrap">
-												<div class="carousel__list" aria-live="polite" style="transform: translateX(-67.4855%);">
-													<div class="carousel__list__entry wrapped used-card-gallery__carousel__entry" role="group" aria-roledescription="slide" style="width: 78.3237%;">
-														<div class="used-card-gallery__empty-item used-card-gallery__empty-item--right">
-															<div class="used-card-gallery__empty-item__image-wrap"></div>
-														</div>
-													</div>
-													<div class="carousel__list__entry used-card-gallery__carousel__entry" role="group" aria-roledescription="slide" aria-label="1 of 40" style="width: 78.3237%;">
-														<article class="used-card-gallery__item">
-															<a class="used-card-gallery__item__image-wrap" tabindex="0" href="/contents/card_collections/6918448?affect_type=ProductSaleDetailCards&amp;affect_id=691947">
-																<div class="used-card-gallery__item__image" style="position: relative; overflow: hidden;">
-																	<div style="position: absolute; top: -13.2509%; width: 100%;">
-																		<div style="position: absolute; top: -13.2509%; width: 100%;">
-																			<img alt="아하허하님의 사진" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1614325124_7rNRazN.jpeg?gif=1&amp;w=640&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1614325124_7rNRazN.jpeg?gif=1&amp;w=850&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1614325124_7rNRazN.jpeg?gif=1&amp;w=1080&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1614325124_7rNRazN.jpeg?gif=1&amp;w=1700&amp;webp=1 3x" style="width: 100%;">
-																		</div>
-																	</div>
-																</div>
-															</a>
-															<div class="used-card-gallery__item__footer">
-																<address class="used-card-gallery__item__author-wrap">
-																	<a class="used-card-gallery__item__author" tabindex="0" href="/users/11513429?affect_type=ProductSaleDetailCards&amp;affect_id=691947"><img class="used-card-gallery__item__author__image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=36&amp;h=36&amp;c=c&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 3x">
-																	아하허하
-																	</a>
-																</address>
-																<div class="used-card-gallery__item__position">
-																1/41
-																</div>
-															</div>
-														</article>
-													</div>
-													<div class="carousel__list__entry used-card-gallery__carousel__entry" role="group" aria-roledescription="slide" aria-label="2 of 40" style="width: 78.3237%;">
-														<article class="used-card-gallery__item">
-															<a class="used-card-gallery__item__image-wrap" tabindex="-1" href="/contents/card_collections/7647085?affect_type=ProductSaleDetailCards&amp;affect_id=691947">
-																<div class="used-card-gallery__item__image" style="position: relative; overflow: hidden;">
-																	<div style="position: absolute; top: -33.3922%; width: 100%;">
-																		<img alt="biny5738님의 사진" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161840805328476983.jpeg?gif=1&amp;w=640&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161840805328476983.jpeg?gif=1&amp;w=850&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161840805328476983.jpeg?gif=1&amp;w=1080&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161840805328476983.jpeg?gif=1&amp;w=1700&amp;webp=1 3x" style="width: 100%;">
-																	</div>
-																</div>
-															</a>
-															<div class="used-card-gallery__item__footer">
-																<address class="used-card-gallery__item__author-wrap">
-																	<a class="used-card-gallery__item__author" tabindex="-1" href="/users/912458?affect_type=ProductSaleDetailCards&amp;affect_id=691947"><img class="used-card-gallery__item__author__image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/1498555622_g.jpeg?gif=1&amp;w=36&amp;h=36&amp;c=c&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/1498555622_g.jpeg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/1498555622_g.jpeg?gif=1&amp;w=72&amp;h=72&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/users/profile_images/1498555622_g.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c&amp;webp=1 3x">
-																	biny5738
-																	</a>
-																</address>
-															<div class="used-card-gallery__item__position">
-																		2/41
-															</div>
-															</div>
-														</article>
-													</div>
-												</div>
-											</div>	
-										</div>
-										<div class="carousel used-card-gallery__thumbnail-list" role="region" aria-roledescription="carousel">
-											<div class="carousel__list-wrap used-card-gallery__thumbnail-list-wrap">
-												<div class="carousel__list" aria-live="polite" style="transform: translateX(0%); transition: transform 0.35s ease 0s;">
-													<div class="carousel__list__entry used-card-gallery__thumbnail-list__entry" role="group" aria-roledescription="slide" aria-label="1 of 40" style="width: 10.8382%;">
-														<button class="used-card-gallery__thumbnail-item used-card-gallery__thumbnail-item--selected" type="button">
-															<img class="used-card-gallery__thumbnail-item__image" alt="아하허하님의 사진" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1614325124_7rNRazN.jpeg?gif=1&amp;w=720&amp;h=720&amp;c=c" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1614325124_7rNRazN.jpeg?gif=1&amp;w=1080&amp;h=1080&amp;c=c 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1614325124_7rNRazN.jpeg?gif=1&amp;w=1440&amp;h=1440&amp;c=c 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1614325124_7rNRazN.jpeg?gif=1&amp;w=2560&amp;h=2560&amp;c=c 3x">
-														</button>
-													</div>
-													<div class="carousel__list__entry used-card-gallery__thumbnail-list__entry" role="group" aria-roledescription="slide" aria-label="2 of 40" style="width: 10.8382%;">
-														<button class="used-card-gallery__thumbnail-item" type="button">
-															<img class="used-card-gallery__thumbnail-item__image" alt="biny5738님의 사진" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161840805328476983.jpeg?gif=1&amp;w=72&amp;h=72&amp;c=c" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161840805328476983.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161840805328476983.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161840805328476983.jpeg?gif=1&amp;w=240&amp;h=240&amp;c=c 3x">
-														</button>
-													</div>
-													<div class="carousel__list__entry used-card-gallery__thumbnail-list__entry" role="group" aria-roledescription="slide" aria-label="3 of 40" style="width: 10.8382%;">
-														<button class="used-card-gallery__thumbnail-item" type="button">
-															<img class="used-card-gallery__thumbnail-item__image" alt="박영종11님의 사진" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1616777160_0Y4.jpeg?gif=1&amp;w=72&amp;h=72&amp;c=c" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1616777160_0Y4.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1616777160_0Y4.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1616777160_0Y4.jpeg?gif=1&amp;w=240&amp;h=240&amp;c=c 3x">
-														</button>
-													</div>
-													<div class="carousel__list__entry used-card-gallery__thumbnail-list__entry" role="group" aria-roledescription="slide" aria-label="4 of 40" style="width: 10.8382%;">
-														<button class="used-card-gallery__thumbnail-item" type="button">
-															<img class="used-card-gallery__thumbnail-item__image" alt="아하허하님의 사진" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1614162536_0CB9dM.jpeg?gif=1&amp;w=72&amp;h=72&amp;c=c" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1614162536_0CB9dM.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1614162536_0CB9dM.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1614162536_0CB9dM.jpeg?gif=1&amp;w=240&amp;h=240&amp;c=c 3x">
-														</button>
-													</div>
-													<div class="carousel__list__entry used-card-gallery__thumbnail-list__entry" role="group" aria-roledescription="slide" aria-label="5 of 40" style="width: 10.8382%;">
-														<button class="used-card-gallery__thumbnail-item" type="button">
-															<img class="used-card-gallery__thumbnail-item__image" alt="거북이와두룹이님의 사진" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161608406916859408.jpeg?gif=1&amp;w=72&amp;h=72&amp;c=c" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161608406916859408.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161608406916859408.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161608406916859408.jpeg?gif=1&amp;w=240&amp;h=240&amp;c=c 3x">
-														</button>
-													</div>
-													<div class="carousel__list__entry used-card-gallery__thumbnail-list__entry" role="group" aria-roledescription="slide" aria-label="6 of 40" style="width: 10.8382%;">
-														<button class="used-card-gallery__thumbnail-item" type="button">
-															<img class="used-card-gallery__thumbnail-item__image" alt="h.a-2님의 사진" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161726912221693165.jpeg?gif=1&amp;w=72&amp;h=72&amp;c=c" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161726912221693165.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161726912221693165.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161726912221693165.jpeg?gif=1&amp;w=240&amp;h=240&amp;c=c 3x">
-														</button>
-													</div>
-													<div class="carousel__list__entry used-card-gallery__thumbnail-list__entry" role="group" aria-roledescription="slide" aria-label="7 of 40" style="width: 10.8382%;">
-														<button class="used-card-gallery__thumbnail-item" type="button">
-															<img class="used-card-gallery__thumbnail-item__image" alt="BH00님의 사진" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1618323350_S0R8lBS2.jpeg?gif=1&amp;w=72&amp;h=72&amp;c=c" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1618323350_S0R8lBS2.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1618323350_S0R8lBS2.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1618323350_S0R8lBS2.jpeg?gif=1&amp;w=240&amp;h=240&amp;c=c 3x">
-														</button>
-													</div>
-													<div class="carousel__list__entry used-card-gallery__thumbnail-list__entry" role="group" aria-roledescription="slide" aria-label="8 of 40" style="width: 10.8382%;">
-														<button class="used-card-gallery__thumbnail-item" type="button">
-															<img class="used-card-gallery__thumbnail-item__image" alt="똘멩이야님의 사진" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1618042987_Rbe.jpeg?gif=1&amp;w=72&amp;h=72&amp;c=c" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1618042987_Rbe.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1618042987_Rbe.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1618042987_Rbe.jpeg?gif=1&amp;w=240&amp;h=240&amp;c=c 3x">
-														</button>
-													</div>
-													<div class="carousel__list__entry used-card-gallery__thumbnail-list__entry" role="group" aria-roledescription="slide" aria-label="9 of 40" style="width: 10.8382%;">
-														<button class="used-card-gallery__thumbnail-item" type="button">
-															<img class="used-card-gallery__thumbnail-item__image" alt="luv_yunseul님의 사진" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161670771252254317.jpeg?gif=1&amp;w=72&amp;h=72&amp;c=c" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161670771252254317.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161670771252254317.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161670771252254317.jpeg?gif=1&amp;w=240&amp;h=240&amp;c=c 3x">
-														</button>
-													</div>
-													<div class="carousel__list__entry used-card-gallery__thumbnail-list__entry" role="group" aria-roledescription="slide" aria-label="10 of 40" style="width: 10.8382%;">
-														<button class="used-card-gallery__thumbnail-item" type="button">
-															<img class="used-card-gallery__thumbnail-item__image" alt="대댕찌님의 사진" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161398405899093707.jpeg?gif=1&amp;w=72&amp;h=72&amp;c=c" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161398405899093707.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161398405899093707.jpeg?gif=1&amp;w=144&amp;h=144&amp;c=c 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161398405899093707.jpeg?gif=1&amp;w=240&amp;h=240&amp;c=c 3x">
-														</button>
-													</div>
-												</div>											
-											</div>
-										</div>
-									</div>
-								</section>
-							</div>
 							<a id="production-selling-information"></a>
 							<div class="production-selling-description production-selling-description--notice production-selling-description--open">
 								<ul class="production-selling-description__delivery-notice">
@@ -395,383 +213,30 @@
 									<li>주문확인 이후에는 구매 취소와 배송지 변경이 불가합니다.</li>
 								</ul>
 								<div class="production-selling-description__content">
-									<img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/descriptions/1_1618454574562_OoHI2nrv.jpg?gif=1&amp;w=720" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/descriptions/1_1618454574562_OoHI2nrv.jpg?gif=1&amp;w=1080 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/descriptions/1_1618454574562_OoHI2nrv.jpg?gif=1&amp;w=1440 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/descriptions/1_1618454574562_OoHI2nrv.jpg?gif=1&amp;w=2560 3x">
+
+									<img src="../../img/productDetailImg/${imgName}">
 								</div>
 							</div>
-							<section class="deal-production">
-								<div class="row deal-production__list">
-									<div class="col-lg-4 col-md-4 col-12 deal-production__list__item">
-										<div class="deal-production-item__wrapper">
-											<article class="deal-production-item">
-												<a class="deal-production-item__overlay" href="/productions/691947/selling?affect_type=CategoryMDpicks&amp;affect_id=0#685963"></a>
-												<div class="deal-production-item__image">
-													<div class="deal-production-item__image__item">
-														<div class="production-item-image">
-															<img class="image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161251177210999908.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;q=0.8" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161251177210999908.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;q=0.8 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161251177210999908.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;q=0.8 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161251177210999908.jpg?gif=1&amp;w=1080&amp;h=1080&amp;c=c&amp;q=0.8 3x">
-															<button class="production-item-scrap-badge production-item-image__scrap-badge" type="button">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
-																	<defs><path id="scrap-icon-2-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path><filter id="scrap-icon-2-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix></filter><filter id="scrap-icon-2-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur><feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset><feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite><feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix></filter></defs><g fill="none" fill-rule="nonzero" transform="matrix(1 0 0 -1 0 24)"><use fill="#000" filter="url(#scrap-icon-2-a)" href="#scrap-icon-2-b"></use><use fill="#FFF" fill-opacity=".4" href="#scrap-icon-2-b"></use><use fill="#000" filter="url(#scrap-icon-2-c)" href="#scrap-icon-2-b"></use><path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path></g></svg><svg class="active-icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="#35C5F0" fill-rule="nonzero" d="M12.472 17.07a.999.999 0 0 0-.944 0l-7.056 3.811A.999.999 0 0 1 3 19.998V4.502C3 3.672 3.672 3 4.5 3h15c.828 0 1.5.673 1.5 1.502v15.496a1 1 0 0 1-1.472.883l-7.056-3.811z"></path>
-																</svg>
-															</button>
-															<div class="production-item-image__dark-overlay"></div>
-														</div>
-														<div class="deal-production-item__image__item__index">1</div>
-													</div>
-												</div>
-												<div class="deal-production-item__content">
-													<div class="deal-production-item__content--wrap">
-														<h1 class="deal-production-item__header">
-															<span class="deal-production-item__header__index">선택 1</span>
-															<span class="deal-production-item__header__name">헤네시 1200 고무나무 원목 반타원 화이트 식탁 테이블 단품</span>
-														</h1>
-														<div class="deal-production-item__stats-mobile">
-															<p class="production-item-stats production-item-stats--review">
-																<svg class="icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
-																	<path fill="currentColor" fill-rule="evenodd" d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"></path>
-																</svg>
-																<strong class="avg">4.7</strong>
-																 리뷰 20
-															</p>
-														</div>
-														<span class="production-item-price">
-															<span class="production-item-price__rate">76<span class="percentage">% </span></span>
-															<span class="production-item-price__price">98,000</span>
-														</span>
-														<div class="deal-production-item__stats-pc">
-															<p class="production-item-stats production-item-stats--review">
-																<svg class="icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"></path></svg>
-																<strong class="avg">4.7</strong>
-																 리뷰 20
-															</p>
-														</div>
-														<span class="production-item-badge-list">
-															<svg class="icon" aria-label="무료배송" width="47" height="20" viewBox="0 0 47 20" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><rect width="47" height="20" fill="#000" fill-opacity=".07" fill-rule="nonzero" rx="4"></rect><path fill="#757575" d="M12.73 5.38v3.96h-6.6V5.38h6.6zm-2.68 9.43H8.76v-3.25H5v-1.03h8.86v1.03h-3.81v3.25zm1.4-6.49V6.41H7.43v1.91h4.04zm11.08 2.7h-1.42v1.54h2.26v1.02h-8.86v-1.02h2.24v-1.53h-1.1V7.78h5.32V6.65H15.6V5.63h6.66V8.8h-5.33v1.18h5.61v1.04zm-4.53 0v1.54h1.87v-1.53H18zm14.37 3.78h-1.23V9.86h-.8v4.49h-1.2V5.18h1.2v3.66h.8V5h1.23v9.8zm-4.2-2.54h-3.9V6.01h1.27v2.26h1.36V6h1.28v6.26zm-1.27-1.01v-2h-1.36v2h1.36zm14.49 1.71c0 1.13-1.25 1.82-3.41 1.82s-3.42-.7-3.42-1.82 1.25-1.82 3.4-1.82c2.18 0 3.43.7 3.43 1.82zm-3.41-6.05c-.5 1.13-2.1 1.9-3.51 2.1l-.54-1c1.64-.17 3.39-1.06 3.39-2.54V5.2h1.33v.28c0 1.48 1.99 2.47 3.4 2.53l-.55 1.01c-1.31-.18-3.03-.97-3.52-2.1zm4.42 3.78h-8.86V9.66h3.79V8.4h1.29v1.26h3.78v1.03zm-2.33 2.27c0-.5-.83-.8-2.1-.8s-2.08.3-2.08.8c0 .51.81.8 2.08.8s2.1-.29 2.1-.8z"></path></g></svg><svg class="icon" aria-label="특가" width="30" height="20" viewBox="0 0 30 20" preserveAspectRatio="xMidYMid meet"><rect width="30" height="20" fill="#F77" rx="4"></rect><path fill="#fff" d="M12.83 7.93v-.97H7.93v-.555h5.228v-.991H6.655v4.063h6.59v-.992H7.928V7.93h4.901zm-6.295 3.747v1.002h5.326v2.037h1.274v-3.04h-6.6zm7.733-.588v-1.024H5.5v1.024h8.768zM23.91 9.782V8.725h-1.405V5H21.24v9.705h1.264V9.782h1.405zm-3.954-3.79h-4.53v1.056h3.147c-.174 1.938-1.623 3.975-3.736 4.945l.773.958c2.974-1.612 4.259-4.03 4.346-6.96z"></path></svg>
-														</span>
-													</div>
-												</div>
-											</article>
-										</div>
-									</div><!-- 1 -->
-									<div class="col-lg-4 col-md-4 col-12 deal-production__list__item">
-										<div class="deal-production-item__wrapper">
-											<article class="deal-production-item">
-												<a class="deal-production-item__overlay" href="/productions/691947/selling?affect_type=CategoryMDpicks&amp;affect_id=0#690159"></a>
-												<div class="deal-production-item__image">
-													<div class="deal-production-item__image__item">
-														<div class="production-item-image">
-															<img class="image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285610649185115.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;q=0.8" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285610649185115.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;q=0.8 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285610649185115.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;q=0.8 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285610649185115.jpg?gif=1&amp;w=1080&amp;h=1080&amp;c=c&amp;q=0.8 3x">
-															<button class="production-item-scrap-badge production-item-image__scrap-badge" type="button">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
-																	<defs><path id="scrap-icon-3-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path><filter id="scrap-icon-3-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix></filter><filter id="scrap-icon-3-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur><feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset><feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite><feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix></filter></defs>
-																	<g fill="none" fill-rule="nonzero" transform="matrix(1 0 0 -1 0 24)"><use fill="#000" filter="url(#scrap-icon-3-a)" href="#scrap-icon-3-b"></use><use fill="#FFF" fill-opacity=".4" href="#scrap-icon-3-b"></use><use fill="#000" filter="url(#scrap-icon-3-c)" href="#scrap-icon-3-b"></use><path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path></g>
-																</svg>
-																<svg class="active-icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
-																	<path fill="#35C5F0" fill-rule="nonzero" d="M12.472 17.07a.999.999 0 0 0-.944 0l-7.056 3.811A.999.999 0 0 1 3 19.998V4.502C3 3.672 3.672 3 4.5 3h15c.828 0 1.5.673 1.5 1.502v15.496a1 1 0 0 1-1.472.883l-7.056-3.811z"></path>
-																</svg>
-															</button>
-															<div class="production-item-image__dark-overlay"></div>
-														</div>
-														<div class="deal-production-item__image__item__index">2</div>
-													</div>
-												</div>
-												<div class="deal-production-item__content">
-													<div class="deal-production-item__content--wrap">
-														<h1 class="deal-production-item__header">
-															<span class="deal-production-item__header__index">선택 2</span>
-															<span class="deal-production-item__header__name">헤네시 1200 고무나무 원목 반타원 화이트 식탁세트 4인용 (노블 벤치형)</span>
-														</h1>
-														<div class="deal-production-item__stats-mobile">
-															<p class="production-item-stats production-item-stats--review">
-																<svg class="icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"></path>
-																</svg>
-																<strong class="avg">4.6</strong>
-																 리뷰 11
-															</p>
-														</div>
-														<span class="production-item-price">
-															<span class="production-item-price__rate">64<span class="percentage">% </span></span>
-															<span class="production-item-price__price">168,000</span>
-														</span>
-														<div class="deal-production-item__stats-pc">
-															<p class="production-item-stats production-item-stats--review">
-																<svg class="icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"></path>
-																</svg>
-																<strong class="avg">4.6</strong>
-																 리뷰 11
-															</p>
-														</div>
-														<span class="production-item-badge-list">
-															<svg class="icon" aria-label="무료배송" width="47" height="20" viewBox="0 0 47 20" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><rect width="47" height="20" fill="#000" fill-opacity=".07" fill-rule="nonzero" rx="4"></rect><path fill="#757575" d="M12.73 5.38v3.96h-6.6V5.38h6.6zm-2.68 9.43H8.76v-3.25H5v-1.03h8.86v1.03h-3.81v3.25zm1.4-6.49V6.41H7.43v1.91h4.04zm11.08 2.7h-1.42v1.54h2.26v1.02h-8.86v-1.02h2.24v-1.53h-1.1V7.78h5.32V6.65H15.6V5.63h6.66V8.8h-5.33v1.18h5.61v1.04zm-4.53 0v1.54h1.87v-1.53H18zm14.37 3.78h-1.23V9.86h-.8v4.49h-1.2V5.18h1.2v3.66h.8V5h1.23v9.8zm-4.2-2.54h-3.9V6.01h1.27v2.26h1.36V6h1.28v6.26zm-1.27-1.01v-2h-1.36v2h1.36zm14.49 1.71c0 1.13-1.25 1.82-3.41 1.82s-3.42-.7-3.42-1.82 1.25-1.82 3.4-1.82c2.18 0 3.43.7 3.43 1.82zm-3.41-6.05c-.5 1.13-2.1 1.9-3.51 2.1l-.54-1c1.64-.17 3.39-1.06 3.39-2.54V5.2h1.33v.28c0 1.48 1.99 2.47 3.4 2.53l-.55 1.01c-1.31-.18-3.03-.97-3.52-2.1zm4.42 3.78h-8.86V9.66h3.79V8.4h1.29v1.26h3.78v1.03zm-2.33 2.27c0-.5-.83-.8-2.1-.8s-2.08.3-2.08.8c0 .51.81.8 2.08.8s2.1-.29 2.1-.8z"></path></g>
-															</svg>
-															<svg class="icon" aria-label="특가" width="30" height="20" viewBox="0 0 30 20" preserveAspectRatio="xMidYMid meet"><rect width="30" height="20" fill="#F77" rx="4"></rect><path fill="#fff" d="M12.83 7.93v-.97H7.93v-.555h5.228v-.991H6.655v4.063h6.59v-.992H7.928V7.93h4.901zm-6.295 3.747v1.002h5.326v2.037h1.274v-3.04h-6.6zm7.733-.588v-1.024H5.5v1.024h8.768zM23.91 9.782V8.725h-1.405V5H21.24v9.705h1.264V9.782h1.405zm-3.954-3.79h-4.53v1.056h3.147c-.174 1.938-1.623 3.975-3.736 4.945l.773.958c2.974-1.612 4.259-4.03 4.346-6.96z"></path></svg>
-														</span>
-													</div>
-												</div>
-											</article>
-										</div>
-									</div><!-- 2 -->
-									<div class="col-lg-4 col-md-4 col-12 deal-production__list__item">
-											<div class="deal-production-item__wrapper">
-												<article class="deal-production-item">
-													<a class="deal-production-item__overlay" href="/productions/691947/selling?affect_type=CategoryMDpicks&amp;affect_id=0#690166"></a>
-													<div class="deal-production-item__image">
-														<div class="deal-production-item__image__item">
-															<div class="production-item-image">
-																<img class="image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285642826041373.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;q=0.8" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285642826041373.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;q=0.8 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285642826041373.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;q=0.8 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285642826041373.jpg?gif=1&amp;w=1080&amp;h=1080&amp;c=c&amp;q=0.8 3x">
-																<button class="production-item-scrap-badge production-item-image__scrap-badge" type="button">
-																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
-																		<defs><path id="scrap-icon-4-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path><filter id="scrap-icon-4-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix></filter><filter id="scrap-icon-4-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur><feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset><feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite><feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix></filter></defs>
-																		<g fill="none" fill-rule="nonzero" transform="matrix(1 0 0 -1 0 24)"><use fill="#000" filter="url(#scrap-icon-4-a)" href="#scrap-icon-4-b"></use><use fill="#FFF" fill-opacity=".4" href="#scrap-icon-4-b"></use><use fill="#000" filter="url(#scrap-icon-4-c)" href="#scrap-icon-4-b"></use><path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path></g>
-																	</svg>
-																	<svg class="active-icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
-																		<path fill="#35C5F0" fill-rule="nonzero" d="M12.472 17.07a.999.999 0 0 0-.944 0l-7.056 3.811A.999.999 0 0 1 3 19.998V4.502C3 3.672 3.672 3 4.5 3h15c.828 0 1.5.673 1.5 1.502v15.496a1 1 0 0 1-1.472.883l-7.056-3.811z"></path>
-																	</svg>
-																</button>
-																<div class="production-item-image__dark-overlay">
-															</div>
-														</div>
-														<div class="deal-production-item__image__item__index">3</div>
-													</div>
-												</div>
-												<div class="deal-production-item__content">
-													<div class="deal-production-item__content--wrap">
-														<h1 class="deal-production-item__header">
-															<span class="deal-production-item__header__index">선택 3</span>
-															<span class="deal-production-item__header__name">헤네시 1200 고무나무 원목 반타원 화이트 식탁세트 4인용 (노블 체어형)</span>
-														</h1>
-														<div class="deal-production-item__stats-mobile">
-															<p class="production-item-stats production-item-stats--review">
-																<svg class="icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
-																	<path fill="currentColor" fill-rule="evenodd" d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"></path>
-																</svg>
-																<strong class="avg">4.8</strong>
-																 리뷰 1
-															</p>
-														</div>
-														<span class="production-item-price">
-															<span class="production-item-price__rate">59<span class="percentage">% </span></span>
-															<span class="production-item-price__price">208,000</span>
-														</span>
-														<div class="deal-production-item__stats-pc">
-															<p class="production-item-stats production-item-stats--review">
-																<svg class="icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"></path>
-																</svg>
-																<strong class="avg">4.8</strong>
-																 리뷰 1
-															</p>
-														</div>
-														<span class="production-item-badge-list">
-															<svg class="icon" aria-label="무료배송" width="47" height="20" viewBox="0 0 47 20" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><rect width="47" height="20" fill="#000" fill-opacity=".07" fill-rule="nonzero" rx="4"></rect><path fill="#757575" d="M12.73 5.38v3.96h-6.6V5.38h6.6zm-2.68 9.43H8.76v-3.25H5v-1.03h8.86v1.03h-3.81v3.25zm1.4-6.49V6.41H7.43v1.91h4.04zm11.08 2.7h-1.42v1.54h2.26v1.02h-8.86v-1.02h2.24v-1.53h-1.1V7.78h5.32V6.65H15.6V5.63h6.66V8.8h-5.33v1.18h5.61v1.04zm-4.53 0v1.54h1.87v-1.53H18zm14.37 3.78h-1.23V9.86h-.8v4.49h-1.2V5.18h1.2v3.66h.8V5h1.23v9.8zm-4.2-2.54h-3.9V6.01h1.27v2.26h1.36V6h1.28v6.26zm-1.27-1.01v-2h-1.36v2h1.36zm14.49 1.71c0 1.13-1.25 1.82-3.41 1.82s-3.42-.7-3.42-1.82 1.25-1.82 3.4-1.82c2.18 0 3.43.7 3.43 1.82zm-3.41-6.05c-.5 1.13-2.1 1.9-3.51 2.1l-.54-1c1.64-.17 3.39-1.06 3.39-2.54V5.2h1.33v.28c0 1.48 1.99 2.47 3.4 2.53l-.55 1.01c-1.31-.18-3.03-.97-3.52-2.1zm4.42 3.78h-8.86V9.66h3.79V8.4h1.29v1.26h3.78v1.03zm-2.33 2.27c0-.5-.83-.8-2.1-.8s-2.08.3-2.08.8c0 .51.81.8 2.08.8s2.1-.29 2.1-.8z"></path></g>
-															</svg>
-															<svg class="icon" aria-label="특가" width="30" height="20" viewBox="0 0 30 20" preserveAspectRatio="xMidYMid meet"><rect width="30" height="20" fill="#F77" rx="4"></rect><path fill="#fff" d="M12.83 7.93v-.97H7.93v-.555h5.228v-.991H6.655v4.063h6.59v-.992H7.928V7.93h4.901zm-6.295 3.747v1.002h5.326v2.037h1.274v-3.04h-6.6zm7.733-.588v-1.024H5.5v1.024h8.768zM23.91 9.782V8.725h-1.405V5H21.24v9.705h1.264V9.782h1.405zm-3.954-3.79h-4.53v1.056h3.147c-.174 1.938-1.623 3.975-3.736 4.945l.773.958c2.974-1.612 4.259-4.03 4.346-6.96z"></path></svg>
-														</span>
-													</div>
-												</div>
-											</article>
-										</div>
-									</div><!-- 3 -->
-									<div class="col-lg-4 col-md-4 col-12 deal-production__list__item">
-										<div class="deal-production-item__wrapper">
-											<article class="deal-production-item">
-												<a class="deal-production-item__overlay" href="/productions/691947/selling?affect_type=CategoryMDpicks&amp;affect_id=0#690173"></a>
-												<div class="deal-production-item__image">
-													<div class="deal-production-item__image__item">
-														<div class="production-item-image">
-															<img class="image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285667624210443.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;q=0.8" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285667624210443.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;q=0.8 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285667624210443.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;q=0.8 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285667624210443.jpg?gif=1&amp;w=1080&amp;h=1080&amp;c=c&amp;q=0.8 3x">
-															<button class="production-item-scrap-badge production-item-image__scrap-badge" type="button">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
-																	<defs><path id="scrap-icon-5-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path><filter id="scrap-icon-5-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix></filter><filter id="scrap-icon-5-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur><feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset><feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite><feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix></filter></defs>
-																	<g fill="none" fill-rule="nonzero" transform="matrix(1 0 0 -1 0 24)"><use fill="#000" filter="url(#scrap-icon-5-a)" href="#scrap-icon-5-b"></use><use fill="#FFF" fill-opacity=".4" href="#scrap-icon-5-b"></use><use fill="#000" filter="url(#scrap-icon-5-c)" href="#scrap-icon-5-b"></use><path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path></g>
-																</svg>
-																<svg class="active-icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
-																	<path fill="#35C5F0" fill-rule="nonzero" d="M12.472 17.07a.999.999 0 0 0-.944 0l-7.056 3.811A.999.999 0 0 1 3 19.998V4.502C3 3.672 3.672 3 4.5 3h15c.828 0 1.5.673 1.5 1.502v15.496a1 1 0 0 1-1.472.883l-7.056-3.811z"></path>
-																</svg>
-															</button>
-															<div class="production-item-image__dark-overlay"></div>
-														</div>
-														<div class="deal-production-item__image__item__index">4</div>
-													</div>
-												</div>
-												<div class="deal-production-item__content">
-													<div class="deal-production-item__content--wrap">
-														<h1 class="deal-production-item__header">
-															<span class="deal-production-item__header__index">선택 4</span>
-															<span class="deal-production-item__header__name">헤네시 1200 고무나무 원목 반타원 화이트 식탁세트 4인용 (에클레어 벤치형)</span>
-														</h1>
-														<div class="deal-production-item__stats-mobile">
-															<p class="production-item-stats production-item-stats--review">
-																<svg class="icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"></path>
-																</svg>
-																<strong class="avg">4.8</strong>
-																 리뷰 11
-															</p>
-														</div>
-														<span class="production-item-price">
-															<span class="production-item-price__rate">55<span class="percentage">% </span></span>
-															<span class="production-item-price__price">238,000</span>
-														</span>
-														<div class="deal-production-item__stats-pc">
-															<p class="production-item-stats production-item-stats--review">
-																<svg class="icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"></path>
-																</svg>
-																<strong class="avg">4.8</strong>
-																 리뷰 11
-															</p>
-														</div>
-														<span class="production-item-badge-list">
-															<svg class="icon" aria-label="무료배송" width="47" height="20" viewBox="0 0 47 20" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><rect width="47" height="20" fill="#000" fill-opacity=".07" fill-rule="nonzero" rx="4"></rect><path fill="#757575" d="M12.73 5.38v3.96h-6.6V5.38h6.6zm-2.68 9.43H8.76v-3.25H5v-1.03h8.86v1.03h-3.81v3.25zm1.4-6.49V6.41H7.43v1.91h4.04zm11.08 2.7h-1.42v1.54h2.26v1.02h-8.86v-1.02h2.24v-1.53h-1.1V7.78h5.32V6.65H15.6V5.63h6.66V8.8h-5.33v1.18h5.61v1.04zm-4.53 0v1.54h1.87v-1.53H18zm14.37 3.78h-1.23V9.86h-.8v4.49h-1.2V5.18h1.2v3.66h.8V5h1.23v9.8zm-4.2-2.54h-3.9V6.01h1.27v2.26h1.36V6h1.28v6.26zm-1.27-1.01v-2h-1.36v2h1.36zm14.49 1.71c0 1.13-1.25 1.82-3.41 1.82s-3.42-.7-3.42-1.82 1.25-1.82 3.4-1.82c2.18 0 3.43.7 3.43 1.82zm-3.41-6.05c-.5 1.13-2.1 1.9-3.51 2.1l-.54-1c1.64-.17 3.39-1.06 3.39-2.54V5.2h1.33v.28c0 1.48 1.99 2.47 3.4 2.53l-.55 1.01c-1.31-.18-3.03-.97-3.52-2.1zm4.42 3.78h-8.86V9.66h3.79V8.4h1.29v1.26h3.78v1.03zm-2.33 2.27c0-.5-.83-.8-2.1-.8s-2.08.3-2.08.8c0 .51.81.8 2.08.8s2.1-.29 2.1-.8z"></path></g>
-															</svg>
-															<svg class="icon" aria-label="특가" width="30" height="20" viewBox="0 0 30 20" preserveAspectRatio="xMidYMid meet"><rect width="30" height="20" fill="#F77" rx="4"></rect><path fill="#fff" d="M12.83 7.93v-.97H7.93v-.555h5.228v-.991H6.655v4.063h6.59v-.992H7.928V7.93h4.901zm-6.295 3.747v1.002h5.326v2.037h1.274v-3.04h-6.6zm7.733-.588v-1.024H5.5v1.024h8.768zM23.91 9.782V8.725h-1.405V5H21.24v9.705h1.264V9.782h1.405zm-3.954-3.79h-4.53v1.056h3.147c-.174 1.938-1.623 3.975-3.736 4.945l.773.958c2.974-1.612 4.259-4.03 4.346-6.96z"></path></svg>
-														</span>
-													</div>
-												</div>
-											</article>
-										</div>
-									</div><!-- 4 -->
-									<div class="col-lg-4 col-md-4 col-12 deal-production__list__item">
-										<div class="deal-production-item__wrapper">
-											<article class="deal-production-item">
-												<a class="deal-production-item__overlay" href="/productions/691947/selling?affect_type=CategoryMDpicks&amp;affect_id=0#690189"></a>
-												<div class="deal-production-item__image">
-													<div class="deal-production-item__image__item">
-														<div class="production-item-image">
-															<img class="image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285690279401908.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;q=0.8" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285690279401908.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;q=0.8 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285690279401908.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;q=0.8 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161285690279401908.jpg?gif=1&amp;w=1080&amp;h=1080&amp;c=c&amp;q=0.8 3x">
-															<button class="production-item-scrap-badge production-item-image__scrap-badge" type="button">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
-																	<defs><path id="scrap-icon-6-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path><filter id="scrap-icon-6-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix></filter><filter id="scrap-icon-6-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur><feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset><feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite><feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix></filter></defs><g fill="none" fill-rule="nonzero" transform="matrix(1 0 0 -1 0 24)"><use fill="#000" filter="url(#scrap-icon-6-a)" href="#scrap-icon-6-b"></use><use fill="#FFF" fill-opacity=".4" href="#scrap-icon-6-b"></use><use fill="#000" filter="url(#scrap-icon-6-c)" href="#scrap-icon-6-b"></use><path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path></g>
-																</svg>
-																<svg class="active-icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
-																	<path fill="#35C5F0" fill-rule="nonzero" d="M12.472 17.07a.999.999 0 0 0-.944 0l-7.056 3.811A.999.999 0 0 1 3 19.998V4.502C3 3.672 3.672 3 4.5 3h15c.828 0 1.5.673 1.5 1.502v15.496a1 1 0 0 1-1.472.883l-7.056-3.811z"></path>
-																</svg>
-															</button>
-															<div class="production-item-image__dark-overlay"></div>
-														</div>
-														<div class="deal-production-item__image__item__index">5</div>
-													</div>
-												</div>
-												<div class="deal-production-item__content">
-													<div class="deal-production-item__content--wrap">
-														<h1 class="deal-production-item__header">
-															<span class="deal-production-item__header__index">선택 5</span>
-															<span class="deal-production-item__header__name">헤네시 1200 고무나무 원목 반타원 화이트 식탁세트 4인용 (에클레어 체어형)</span>
-														</h1>
-														<div class="deal-production-item__stats-mobile">
-															<p class="production-item-stats production-item-stats--review">
-																<svg class="icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"></path>
-																</svg>
-																<strong class="avg">5</strong>
-																 리뷰 1
-															</p>
-														</div>
-														<span class="production-item-price">
-															<span class="production-item-price__rate">51<span class="percentage">% </span></span>
-															<span class="production-item-price__price">288,000</span>
-														</span>
-														<div class="deal-production-item__stats-pc">
-															<p class="production-item-stats production-item-stats--review">
-																<svg class="icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"></path>
-																</svg>
-																<strong class="avg">5</strong>
-																 리뷰 1
-															</p>
-														</div>
-														<span class="production-item-badge-list">
-															<svg class="icon" aria-label="무료배송" width="47" height="20" viewBox="0 0 47 20" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><rect width="47" height="20" fill="#000" fill-opacity=".07" fill-rule="nonzero" rx="4"></rect><path fill="#757575" d="M12.73 5.38v3.96h-6.6V5.38h6.6zm-2.68 9.43H8.76v-3.25H5v-1.03h8.86v1.03h-3.81v3.25zm1.4-6.49V6.41H7.43v1.91h4.04zm11.08 2.7h-1.42v1.54h2.26v1.02h-8.86v-1.02h2.24v-1.53h-1.1V7.78h5.32V6.65H15.6V5.63h6.66V8.8h-5.33v1.18h5.61v1.04zm-4.53 0v1.54h1.87v-1.53H18zm14.37 3.78h-1.23V9.86h-.8v4.49h-1.2V5.18h1.2v3.66h.8V5h1.23v9.8zm-4.2-2.54h-3.9V6.01h1.27v2.26h1.36V6h1.28v6.26zm-1.27-1.01v-2h-1.36v2h1.36zm14.49 1.71c0 1.13-1.25 1.82-3.41 1.82s-3.42-.7-3.42-1.82 1.25-1.82 3.4-1.82c2.18 0 3.43.7 3.43 1.82zm-3.41-6.05c-.5 1.13-2.1 1.9-3.51 2.1l-.54-1c1.64-.17 3.39-1.06 3.39-2.54V5.2h1.33v.28c0 1.48 1.99 2.47 3.4 2.53l-.55 1.01c-1.31-.18-3.03-.97-3.52-2.1zm4.42 3.78h-8.86V9.66h3.79V8.4h1.29v1.26h3.78v1.03zm-2.33 2.27c0-.5-.83-.8-2.1-.8s-2.08.3-2.08.8c0 .51.81.8 2.08.8s2.1-.29 2.1-.8z"></path></g>
-															</svg>
-															<svg class="icon" aria-label="특가" width="30" height="20" viewBox="0 0 30 20" preserveAspectRatio="xMidYMid meet"><rect width="30" height="20" fill="#F77" rx="4"></rect><path fill="#fff" d="M12.83 7.93v-.97H7.93v-.555h5.228v-.991H6.655v4.063h6.59v-.992H7.928V7.93h4.901zm-6.295 3.747v1.002h5.326v2.037h1.274v-3.04h-6.6zm7.733-.588v-1.024H5.5v1.024h8.768zM23.91 9.782V8.725h-1.405V5H21.24v9.705h1.264V9.782h1.405zm-3.954-3.79h-4.53v1.056h3.147c-.174 1.938-1.623 3.975-3.736 4.945l.773.958c2.974-1.612 4.259-4.03 4.346-6.96z"></path></svg>
-														</span>
-													</div>
-												</div>
-											</article>
-										</div>
-									</div><!-- 5 -->
-									<div class="col-lg-4 col-md-4 col-12 deal-production__list__item">
-										<div class="deal-production-item__wrapper">
-											<article class="deal-production-item">
-												<a class="deal-production-item__overlay" href="/productions/691947/selling?affect_type=CategoryMDpicks&amp;affect_id=0#706953"></a>
-												<div class="deal-production-item__image">
-													<div class="deal-production-item__image__item">
-														<div class="production-item-image">
-															<img class="image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161407081577252990.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;q=0.8" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161407081577252990.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;q=0.8 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161407081577252990.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;q=0.8 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161407081577252990.jpg?gif=1&amp;w=1080&amp;h=1080&amp;c=c&amp;q=0.8 3x">
-															<button class="production-item-scrap-badge production-item-image__scrap-badge" type="button">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
-																	<defs><path id="scrap-icon-7-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path><filter id="scrap-icon-7-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix></filter><filter id="scrap-icon-7-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur><feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset><feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite><feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix></filter></defs>
-																	<g fill="none" fill-rule="nonzero" transform="matrix(1 0 0 -1 0 24)"><use fill="#000" filter="url(#scrap-icon-7-a)" href="#scrap-icon-7-b"></use><use fill="#FFF" fill-opacity=".4" href="#scrap-icon-7-b"></use><use fill="#000" filter="url(#scrap-icon-7-c)" href="#scrap-icon-7-b"></use><path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path></g>
-																</svg>
-																<svg class="active-icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
-																	<path fill="#35C5F0" fill-rule="nonzero" d="M12.472 17.07a.999.999 0 0 0-.944 0l-7.056 3.811A.999.999 0 0 1 3 19.998V4.502C3 3.672 3.672 3 4.5 3h15c.828 0 1.5.673 1.5 1.502v15.496a1 1 0 0 1-1.472.883l-7.056-3.811z"></path>
-																</svg>
-															</button>
-															<div class="production-item-image__dark-overlay"></div>
-														</div>
-														<div class="deal-production-item__image__item__index">6</div>
-													</div>
-												</div>
-												<div class="deal-production-item__content">
-													<div class="deal-production-item__content--wrap">
-														<h1 class="deal-production-item__header">
-															<span class="deal-production-item__header__index">선택 6</span>
-															<span class="deal-production-item__header__name">엘리아 900 고무나무 원목 화이트 원형 테이블 단품 (의자 추가선택)</span>
-														</h1>
-														<div class="deal-production-item__stats-mobile">
-															<p class="production-item-stats production-item-stats--review">
-																<svg class="icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"></path>
-																</svg>
-																<strong class="avg">4.1</strong>
-																 리뷰 11
-															</p>
-														</div>
-														<span class="production-item-price">
-															<span class="production-item-price__rate">76<span class="percentage">% </span></span>
-															<span class="production-item-price__price">98,000</span>
-														</span>
-														<div class="deal-production-item__stats-pc">
-															<p class="production-item-stats production-item-stats--review">
-																<svg class="icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"></path>
-																</svg>
-																<strong class="avg">4.1</strong>
-																 리뷰 11
-															</p>
-														</div>
-														<span class="production-item-badge-list">
-															<svg class="icon" aria-label="무료배송" width="47" height="20" viewBox="0 0 47 20" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><rect width="47" height="20" fill="#000" fill-opacity=".07" fill-rule="nonzero" rx="4"></rect><path fill="#757575" d="M12.73 5.38v3.96h-6.6V5.38h6.6zm-2.68 9.43H8.76v-3.25H5v-1.03h8.86v1.03h-3.81v3.25zm1.4-6.49V6.41H7.43v1.91h4.04zm11.08 2.7h-1.42v1.54h2.26v1.02h-8.86v-1.02h2.24v-1.53h-1.1V7.78h5.32V6.65H15.6V5.63h6.66V8.8h-5.33v1.18h5.61v1.04zm-4.53 0v1.54h1.87v-1.53H18zm14.37 3.78h-1.23V9.86h-.8v4.49h-1.2V5.18h1.2v3.66h.8V5h1.23v9.8zm-4.2-2.54h-3.9V6.01h1.27v2.26h1.36V6h1.28v6.26zm-1.27-1.01v-2h-1.36v2h1.36zm14.49 1.71c0 1.13-1.25 1.82-3.41 1.82s-3.42-.7-3.42-1.82 1.25-1.82 3.4-1.82c2.18 0 3.43.7 3.43 1.82zm-3.41-6.05c-.5 1.13-2.1 1.9-3.51 2.1l-.54-1c1.64-.17 3.39-1.06 3.39-2.54V5.2h1.33v.28c0 1.48 1.99 2.47 3.4 2.53l-.55 1.01c-1.31-.18-3.03-.97-3.52-2.1zm4.42 3.78h-8.86V9.66h3.79V8.4h1.29v1.26h3.78v1.03zm-2.33 2.27c0-.5-.83-.8-2.1-.8s-2.08.3-2.08.8c0 .51.81.8 2.08.8s2.1-.29 2.1-.8z"></path></g>
-															</svg>
-															<svg class="icon" aria-label="특가" width="30" height="20" viewBox="0 0 30 20" preserveAspectRatio="xMidYMid meet"><rect width="30" height="20" fill="#F77" rx="4"></rect><path fill="#fff" d="M12.83 7.93v-.97H7.93v-.555h5.228v-.991H6.655v4.063h6.59v-.992H7.928V7.93h4.901zm-6.295 3.747v1.002h5.326v2.037h1.274v-3.04h-6.6zm7.733-.588v-1.024H5.5v1.024h8.768zM23.91 9.782V8.725h-1.405V5H21.24v9.705h1.264V9.782h1.405zm-3.954-3.79h-4.53v1.056h3.147c-.174 1.938-1.623 3.975-3.736 4.945l.773.958c2.974-1.612 4.259-4.03 4.346-6.96z"></path></svg>
-														</span>
-													</div>
-												</div>
-											</article>
-										</div>
-									</div><!-- 6 -->
-								</div>
-							</section>
+
 							<a id="production-selling-review"></a>
 							<section class="production-selling-section">
 								<header class="production-selling-section__header">
-									<h1 class="production-selling-section__title">리뷰 <span class="count">55</span></h1>
+									<h1 class="production-selling-section__title">리뷰 <span class="count">${r_cnt}</span></h1>
 									<div class="production-selling-section__right"></div>
 								</header>
-								<div class="production-select-dropdown">
-									<div class="production-select-dropdown__button">
-										<button class="production-select-text-button" type="button">
-											<span class="production-select-text-button__text">전체</span>
-											<svg class="production-select-text-button__icon" width="8" height="8" viewBox="0 0 8 8" preserveAspectRatio="xMidYMid meet"><path fill="#BDBDBD" d="M0 2l4 4 4-4z"></path></svg>
-										</button>
-									</div>
-								</div>
 								<div class="production-review-feed">
 									<div class="production-review-feed__header-v2">
 										<div class="production-review-feed__header-v2__stars">
 											<div class="production-review-feed__header-v2__stars__badge">
-												<span class="badge__mobile">4.7</span>
-												<span class="icon" aria-label="별점 4.7점">
+												<span class="badge__mobile">${r_grade}</span>
+												<span class="icon" aria-label="별점 ${r_grade}점">
 													<svg fill="#ed4a4a" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><defs><path id="star-path-0" d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"></path><clipPath id="star-clip-0"><rect x="0" y="0" width="24" height="24"></rect></clipPath></defs><use xlink:href="#star-path-0" fill="#DBDBDB"></use><use clip-path="url(#star-clip-0)" xlink:href="#star-path-0"></use></svg>
 													<svg fill="#ed4a4a" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><defs><path id="star-path-1" d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"></path><clipPath id="star-clip-1"><rect x="0" y="0" width="24" height="24"></rect></clipPath></defs><use xlink:href="#star-path-1" fill="#DBDBDB"></use><use clip-path="url(#star-clip-1)" xlink:href="#star-path-1"></use></svg>
 													<svg fill="#ed4a4a" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><defs><path id="star-path-2" d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"></path><clipPath id="star-clip-2"><rect x="0" y="0" width="24" height="24"></rect></clipPath></defs><use xlink:href="#star-path-2" fill="#DBDBDB"></use><use clip-path="url(#star-clip-2)" xlink:href="#star-path-2"></use></svg>
 													<svg fill="#ed4a4a" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><defs><path id="star-path-3" d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"></path><clipPath id="star-clip-3"><rect x="0" y="0" width="24" height="24"></rect></clipPath></defs><use xlink:href="#star-path-3" fill="#DBDBDB"></use><use clip-path="url(#star-clip-3)" xlink:href="#star-path-3"></use></svg>
 													<svg fill="#ed4a4a" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><defs><path id="star-path-4" d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"></path><clipPath id="star-clip-4"><rect x="0" y="0" width="16.145454545454548" height="24"></rect></clipPath></defs><use xlink:href="#star-path-4" fill="#DBDBDB"></use><use clip-path="url(#star-clip-4)" xlink:href="#star-path-4"></use></svg>
 												</span>
-												<span class="badge__pc">4.7</span>
+												<span class="badge__pc">${r_grade}</span>
 											</div>
 											<div class="production-review-feed__header-v2__stars__avg">
 												<div class="production-review-feed__header-v2__stars__avg-warp">
@@ -823,32 +288,9 @@
 										<div class="production-review-feed__filter-wrap">
 											<div class="production-review-feed__filter">
 												<div class="production-review-feed__filter__order-list">
-													<button class="production-review-feed__filter__order production-review-feed__filter__order--active" aria-pressed="true" type="button">베스트순</button>
+													<button class="production-review-feed__filter__order production-review-feed__filter__order--active" aria-pressed="true" type="button">별점순</button>
 													<button class="production-review-feed__filter__order" aria-pressed="false" type="button">최신순</button>
-													<button class="production-review-feed__filter__order production-review-feed__filter__order--photo" aria-pressed="false" type="button">
-														<svg class="icon" width="18" height="18" viewBox="0 0 18 18" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" d="M15.821 3a.67.67 0 0 1 .679.672v10.656a.67.67 0 0 1-.679.672H2.18a.67.67 0 0 1-.679-.672V3.672c0-.375.3-.672.679-.672H15.82zm-.679 1.344H2.858v8.14L7.01 7.781c.094-.125.284-.125.394 0l2.321 2.657c.048.046.063.109.048.156l-.3 1.375c-.016.11.11.172.173.094l2.369-2.579a.202.202 0 0 1 .284 0l2.842 3.094V4.344zm-2.526 3.61a1.1 1.1 0 0 1-1.105-1.095 1.1 1.1 0 0 1 1.105-1.093 1.1 1.1 0 0 1 1.105 1.093 1.1 1.1 0 0 1-1.105 1.094z"></path>
-														</svg>사진리뷰
-													</button>
 												</div>
-												<div class="production-review-feed__filter__option-list__mobile">
-													<div class="drop-down panel-drop-down filter-bar-control">
-														<button class="production-review-feed__filter__option" type="button">
-															<svg class="production-review-feed__filter__option__icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="#BDBDBD" d="M18.284 4H5.716a.7.7 0 0 0-.61.362.668.668 0 0 0 0 .724l3.963 6.978c.353.632.97 1.348.971 2.076v6.181c.002.24-.054.388.149.558.203.17.343.118.444.095l3.29-1.257c.283-.095.321-.369.317-.676v-4.9c0-.73.338-1.445.69-2.077l3.963-6.978a.668.668 0 0 0 0-.724.7.7 0 0 0-.61-.362z"></path>
-															</svg>
-															필터
-														</button>
-													</div>
-												</div>
-												<ul class="production-review-feed__filter__option-list__pc">
-													<li class="filter-bar__control-list__item">
-														<div class="drop-down panel-drop-down filter-bar-control">
-															<button class="button button--color-gray-4 button--size-50 button--shape-4 filter-bar-control__button">
-															별점
-															<svg class="icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor" preserveAspectRatio="xMidYMid meet"><path d="M6.069 6.72l4.123-3.783 1.216 1.326-5.32 4.881L.603 4.273l1.196-1.346z"></path></svg>
-															</button>
-														</div>
-													</li>
-												</ul>
 											</div>
 										</div>
 									</div>
@@ -1260,359 +702,12 @@
 								</ul>
 								</div>
 							</section>
-							<a id="production-selling-question"></a>
-							<section class="production-selling-section">
-								<header class="production-selling-section__header">
-									<h1 class="production-selling-section__title">
-										문의
-										<!-- --> 
-										<span class="count">92</span>
-									</h1>
-									<div class="production-selling-section__right"></div>
-								</header>
-								<div class="production-select-dropdown">
-									<div class="production-select-dropdown__button">
-										<button class="production-select-text-button" type="button">
-											<span class="production-select-text-button__text">상품을 선택하세요.</span>
-											<svg class="production-select-text-button__icon" width="8" height="8" viewBox="0 0 8 8" preserveAspectRatio="xMidYMid meet"><path fill="#BDBDBD" d="M0 2l4 4 4-4z"></path></svg>
-										</button>
-									</div>
-								</div>
-							</section>
-							<a id="production-selling-delivery"></a>
-							<section class="production-selling-section">
-								<header class="production-selling-section__header">
-									<h1 class="production-selling-section__title">배송/교환/환불</h1>
-								</header>
-								<div class="production-select-dropdown">
-									<div class="production-select-dropdown__button">
-										<button class="production-select-text-button" type="button">
-											<span class="production-select-text-button__text">상품을 선택하세요. *상품별 정책 상이</span>
-											<svg class="production-select-text-button__icon" width="8" height="8" viewBox="0 0 8 8" preserveAspectRatio="xMidYMid meet"><path fill="#BDBDBD" d="M0 2l4 4 4-4z"></path></svg>
-										</button>
-									</div>
-								</div>
-							</section>
-							<a id="production-selling-suggestion"></a>
-							<div>
-								<section class="production-selling-section">
-									<header class="production-selling-section__header">
-										<h1 class="production-selling-section__title">이 상품이 포함된 기획전 <span class="count">2</span></h1>
-									</header>
-									<div class="scroller-wrap production-selling-exhibition-list">
-										<div class="scroller">
-											<div class="scroller__content-wrap" tabindex="-1">
-												<div class="scroller__content" style="transform: translateX(0px);">
-													<ul class="production-selling-exhibition-list__list">
-														<article class="production-selling-exhibition-list__item-wrap">
-															<a class="production-selling-exhibition-list__item" href="/exhibitions/1322?affect_type=ProductSaleDetailExhibition&amp;affect_id=">
-																<div class="production-selling-exhibition-list__item__image">
-																	<img alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/exhibitions/cover_image/159497934023352357.jpg?gif=1&amp;w=360&amp;h=240&amp;c=c&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/exhibitions/cover_image/159497934023352357.jpg?gif=1&amp;w=512&amp;h=342&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/exhibitions/cover_image/159497934023352357.jpg?gif=1&amp;w=720&amp;h=480&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/exhibitions/cover_image/159497934023352357.jpg?gif=1&amp;w=1024&amp;h=683&amp;c=c&amp;webp=1 3x">
-																	<span class="production-selling-exhibition-list__item__badge">282개 상품</span>
-																</div>
-																<h1 class="production-selling-exhibition-list__item__title">화이트 식탁 베스트셀러 특가</h1>
-																<p class="production-selling-exhibition-list__item__sub-title">우리집을 카페처럼</p>
-															</a>
-														</article>
-														<article class="production-selling-exhibition-list__item-wrap">
-															<a class="production-selling-exhibition-list__item" href="/exhibitions/1377?affect_type=ProductSaleDetailExhibition&amp;affect_id=">
-																<div class="production-selling-exhibition-list__item__image">
-																	<img alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/exhibitions/cover_image/159852108658564456.jpg?gif=1&amp;w=360&amp;h=240&amp;c=c&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/exhibitions/cover_image/159852108658564456.jpg?gif=1&amp;w=512&amp;h=342&amp;c=c&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/exhibitions/cover_image/159852108658564456.jpg?gif=1&amp;w=720&amp;h=480&amp;c=c&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/exhibitions/cover_image/159852108658564456.jpg?gif=1&amp;w=1024&amp;h=683&amp;c=c&amp;webp=1 3x">
-																	<span class="production-selling-exhibition-list__item__badge">177개 상품</span>
-																</div>
-																<h1 class="production-selling-exhibition-list__item__title">원목식탁 베스트셀러 특가</h1>
-																<p class="production-selling-exhibition-list__item__sub-title">어느 공간이든 잘 어울리는 내추럴 스타일 </p>
-															</a>
-														</article>
-													</ul>
-												</div>
-											</div>
-											<div class="scroller__ui">
-												<div class="scroller__ui__left scroller-hide scroller-fixed" style="top: 112px;">
-													<svg class="inactive" width="40" height="40" viewBox="0 0 40 40" preserveAspectRatio="xMidYMid meet"><g fill="none"><circle cx="20" cy="20" r="20" fill="#FFF" class="circle"></circle><path fill="#424242" d="M17 20l7.5 7.5-1.4 1.4-8.4-8.4-.5-.5.5-.5 8.4-8.4 1.4 1.4-7.5 7.5z" class="arrow"></path></g></svg>
-													<svg class="active" width="40" height="40" viewBox="0 0 40 40" preserveAspectRatio="xMidYMid meet"><g fill="none"><circle cx="20" cy="20" r="20" fill="#35C5F0"></circle><path fill="#FFF" d="M17 20l7.5 7.5-1.4 1.4-8.4-8.4-.5-.5.5-.5 8.4-8.4 1.4 1.4-7.5 7.5z"></path></g></svg>
-												</div>
-												<div class="scroller__ui__right scroller-hide scroller-fixed" style="top: 112px;">
-													<svg class="inactive" width="40" height="40" viewBox="0 0 40 40" preserveAspectRatio="xMidYMid meet"><g fill="none" transform="matrix(-1 0 0 1 40 0)"><circle cx="20" cy="20" r="20" fill="#FFF" class="circle"></circle><path fill="#424242" d="M17 20l7.5 7.5-1.4 1.4-8.4-8.4-.5-.5.5-.5 8.4-8.4 1.4 1.4-7.5 7.5z" class="arrow"></path></g></svg>
-													<svg class="active" width="40" height="40" viewBox="0 0 40 40" preserveAspectRatio="xMidYMid meet"><g fill="none" transform="matrix(-1 0 0 1 40 0)"><circle cx="20" cy="20" r="20" fill="#35C5F0"></circle><path fill="#FFF" d="M17 20l7.5 7.5-1.4 1.4-8.4-8.4-.5-.5.5-.5 8.4-8.4 1.4 1.4-7.5 7.5z"></path></g></svg>
-												</div>
-											</div>
-										</div>
-									</div>
-								</section>
-								<section class="production-selling-section">
-									<header class="production-selling-section__header">
-										<h1 class="production-selling-section__title">비슷한 상품</h1>
-									</header>
-									<div class="scroller-wrap production-selling-production-list">
-										<div class="scroller">
-											<div class="scroller__content-wrap" tabindex="-1">
-												<div class="scroller__content" style="transform: translateX(0px);">
-													<ul class="production-selling-production-list__list">
-														<div class="production-selling-production-list__item-wrap">
-															<article class="production-item">
-																<a class="production-item__overlay" href="/productions/468564/selling"></a>
-																<div class="production-item-image production-item__image">
-																	<img class="image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/1599007157_100998_1.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;q=0.8&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/1599007157_100998_1.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;q=0.8&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/1599007157_100998_1.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;q=0.8&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/1599007157_100998_1.jpg?gif=1&amp;w=1080&amp;h=1080&amp;c=c&amp;q=0.8&amp;webp=1 3x">
-																	<button class="production-item-scrap-badge production-item-image__scrap-badge" type="button">
-																		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon"><defs><path id="scrap-icon-8-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path><filter id="scrap-icon-8-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix></filter><filter id="scrap-icon-8-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur><feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset><feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite><feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix></filter></defs><g fill="none" fill-rule="nonzero" transform="matrix(1 0 0 -1 0 24)"><use fill="#000" filter="url(#scrap-icon-8-a)" href="#scrap-icon-8-b"></use><use fill="#FFF" fill-opacity=".4" href="#scrap-icon-8-b"></use><use fill="#000" filter="url(#scrap-icon-8-c)" href="#scrap-icon-8-b"></use><path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path></g></svg>
-																		<svg class="active-icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="#35C5F0" fill-rule="nonzero" d="M12.472 17.07a.999.999 0 0 0-.944 0l-7.056 3.811A.999.999 0 0 1 3 19.998V4.502C3 3.672 3.672 3 4.5 3h15c.828 0 1.5.673 1.5 1.502v15.496a1 1 0 0 1-1.472.883l-7.056-3.811z"></path></svg>
-																	</button>
-																	<div class="production-item-image__dark-overlay"></div>
-																</div>
-																<div class="production-item__content">
-																	<h1 class="production-item__header">
-																		<span class="production-item__header__brand">세레스홈 </span>
-																		<span class="production-item__header__name">마리 이태리 호마이카 반타원형 2인/4인 테이블 1200</span>
-																	</h1>
-																	<span class="production-item-price">
-																		<span class="production-item-price__rate">26<span class="percentage">% </span></span>
-																	<span class="production-item-price__price">380,000</span>
-																	</span>
-																	<p class="production-item-stats production-item-stats--review">
-																		<svg class="icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"></path></svg>
-																		<strong class="avg">4.6</strong> 리뷰 2
-																	</p>
-																	<span class="production-item-badge-list"></span>
-																</div>
-															</article>
-														</div>
-														<div class="production-selling-production-list__item-wrap">
-															<article class="production-item">
-																<a class="production-item__overlay" href="/productions/467830/selling"></a>
-																<div class="production-item-image production-item__image">
-																	<img class="image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/159913843938904555.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;q=0.8&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/159913843938904555.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;q=0.8&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/159913843938904555.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;q=0.8&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/159913843938904555.jpg?gif=1&amp;w=1080&amp;h=1080&amp;c=c&amp;q=0.8&amp;webp=1 3x">
-																	<button class="production-item-scrap-badge production-item-image__scrap-badge" type="button">
-																		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon"><defs><path id="scrap-icon-9-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path><filter id="scrap-icon-9-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix></filter><filter id="scrap-icon-9-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur><feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset><feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite><feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix></filter></defs><g fill="none" fill-rule="nonzero" transform="matrix(1 0 0 -1 0 24)"><use fill="#000" filter="url(#scrap-icon-9-a)" href="#scrap-icon-9-b"></use><use fill="#FFF" fill-opacity=".4" href="#scrap-icon-9-b"></use><use fill="#000" filter="url(#scrap-icon-9-c)" href="#scrap-icon-9-b"></use><path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path></g></svg>
-																		<svg class="active-icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="#35C5F0" fill-rule="nonzero" d="M12.472 17.07a.999.999 0 0 0-.944 0l-7.056 3.811A.999.999 0 0 1 3 19.998V4.502C3 3.672 3.672 3 4.5 3h15c.828 0 1.5.673 1.5 1.502v15.496a1 1 0 0 1-1.472.883l-7.056-3.811z"></path></svg>
-																	</button>
-																	<div class="production-item-image__dark-overlay"></div>
-																</div>
-																<div class="production-item__content">
-																	<h1 class="production-item__header">
-																		<span class="production-item__header__brand">레트로하우스 </span>
-																		<span class="production-item__header__name">프리모 세라믹 사각 테이블 1400</span>
-																	</h1>
-																	<span class="production-item-price">
-																		<span class="production-item-price__rate">61<span class="percentage">% </span></span>
-																		<span class="production-item-price__price">249,000</span>
-																	</span>
-																	<p class="production-item-stats production-item-stats--review">
-																		<svg class="icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"></path></svg>
-																		<strong class="avg">4.2</strong> 리뷰 3
-																	</p>
-																	<span class="production-item-badge-list"></span>
-																</div>
-															</article>
-														</div>
-														<div class="production-selling-production-list__item-wrap">
-															<article class="production-item">
-																<a class="production-item__overlay" href="/productions/467828/selling"></a>
-																<div class="production-item-image production-item__image">
-																	<img class="image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/159913842047635840.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;q=0.8&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/159913842047635840.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;q=0.8&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/159913842047635840.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;q=0.8&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/159913842047635840.jpg?gif=1&amp;w=1080&amp;h=1080&amp;c=c&amp;q=0.8&amp;webp=1 3x">
-																	<button class="production-item-scrap-badge production-item-image__scrap-badge" type="button">
-																		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon"><defs><path id="scrap-icon-10-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path><filter id="scrap-icon-10-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix></filter><filter id="scrap-icon-10-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur><feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset><feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite><feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix></filter></defs><g fill="none" fill-rule="nonzero" transform="matrix(1 0 0 -1 0 24)"><use fill="#000" filter="url(#scrap-icon-10-a)" href="#scrap-icon-10-b"></use><use fill="#FFF" fill-opacity=".4" href="#scrap-icon-10-b"></use><use fill="#000" filter="url(#scrap-icon-10-c)" href="#scrap-icon-10-b"></use><path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path></g></svg>
-																		<svg class="active-icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="#35C5F0" fill-rule="nonzero" d="M12.472 17.07a.999.999 0 0 0-.944 0l-7.056 3.811A.999.999 0 0 1 3 19.998V4.502C3 3.672 3.672 3 4.5 3h15c.828 0 1.5.673 1.5 1.502v15.496a1 1 0 0 1-1.472.883l-7.056-3.811z"></path></svg>
-																	</button>
-																	<div class="production-item-image__dark-overlay"></div>
-																</div>
-																<div class="production-item__content">
-																	<h1 class="production-item__header">
-																		<span class="production-item__header__brand">레트로하우스 </span>
-																		<span class="production-item__header__name">프리모 세라믹 반타원 테이블 1400</span>
-																	</h1>
-																	<span class="production-item-price">
-																		<span class="production-item-price__rate">42<span class="percentage">% </span></span>
-																		<span class="production-item-price__price">289,000</span>
-																	</span>
-																	<p class="production-item-stats production-item-stats--review">
-																		<svg class="icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"></path></svg>
-																		<strong class="avg">4.8</strong> 리뷰 3
-																	</p>
-																	<span class="production-item-badge-list"></span>
-																</div>
-															</article>
-														</div>
-														<div class="production-selling-production-list__item-wrap">
-															<article class="production-item">
-																<a class="production-item__overlay" href="/productions/240363/selling"></a>
-																<div class="production-item-image production-item__image">
-																	<img class="image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/15650448022784_Zs44a.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;q=0.8&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/15650448022784_Zs44a.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;q=0.8&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/15650448022784_Zs44a.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;q=0.8&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/15650448022784_Zs44a.jpg?gif=1&amp;w=1080&amp;h=1080&amp;c=c&amp;q=0.8&amp;webp=1 3x">
-																	<button class="production-item-scrap-badge production-item-image__scrap-badge" type="button">
-																		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon"><defs><path id="scrap-icon-11-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path><filter id="scrap-icon-11-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix></filter><filter id="scrap-icon-11-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox"><feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur><feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset><feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite><feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix></filter></defs><g fill="none" fill-rule="nonzero" transform="matrix(1 0 0 -1 0 24)"><use fill="#000" filter="url(#scrap-icon-11-a)" href="#scrap-icon-11-b"></use><use fill="#FFF" fill-opacity=".4" href="#scrap-icon-11-b"></use><use fill="#000" filter="url(#scrap-icon-11-c)" href="#scrap-icon-11-b"></use><path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path></g></svg>
-																		<svg class="active-icon" width="24" height="24" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path fill="#35C5F0" fill-rule="nonzero" d="M12.472 17.07a.999.999 0 0 0-.944 0l-7.056 3.811A.999.999 0 0 1 3 19.998V4.502C3 3.672 3.672 3 4.5 3h15c.828 0 1.5.673 1.5 1.502v15.496a1 1 0 0 1-1.472.883l-7.056-3.811z"></path></svg>
-																	</button>
-																	<div class="production-item-image__dark-overlay"></div>
-																</div>
-																<div class="production-item__content">
-																	<h1 class="production-item__header">
-																		<span class="production-item__header__brand">에넥스 </span>
-																		<span class="production-item__header__name">[5%쿠폰] 키튼 이태리 나노클린 1600 타원형식탁 (의자선택)</span>
-																	</h1>
-																	<span class="production-item-price">
-																		<span class="production-item-price__rate">29<span class="percentage">% </span></span>
-																		<span class="production-item-price__price">59,000</span>
-																	</span>
-																	<p class="production-item-stats production-item-stats--scrap">스크랩 1,001</p>
-																	<span class="production-item-badge-list">
-																		<svg class="icon" aria-label="무료배송" width="47" height="20" viewBox="0 0 47 20" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><rect width="47" height="20" fill="#000" fill-opacity=".07" fill-rule="nonzero" rx="4"></rect><path fill="#757575" d="M12.73 5.38v3.96h-6.6V5.38h6.6zm-2.68 9.43H8.76v-3.25H5v-1.03h8.86v1.03h-3.81v3.25zm1.4-6.49V6.41H7.43v1.91h4.04zm11.08 2.7h-1.42v1.54h2.26v1.02h-8.86v-1.02h2.24v-1.53h-1.1V7.78h5.32V6.65H15.6V5.63h6.66V8.8h-5.33v1.18h5.61v1.04zm-4.53 0v1.54h1.87v-1.53H18zm14.37 3.78h-1.23V9.86h-.8v4.49h-1.2V5.18h1.2v3.66h.8V5h1.23v9.8zm-4.2-2.54h-3.9V6.01h1.27v2.26h1.36V6h1.28v6.26zm-1.27-1.01v-2h-1.36v2h1.36zm14.49 1.71c0 1.13-1.25 1.82-3.41 1.82s-3.42-.7-3.42-1.82 1.25-1.82 3.4-1.82c2.18 0 3.43.7 3.43 1.82zm-3.41-6.05c-.5 1.13-2.1 1.9-3.51 2.1l-.54-1c1.64-.17 3.39-1.06 3.39-2.54V5.2h1.33v.28c0 1.48 1.99 2.47 3.4 2.53l-.55 1.01c-1.31-.18-3.03-.97-3.52-2.1zm4.42 3.78h-8.86V9.66h3.79V8.4h1.29v1.26h3.78v1.03zm-2.33 2.27c0-.5-.83-.8-2.1-.8s-2.08.3-2.08.8c0 .51.81.8 2.08.8s2.1-.29 2.1-.8z"></path></g></svg>
-																	</span>
-																</div>
-															</article>
-														</div>
-													</ul>
-												</div>
-											</div>
-											<div class="scroller__ui">
-												<div class="scroller__ui__left scroller-hide scroller-fixed" style="top: 108.662px;">
-													<svg class="inactive" width="40" height="40" viewBox="0 0 40 40" preserveAspectRatio="xMidYMid meet"><g fill="none"><circle cx="20" cy="20" r="20" fill="#FFF" class="circle"></circle><path fill="#424242" d="M17 20l7.5 7.5-1.4 1.4-8.4-8.4-.5-.5.5-.5 8.4-8.4 1.4 1.4-7.5 7.5z" class="arrow"></path></g></svg>
-													<svg class="active" width="40" height="40" viewBox="0 0 40 40" preserveAspectRatio="xMidYMid meet"><g fill="none"><circle cx="20" cy="20" r="20" fill="#35C5F0"></circle><path fill="#FFF" d="M17 20l7.5 7.5-1.4 1.4-8.4-8.4-.5-.5.5-.5 8.4-8.4 1.4 1.4-7.5 7.5z"></path></g></svg>
-												</div>
-												<div class="scroller__ui__right scroller-fixed" style="top: 108.662px;">
-													<svg class="inactive" width="40" height="40" viewBox="0 0 40 40" preserveAspectRatio="xMidYMid meet"><g fill="none" transform="matrix(-1 0 0 1 40 0)"><circle cx="20" cy="20" r="20" fill="#FFF" class="circle"></circle><path fill="#424242" d="M17 20l7.5 7.5-1.4 1.4-8.4-8.4-.5-.5.5-.5 8.4-8.4 1.4 1.4-7.5 7.5z" class="arrow"></path></g></svg>
-													<svg class="active" width="40" height="40" viewBox="0 0 40 40" preserveAspectRatio="xMidYMid meet"><g fill="none" transform="matrix(-1 0 0 1 40 0)"><circle cx="20" cy="20" r="20" fill="#35C5F0"></circle><path fill="#FFF" d="M17 20l7.5 7.5-1.4 1.4-8.4-8.4-.5-.5.5-.5 8.4-8.4 1.4 1.4-7.5 7.5z"></path></g></svg>
-												</div>
-											</div>
-								</section>
-							</div>
 						</div>
 					</div><!-- 본문 좌측끝 -->
-					<div class="production-selling__detail__sidebar col-4">
-						<div data-sticky-enabled="true" data-sticky-disabled="false" data-sticky-always="false" data-sticky-ignore="false" data-direction="top" data-offset="133" class="sticky-container production-selling-sidebar-wrap" style="height: 193px;">
-							<div class="sticky-child production-selling-sidebar" style="position: absolute; box-sizing: border-box; height: 450px; width: 365.325px; top: px;">
-								<section class="production-selling-sidebar-content production-selling-sidebar__content">
-									<div class="production-selling-option-form production-selling-sidebar-content__option-form">
-										<div class="selling-option-form-content deal-selling-option-form-content production-selling-option-form__form">
-											<div class="production-select-dropdown">
-												<div class="production-select-dropdown__button">
-													<button class="production-select-button" type="button">
-														<div class="production-select-button__production">
-															<div class="production-select-button__production__blank">상품을 선택하세요.</div>
-															<div class="production-select-button__production__icon">
-																<svg width="1em" height="1em" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path></svg>
-															</div>
-														</div>
-													</button>
-												</div>
-											</div>
-											<ul class="selling-option-form-content__list"></ul>
-											<p class="selling-option-form-content__price">
-												<span class="selling-option-form-content__price__left">주문금액</span>
-												<span class="selling-option-form-content__price__right">
-													<span class="selling-option-form-content__price__number">0</span>원
-												</span>
-											</p>
-										</div>
-										<div class="production-selling-option-form__footer">
-											<button class="button button--color-gray-14-inverted button--size-55 button--shape-4 production-selling-sidebar-content__scrap" type="button">
-											<svg class="icon--stroke" aria-label="스크랩" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="0.5" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M11.53 18.54l-8.06 4.31A1 1 0 0 1 2 21.97V3.5A1.5 1.5 0 0 1 3.5 2h17A1.5 1.5 0 0 1 22 3.5v18.47a1 1 0 0 1-1.47.88l-8.06-4.31a1 1 0 0 0-.94 0z"></path></svg>
-											</button>
-											<button class="button button--color-blue-inverted button--size-55 button--shape-4" type="button">장바구니</button>
-											<button class="button button--color-blue button--size-55 button--shape-4" type="button">바로구매</button>
-										</div>
-									</div>
-								</section>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
-		
-		<!-- 페이지 하단 -->
-		<footer class="layout-footer">
-			<div class="layout-footer__content">
-				<div class="layout-footer__top">
-					<address class="layout-footer__cs">
-						<div class="layout-footer__cs__row">
-							<a class="layout-footer__cs__link" href="#">
-								고객센터>
-							</a>
-						</div>
-						<div class="layout-footer__cs__row">
-							<a class="layout-footer__cs__tel" href="#">1670-0876</a>
-						</div>
-						<span class="layout-footer__cs__time">평일 09:00 ~ 18:00 (주말 &amp; 공휴일 제외)</span>
-					</address>
-					<div class="layout-footer__outbound">
-						<a class="layout-footer__outbound__item" href="#" title="앱스토어">
-							<svg class="icon" width="30" height="30" viewBox="0 0 30 30" preserveAspectRatio="xMidYMid meet"><path fill-rule="evenodd" d="M22.34 15.57a5.6 5.6 0 0 0 3.42 5.15c-.02.1-.53 1.84-1.78 3.62-1.05 1.57-2.15 3.1-3.9 3.13-1.69.04-2.26-1-4.2-1-1.96 0-2.57.97-4.2 1.04-1.65.06-2.92-1.67-4-3.23-2.18-3.17-3.87-8.93-1.6-12.85a6.23 6.23 0 0 1 5.24-3.2c1.66-.03 3.2 1.12 4.22 1.12 1 0 2.91-1.38 4.88-1.17.82.02 3.17.32 4.68 2.52-.13.08-2.8 1.64-2.76 4.87zm-3.2-9.48a4.8 4.8 0 0 1-3.8 1.8c-.18-1.46.54-3 1.34-3.95A5.81 5.81 0 0 1 20.44 2c.17 1.5-.43 3-1.3 4.09z"></path></svg>
-						</a>
-						<a class="layout-footer__outbound__item" href="#" title="플레이스토어">
-							<svg class="icon" width="30" height="30" viewBox="0 0 30 30" preserveAspectRatio="xMidYMid meet"><path fill-rule="evenodd" d="M4.22 26.95A2.35 2.35 0 0 1 4 25.9V3.8c0-.42.08-.77.22-1.05l12.1 12.1-12.1 12.1zm.74.68l12.07-12.07 3.7 3.7-14.2 8.1c-.6.34-1.14.42-1.57.27zm15.78-17.2l-3.71 3.71L4.96 2.07c.14-.04.3-.07.45-.07.34 0 .72.1 1.12.34l14.2 8.1zm.9.52l4.32 2.46c1.39.8 1.39 2.09 0 2.88l-4.32 2.46-3.9-3.9 3.9-3.9z"></path></svg>
-						</a>
-						<a class="layout-footer__outbound__item" href="#" title="카카오스토리">
-							<svg class="icon" width="30" height="30" viewBox="0 0 30 30" preserveAspectRatio="xMidYMid meet"><path fill="#757575" fill-rule="evenodd" d="M19.02 6h-8.04a.96.96 0 0 0-.98.93v8.16c0 .51.44.93.98.93h3.7c-.02.9-.4 1.9-.99 2.77a10.3 10.3 0 0 1-2 2.06l-.03.03c-.11.1-.2.22-.2.38 0 .12.07.21.14.31l.02.02 2.57 2.76s.13.12.23.15c.12.02.25.03.34-.04A12.25 12.25 0 0 0 20 14.79V6.93a.96.96 0 0 0-.98-.93"></path></svg>
-						</a>
-						<a class="layout-footer__outbound__item" href="#" title="페이스북">
-							<svg class="icon" width="30" height="30" viewBox="0 0 30 30" preserveAspectRatio="xMidYMid meet"><path fill="#757575" fill-rule="evenodd" d="M16.67 26V15H20v-3.38h-3.33V9.07c-.02-.76.08-1.29 1.66-1.7H20V4h-3.33c-3.2 0-4.46 1.84-4.17 5.08v2.53H10V15h2.5v11h4.17z"></path></svg>
-						</a>
-						<a class="layout-footer__outbound__item" href="#" title="인스타그램">
-							<svg class="icon" width="30" height="30" viewBox="0 0 30 30" preserveAspectRatio="xMidYMid meet"><path fill="#757575" fill-rule="evenodd" d="M15 3c3.26 0 3.67.02 4.95.08 1.27.05 2.14.26 2.9.55a5.88 5.88 0 0 1 2.13 1.39 5.88 5.88 0 0 1 1.39 2.12c.3.77.5 1.64.55 2.91.06 1.28.08 1.7.08 4.95s-.02 3.67-.08 4.95a8.78 8.78 0 0 1-.55 2.9 5.88 5.88 0 0 1-1.39 2.13 5.88 5.88 0 0 1-2.12 1.39c-.77.3-1.64.5-2.91.55-1.28.06-1.7.08-4.95.08s-3.67-.02-4.95-.08a8.78 8.78 0 0 1-2.9-.55 5.88 5.88 0 0 1-2.13-1.39 5.88 5.88 0 0 1-1.39-2.12c-.3-.77-.5-1.64-.55-2.91C3.02 18.67 3 18.25 3 15s.02-3.67.08-4.95c.05-1.27.26-2.15.55-2.9a5.88 5.88 0 0 1 1.39-2.13 5.88 5.88 0 0 1 2.12-1.39c.76-.3 1.64-.5 2.91-.55C11.33 3.02 11.75 3 15 3zm0 2.17c-3.2 0-3.58 0-4.85.07-1.17.05-1.8.24-2.22.4-.56.23-.96.49-1.38.9a3.7 3.7 0 0 0-.9 1.39 6.64 6.64 0 0 0-.41 2.22A82.92 82.92 0 0 0 5.17 15c0 3.2 0 3.58.07 4.85.05 1.17.24 1.8.4 2.22.23.56.49.96.9 1.38.43.42.83.68 1.39.9.42.17 1.05.36 2.22.41 1.27.06 1.65.07 4.85.07 3.2 0 3.58 0 4.85-.07a6.67 6.67 0 0 0 2.23-.4c.56-.23.96-.49 1.38-.9.42-.43.68-.83.9-1.39.16-.42.35-1.05.4-2.22.06-1.27.07-1.65.07-4.85 0-3.2 0-3.58-.06-4.85a6.66 6.66 0 0 0-.42-2.23 3.72 3.72 0 0 0-.9-1.38 3.7 3.7 0 0 0-1.37-.9 6.64 6.64 0 0 0-2.23-.4A82.92 82.92 0 0 0 15 5.15zm0 3.67a6.16 6.16 0 1 1 0 12.32 6.16 6.16 0 0 1 0-12.32zM15 19a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm7.84-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"></path></svg>
-						</a>
-						<a class="layout-footer__outbound__item" href="#" title="네이버 포스트">
-							<svg class="icon" width="30" height="30" viewBox="0 0 30 30" preserveAspectRatio="xMidYMid meet"><path fill="#757575" fill-rule="evenodd" d="M8.5 5h13v13h-13V5zm7.45 4v2.52L14.05 9H12v5h2.05v-2.52l1.9 2.52H18V9h-2.05zm3.11 13h-8.12L8.5 19h13l-2.44 3zm-.81 1L15 27l-3.25-4h6.5z"></path></svg>
-						</a>
-					</div>
-				</div>
-				<ul class="layout-footer__shortcut">
-					<li><a class="layout-footer__shortcut__item" rel="noopener" href="http://bucketplace.co.kr/brand-story" target="_blank">브랜드 스토리</a></li>
-					<li><a class="layout-footer__shortcut__item" rel="noopener" href="http://bucketplace.co.kr/" target="_blank">회사소개</a></li>
-					<li><a class="layout-footer__shortcut__item" rel="noopener" href="http://bucketplace.co.kr/recruit" target="_blank">채용정보</a></li>
-					<li><a class="layout-footer__shortcut__item" rel="noopener" href="/usepolicy" target="_blank">이용약관</a></li>
-					<li><a class="layout-footer__shortcut__item layout-footer__shortcut__item--bold" rel="noopener" href="/privacy" target="_blank">개인정보처리방침</a></li>
-					<li><a class="layout-footer__shortcut__item" rel="noopener" href="/customer_notices" target="_blank">공지사항</a></li>
-					<li><a class="layout-footer__shortcut__item" rel="noopener" href="/customer_center" target="_blank">고객센터</a></li>
-					<li><a class="layout-footer__shortcut__item" rel="noopener" href="/contacts/new" target="_blank">고객의 소리</a></li>
-					<li><a class="layout-footer__shortcut__item" rel="noopener" href="https://pro.ohou.se/?utm_source=ohouse&amp;utm_medium=web&amp;utm_campaign=prosignup&amp;utm_content=footer" target="_blank">전문가 등록</a></li>
-					<li><a class="layout-footer__shortcut__item" rel="noopener" href="/contacts/b2b" target="_blank">사업자 구매회원</a></li>
-					<li><a class="layout-footer__shortcut__item" rel="noopener" href="/contacts/new?type=request" target="_blank">제휴/광고 문의</a></li>
-					<li><a class="layout-footer__shortcut__item" rel="noopener" href="/partner/applications/new" target="_blank">입점신청 문의</a></li>
-				</ul>
-				<address class="layout-footer__info-wrap">
-					<dl class="layout-footer__info">
-						<a class="layout-footer__info__item" href="#">
-							<dt>
-								상호명
-							</dt>
-							<dd>(주)버킷플레이스</dd>
-						</a>
-						<span class="layout-footer__info__item">
-							<dt>
-								이메일
-							</dt>
-							<dd>(고객문의)<a href="mailto:cs@bucketplace.net"> cs@bucketplace.net </a>(제휴문의)<a href="mailto:contact@bucketplace.net"> contact@bucketplace.net</a></dd>
-						</span>
-						<span class="layout-footer__info__item">
-							<dt>대표이사</dt>
-							<dd>이승재</dd>
-						</span>
-						<span class="layout-footer__info__item">
-							<dt>사업자등록번호</dt>
-							<dd>119-86-91245</dd>
-						</span>
-						<span class="layout-footer__info__item">
-							<dt>통신판매업신고번호</dt>
-							<dd>제2018-서울서초-0580호</dd>
-						</span>
-						<span class="layout-footer__info__item">
-							<dt>주소</dt>
-							<dd>서울 서초구 서초대로74길 4 삼성생명서초타워 27층</dd>
-						</span>
-					</dl>
-					<dl class="layout-footer__info">
-						<span class="layout-footer__info__item">
-							<dt>우리은행 채무지급보증안내</dt>
-							<dd>(주)버킷플레이스는 고객님이 현금결제한&nbsp; 금액에 대해 우리은행과 채무지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.&nbsp;<a class="layout-footer__info__item__link" href="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161646429944190689.jpg?gif=1&amp;w=1440" target="_blank" rel="noopener noreferrer">서비스가입사실 확인</a></dd>
-						</span>
-					</dl>
-					<span class="layout-footer__info">
-						<span class="layout-footer__info__item">(주)버킷플레이스는 통신판매중개자로서 통신판매의 당사자가 아니며, 입점업체가 등록한 상품, 상품정보 및 거래에 대하여 (주)버킷플레이스는 일체 책임을 지지 않습니다.</span>
-					</span>
-				</address>
-				<p class="layout-footer__copyright">Copyright 2014. bucketplace, Co., Ltd. All rights reserved</p>
-			</div>
-		</footer>
+
 	</div>
 </body>
 </html>

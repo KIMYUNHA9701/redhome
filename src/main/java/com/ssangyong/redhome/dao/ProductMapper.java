@@ -1,9 +1,6 @@
 package com.ssangyong.redhome.dao;
 
-import com.ssangyong.redhome.bean.Member;
-import com.ssangyong.redhome.bean.Product;
-import com.ssangyong.redhome.bean.Review;
-import com.ssangyong.redhome.bean.Review_avg;
+import com.ssangyong.redhome.bean.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -14,13 +11,18 @@ public interface ProductMapper {
 
     //상품전체 가져오기
     List<Product> selectAllProduct();
-    //세일상품 가져오기
-    List<Product> selectSaleProduct();
+
     //카테고리별전체 가져오기
     List<Product> selectCateProduct(Map<String,Object> map);
 
+    //세일리스트 가져오기
+    List<Product_sale_List> selectSaleList();
+
+    //세일하나 가져오기
+    Product_sale selectSaleOne(int no);
+
     //리뷰평균?전체 가져오기
-    List<Review_avg> selectAvgReview(Map<String,Object> map);
+    Review_avg selectAvgReview(int no);
 
     //상품하나 가져오기
     Product selectProduct(int no);
