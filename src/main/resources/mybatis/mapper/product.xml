@@ -16,7 +16,7 @@
         <if test="sort != null">
             ORDER BY
             <choose>
-                <when test='sort.equals("best")'>PRODUCT_QUANTITY_SOLD</when>
+                <when test='sort.equals("best")'>PRODUCT_QUANTITY_SOLD DESC</when>
                 <when test='sort.equals("new")'>PRODUCT_NUM DESC</when>
                 <when test='sort.equals("high")'>PRODUCT_PRICE DESC</when>
                 <when test='sort.equals("low")'>PRODUCT_PRICE</when>

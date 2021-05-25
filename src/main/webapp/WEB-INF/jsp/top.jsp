@@ -23,7 +23,7 @@
 						스토어
 					</a>
 					<a class="layout-navigation-primary__menu__item noDeco" href="/board?&pageNum=1">
-						공지사항
+						Q&A게시판
 					</a>
 				</nav>
 				<div class="layout-navigation-primary__right">

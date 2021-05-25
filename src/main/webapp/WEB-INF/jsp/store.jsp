@@ -112,6 +112,7 @@
                         </a>
                     </div>
                     <div class="store_item_header">
+                     <%--   --%>
                         <h1>
                             <span class="store_item_header_name">${p.product_num}</span>
                         </h1>
@@ -131,6 +132,8 @@
              </div>
         </c:if>
     </c:forEach>
+
+    <jsp:include page="bottom.jsp" flush="false" />
 
 	<script type="text/javascript">
 		var check = $("input[type='checkbox']");
