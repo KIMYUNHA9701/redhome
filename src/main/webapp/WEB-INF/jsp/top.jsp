@@ -5,8 +5,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title><link rel="stylesheet" type="text/css" href="/css/top.css">
-	<style>
-	</style>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="functions" uri="http://java.sun.com/jsp/jstl/functions" %>
 </head>
 <body>
 <header class="layout-navigation-bar">
@@ -32,8 +32,17 @@
 							<div class="layout-navigation-search__header">
 								<div class="layout-navigation-search__combobox">
 									<div class="layout-navigation-search__input">
+									    <form action="/store">
 										<img src="../../img/ohsu_2.PNG" style="position:absolute; padding-top:6px; padding-left:6px;">
-										<input type="text" class="layout-navigation-search__input__text" placeholder="레드홈 통합검색">
+										<c:choose>
+                                            <c:when test="${p_name != null}">
+                                                <input type="text" id="p_name" name="p_name" class="layout-navigation-search__input__text" placeholder="레드홈 통합검색" value=${p_name}>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <input type="text" id="p_name" name="p_name" class="layout-navigation-search__input__text" placeholder="레드홈 통합검색">
+                                            </c:otherwise>
+										</c:choose>
+										</form>
 									</div>
 								</div>
 							</div>

@@ -8,11 +8,16 @@
 
     <select id="selectCateProduct" parameterType="java.util.Map" resultType="com.ssangyong.redhome.bean.Product">
         SELECT * FROM PRODUCT
-        <if test="c_num != null">
-            <if test="c_num != 0">
-                WHERE PRODUCT_CATEGORY_NUM = #{c_num}
+        <if test="c_num != null or p_name != null">
+            WHERE
+            <if test="c_num != null and c_num != 0">
+                PRODUCT_CATEGORY_NUM = #{c_num}
+            </if>
+            <if test="p_name != null">
+                PRODUCT_NAME LIKE '%${p_name}%'
             </if>
         </if>
+
         <if test="sort != null">
             ORDER BY
             <choose>

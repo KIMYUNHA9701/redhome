@@ -22,17 +22,20 @@ public class ProductController {
     ProductService productService;
 
     @RequestMapping(value = "/store", method = RequestMethod.GET)
-    public String viewStoreCategory(Model model, @RequestParam(required = false) Integer c_num, @RequestParam(required = false) String storeOrder, HttpServletRequest request) {
+    public String viewStoreCategory(Model model, @RequestParam(required = false) Integer c_num, @RequestParam(required = false) String storeOrder, @RequestParam(required = false) String p_name, HttpServletRequest request) {
         System.out.println(c_num + "~~~~~~~~~~~~~~~~~~~~~");
         System.out.println(storeOrder + "~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println(p_name + "~~~~~~~~~~~~~~~~~~~~~");
 
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("c_num", c_num);
         map.put("sort", storeOrder);
+        map.put("p_name", p_name);
 
         //select해도 기존 값 유지
         request.setAttribute("c_num", c_num);
         request.setAttribute("sort", storeOrder);
+        request.setAttribute("p_name", p_name);
 
         DecimalFormat format = new DecimalFormat("###,###,###");
         List<Product_sale_List> productSaleList = productService.selectSaleList();

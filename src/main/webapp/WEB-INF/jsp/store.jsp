@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="functions" uri="http://java.sun.com/jsp/jstl/functions" %>
 <link href="../../css/store.css?" rel="stylesheet">
 <link rel="stylesheet" href="../../css/selectbox.min.css?">
 <script src="../../js/selectbox.min.js?"></script>
@@ -66,7 +67,7 @@
 		</form>
         <form action="/store" name="select_frm" method="get" onchange="javascript:selectSort();">
             <input type="hidden" id="c_num" name="c_num" value="${c_num}">
-
+            <input type="hidden" id="p_name" name="p_name" value="${p_name}">
             <div class="store_option_select">
                 <select name="storeOrder" id="storeOrder" class="justselect">
                     <option value="sort" selected disabled hidden>
@@ -129,6 +130,9 @@
                     </div>
                 </div>
         <c:if test="${status.index%4 == 3 }">
+             </div>
+        </c:if>
+        <c:if test="${status.index == functions:length(productList)-1 and status.index%4 != 3 }">
              </div>
         </c:if>
     </c:forEach>
