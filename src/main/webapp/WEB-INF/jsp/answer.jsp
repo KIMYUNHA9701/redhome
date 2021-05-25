@@ -89,6 +89,8 @@
                     <input type='hidden' name='reply' value='${reply}'>
                     <input type='hidden' name='quest_num' value='${question.quest_num}'>
                     <input type='hidden' name='orderType' value='${orderType}'>
+                    <input type='hidden' name='type' value='${cri.type}'>
+                    <input type='hidden' name='keyword' value='${cri.keyword}'>
                 </form>
 
             </footer>

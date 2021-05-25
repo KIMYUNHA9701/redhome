@@ -3,6 +3,21 @@
 <mapper namespace="com.ssangyong.redhome.dao.BoardMapper">
 
 
+
+    <sql id ="search" >
+
+        <if test="type == 'search_title'">
+            quest_title like '%'||'${keyword}'||'%' and
+        </if>
+        <if test="type == 'search_contents'">
+            quest_contents like '%'||'${keyword}'||'%' and
+        </if>
+        <if test="type == 'search_id'">
+            member_id like '%'||'${keyword}'||'%' and
+        </if>
+    </sql>
+
+
     <select id="selectQuestion" resultType="com.ssangyong.redhome.bean.Quest" parameterType="Integer">
         SELECT QUEST_NUM,QUEST_TITLE,QUEST_CONTENTS,QUEST_IMG,QUEST_PWD, TO_CHAR(QUEST_DATE,'YYYY"년" MM"월" dd"일" HH24:MI') As QUEST_DATE,
                QUEST_STATE,QUEST_CATEGORY_NUM, MEMBER_ID
@@ -22,15 +37,34 @@
     <select id="selectTotalCnt" resultType="Integer" parameterType="java.util.HashMap">
 
         select count(*)total from quest
+        <if test='type!=null or reply=="not_yet" or orderType =="newAnswer"'>where</if>
+
+        <if  test='type!=null'>
+            <choose>
+                <when test="type == 'search_title'">
+                    quest_title like '%'||'${keyword}'||'%'
+                </when>
+                <when test="type == 'search_contents'">
+                    quest_contents like '%'||'${keyword}'||'%'
+                </when>
+                <otherwise>
+                    member_id like '%'||'${keyword}'||'%'
+                </otherwise>
+            </choose>
+        </if>
+
+        <if test='type!=null and reply=="not_yet"'>and</if>
 
        <if test='reply=="not_yet"'>
-
-           where quest_state = '답변대기'
+           quest_state = '답변대기'
 
        </if>
+
+        <if test='type!=null and orderType=="newAnswer"'>and</if>
+
         <if test='orderType=="newAnswer"'>
 
-            where  quest_num in (
+             quest_num in (
                 select /*+ INDEX_DESC(answer answer_answer_num_idx) */ quest_num
                 from answer
                 where quest_num > 0)
@@ -52,6 +86,7 @@
         from quest
 
         <where>
+            <include refid="search"></include>
             <choose>
                 <when test='reply=="not_yet"'>
                     <![CDATA[       quest_num>0 and quest_state = '답변대기' and rownum > 0 and rownum <= (${pageNum} * ${amount})  )  ]]>
@@ -61,6 +96,8 @@
 
                 </otherwise>
             </choose>
+
+
         </where>
 
         <![CDATA[    where rn >(${pageNum} - 1) * ${amount}]]>
@@ -74,7 +111,9 @@
         select /*+ INDEX_DESC(quest PK_QUEST) */ rownum rn, quest_num, quest_title, quest_contents,
         quest_img, quest_pwd, quest_date, quest_state, quest_category_num, member_id
         from quest
-        <![CDATA[   where quest_num>0 and quest_state = '답변완료' and rownum > 0 and rownum <= (${pageNum} * ${amount})  )  ]]>
+        where
+        <include refid="search"></include>
+        <![CDATA[    quest_num>0 and quest_state = '답변완료' and rownum > 0 and rownum <= (${pageNum} * ${amount})  )  ]]>
 
         where rn >(${pageNum} - 1) * ${amount} and quest_num in (
         select /*+ INDEX_DESC(answer answer_answer_num_idx) */ quest_num
@@ -85,7 +124,7 @@
     </select>
 
 
-    <delete id="deleteBoard" parameterType="Integer">
+    <delete id="deleteBoard" parameterType="Integer" >
 
         delete from quest where quest_num = #{value}
 

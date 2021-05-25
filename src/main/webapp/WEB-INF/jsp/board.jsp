@@ -77,30 +77,26 @@
                     빠르고 친절하게 답변해 드리겠습니다.</p>
             </div>
             <form id="questions-header__form" class="sticky-top"
-                  action="/questions" accept-charset="utf-8" method="get">
+                  action="/board" accept-charset="utf-8" method="get">
                 <input name="utf8" type="hidden" value="✓">
                 <div class="sticky-content">
                     <div class="questions-header__form__wrap row">
                         <div class="questions-header__form__search col">
-									<span class="icon icon-etc-find-sm-gray-dark search"
-                                          aria-hidden="true"></span> <span
-                                class="icon icon-pointer-x-bold-gray clear clear-inactive hide"
-                                aria-hidden="false" role="button"></span> <span
-                                class="icon icon-pointer-x-bold-dark clear clear-active hide"
-                                aria-hidden="false" role="button"></span>
-
                             <div class="questions-header__form__search__input">
-                                <select id="questionCategory_filters"  name="questionCategory"  onchange="" >
-                                    <option class="filter-select__list__entry active" selected="selected" value="recent">선택하세요  ▼</option>
-                                    <option class="filter-select__list__entry" value="search_title">제목</option>
-                                    <option class="filter-select__list__entry" value="search_id">아이디</option>
+                                <select id="questionCategory_filters"  name="type"  onchange="" >
+                                    <option class="filter-select__list__entry"  value="" ${pageMaker.cri.type == null?"selected":""} >선택하세요  ▼</option>
+                                    <option class="filter-select__list__entry" value="search_title" ${pageMaker.cri.type eq 'search_title'?"selected":""}>제목</option>
+                                    <option class="filter-select__list__entry" value="search_contents" ${pageMaker.cri.type eq 'search_contents'?"selected":""}>내용</option>
+                                    <option class="filter-select__list__entry" value="search_id" ${pageMaker.cri.type eq 'search_id'?"selected":""}>아이디</option>
                                 </select>
                                 <img src="../../img/ohsu_2.PNG"
-                                     style="position: absolute; padding-top: 21px; padding-left: 21px;">
-                                <input type="text" name="query"
-                                       id="questions-header__form__search" value=""
+                                     style="position: absolute; padding-top: 21px; padding-left: 21px;" class="searchBtn">
+                                <input type="text" name="keyword"
+                                       id="questions-header__form__search" value="${pageMaker.cri.keyword}"
                                        class="form-control" placeholder="궁금한 것을 검색해보세요."
                                        autocomplete="off"/>
+                                <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+                                <input type="hidden" name="amount" value="${pageMaker.cri.amount}">
                             </div>
                         </div>
                     </div>
@@ -246,7 +242,8 @@
              <input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
              <input type='hidden' name='reply' value='${reply}'>
              <input type='hidden' name='orderType' value='${orderType}'>
-
+             <input type='hidden' name='type' value='${pageMaker.cri.type}'>
+             <input type='hidden' name='keyword' value='${pageMaker.cri.keyword}'>
          </form>
 
   <jsp:include page="bottom.jsp" flush="false"/>
@@ -313,6 +310,31 @@
 
         });
 
+
+        var searchForm = $("#questions-header__form");
+
+
+        $(".searchBtn").click(function (e){
+            e.preventDefault();
+
+            searchForm.find("input[name='pageNum']").val(1);
+            searchForm.submit();
+
+
+           /* if(searchForm.find("option").val()==""){
+                 alert('검색 유형을 선택하세요.');
+            }
+            else{
+                if(searchForm.find("input[name='keyword']").val()==null && searchForm.find("input[name='keyword']").val()==""){
+                    alert('검색어를 입력하세요.');
+                }else{
+                    searchForm.submit();
+                }
+
+
+            }*/
+
+        });
 
     });
 
