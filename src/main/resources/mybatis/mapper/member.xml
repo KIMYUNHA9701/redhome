@@ -31,11 +31,28 @@
     </delete>
 
     <select id="searchMember" parameterType="java.util.Map" resultType="com.ssangyong.redhome.bean.Member">
-        SELECT * FROM MEMBER
+        SELECT * FROM (
+        SELECT ROWNUM RM,MEMBER_ID, MEMBER_PWD, MEMBER_NAME, MEMBER_TEL, MEMBER_EMAIL, MEMBER_REG, MEMBER_ADDR,
+        MEMBER_BIRTH, MEMBER_POINT, LEVEL_NUM
+        FROM MEMBER
 
         <if test="query!=null">
             <where>${query} LIKE '%'||#{data}||'%' </where>
         </if>
+        )
+        <if test="start!=null">
+            <if test="end!=null">WHERE RM BETWEEN #{start} AND #{end} </if>
+        </if>
+    </select>
+
+    <select id="getTotalRow" resultType="Integer" parameterType="java.util.Map">
+        SELECT COUNT(*) FROM MEMBER
+
+        <where>
+            <if test="query != null and data != null">
+                ${query} LIKE '%'||#{data}||'%'
+            </if>
+        </where>
     </select>
 </mapper>
 

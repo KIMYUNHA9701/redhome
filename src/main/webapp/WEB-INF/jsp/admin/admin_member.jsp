@@ -16,6 +16,12 @@
             location.href = "/admin_member?query=" + query + "&data=" + data;
         }
     </script>
+    <style>
+        .paging{
+            font-size : 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -71,6 +77,41 @@
             </c:forEach>
             </tbody>
         </table>
+
+        <div class="paging">
+            <a href="/admin_member?page=1&query=${map.get('query')}&data=${map.get('data')}">&lt&lt</a>
+            <c:choose>
+                <c:when test="${map.get('currentPage') > 1}">
+                    <a href="/admin_member?page=${map.get('currentPage') - 1}&query=${map.get('query')}&data=${map.get('data')} ">&lt</a>
+                </c:when>
+                <c:otherwise>
+                    <a href="#">&lt</a>
+                </c:otherwise>
+            </c:choose>
+
+                <span>
+                    <c:forEach var="i" begin="${map.get('startPage')}" end="${map.get('endPage')}">
+                        <c:choose>
+                            <c:when test="${i == map.get('currentPage')}">
+                                <strong>${i}</strong>
+                            </c:when>
+                            <c:otherwise>
+                                <a href="/admin_member?page=${i}&query=${map.get('query')}&data=${map.get('data')}">${i}</a>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                  </span>
+            <c:choose>
+                <c:when test="${map.get('currentPage') < map.get('totalPage')}">
+                    <a href="/admin_member?page=${map.get('currentPage') + 1}&query=${map.get('query')}&data=${map.get('data')}">&gt</a>
+                </c:when>
+                <c:otherwise>
+                    <a href="#">&gt</a>
+                </c:otherwise>
+            </c:choose>
+            <a href="/admin_member?page=${map.get('totalPage')}&query=${map.get('query')}&data=${map.get('data')}">&gt&gt</a>
+
+        </div>
     </div>
 
 </body>

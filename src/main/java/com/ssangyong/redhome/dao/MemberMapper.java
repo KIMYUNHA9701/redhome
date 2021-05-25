@@ -25,4 +25,7 @@ public interface MemberMapper {
 
     //멤버검색
     List<Member> searchMember(Map<String,String> map);
+
+    //멤버전체인원수
+    Integer getTotalRow(Map<String,String> map);
 }

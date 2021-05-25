@@ -114,6 +114,11 @@ public class MemberServiceImpl implements MemberService{
             case "레벨":
                 return "LEVEL_NUM";
         }
-        return null;
+        return query;
+    }
+
+    @Override
+    public Integer getTotalRow(Map<String, String> map) {
+        return memberRepository.getTotalRow(map);
     }
 }

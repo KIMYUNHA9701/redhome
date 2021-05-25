@@ -62,7 +62,7 @@ public class AdminController {
         return "redirect:/admin";
     }
 
-    //회원관리페이지 & 회원검색
+    /*//회원관리페이지 & 회원검색
     @RequestMapping(value = "/admin_member", method = RequestMethod.GET)
     public String viewMembers(Model model,
                               @RequestParam(required = false) String query,
@@ -81,6 +81,62 @@ public class AdminController {
         }else {
             members = memberService.selectAllMember();
         }
+        model.addAttribute("members", members);
+        return "/admin/admin_member";
+    }*/
+
+    //회원관리페이지 & 회원검색 & 페이징
+    @RequestMapping(value = "/admin_member", method = RequestMethod.GET)
+    public String viewMembers(Model model,
+                              @RequestParam(required = false) String query,
+                              @RequestParam(required = false) String data,
+                              @RequestParam(required = false) Integer page){
+        List<Member> members;
+        int pageScale = 2;
+        int currentPage = 1;
+
+        if(query != null && data != null){
+            System.out.println("query = " + query);
+            System.out.println("data = " + data);
+            Map<String,String> map = new HashMap<>();
+            String changedQuery = memberService.translateQuery(query);
+            map.put("query",changedQuery);
+            map.put("data",data);
+            System.out.println(map);
+            int totalRow = memberService.getTotalRow(map);
+            int totalPage = totalRow%pageScale == 0? totalRow/pageScale:(totalRow/pageScale) + 1;
+            if(totalRow==0)totalPage=1;
+            if(page != null)currentPage = page;
+
+            int start = pageScale * (currentPage - 1) + 1;
+            int end = pageScale * currentPage;
+            int currentBlock = currentPage%pageScale==0?currentPage/pageScale:(currentPage/pageScale)+1;
+            int startPage = (currentBlock-1)*pageScale + 1;
+            int endPage = currentBlock*pageScale;
+
+            if(totalPage<=endPage){
+                endPage = totalPage;
+            }
+
+            map.put("start", String.valueOf(start));
+            map.put("end", String.valueOf(end));
+            map.put("pageScale",String.valueOf(pageScale));
+            map.put("currentPage",String.valueOf(currentPage));
+            map.put("totalRow",String.valueOf(totalRow));
+            map.put("totalPage",String.valueOf(totalPage));
+            map.put("currentBlock",String.valueOf(currentBlock));
+            map.put("startPage",String.valueOf(startPage));
+            map.put("endPage",String.valueOf(endPage));
+
+            members = memberService.searchMember(map);
+            System.out.println(members);
+            System.out.println(map);
+
+            model.addAttribute("map",map);
+        }else {
+            members = memberService.selectAllMember();
+        }
+
         model.addAttribute("members", members);
         return "/admin/admin_member";
     }

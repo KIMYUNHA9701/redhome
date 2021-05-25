@@ -22,4 +22,6 @@ public interface MemberService {
     List<Member> searchMember(Map<String,String> map);
 
     String translateQuery(String query);
+
+    Integer getTotalRow(Map<String,String> map);
 }
