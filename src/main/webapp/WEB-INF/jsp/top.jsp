@@ -14,12 +14,12 @@
 		<div class="layout-navigation-primary" style="position:relative">
 			<div class="layout-navigation-primary__content">
 				<div class="layout-navigation-primary__left">
-					<a href="/main" class="noDeco layout-navigation-logo">
+					<a href="/store" class="noDeco layout-navigation-logo">
 						<img src="../../img/redhome_kor.jpg" style="width: 100px;">
 					</a>
 				</div>
 				<nav class="layout-navigation-primary__menu" style="display:block">
-					<a class="layout-navigation-primary__menu__item noDeco" href="/store?c_num=0">
+					<a class="layout-navigation-primary__menu__item noDeco" href="/store">
 						스토어
 					</a>
 					<a class="layout-navigation-primary__menu__item noDeco" href="/board?&pageNum=1">
