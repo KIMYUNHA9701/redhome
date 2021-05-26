@@ -14,14 +14,7 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </head>
 <body>
-    <c:choose>
-        <c:when test="${member == null}">
-            <jsp:include page="top.jsp" flush="false" />
-        </c:when>
-        <c:otherwise>
-            <jsp:include page="top2.jsp" flush="false" />
-        </c:otherwise>
-	</c:choose>
+    <jsp:include page="top.jsp" flush="false" />
 	<jsp:include page="banner.jsp" flush="false" />
 	<div class="store">
 		<div class="today_sale">
