@@ -21,6 +21,13 @@
         function editProduct(no){
             location.href = "/admin_product/edit/" + no;
         }
+
+        function searchBtn(){
+            var query1 = document.getElementById("query1").value;
+            var data = document.getElementById("search").value;
+            console.log("query1 : " + query1 + ", data = " + data);
+            location.href = "/admin_product?query1=" + query1 + "&data=" + data;
+        }
     </script>
 </head>
 <body>
@@ -28,7 +35,12 @@
         <h2>상품관리페이지</h2>
         <br>
         <div>
-            <select name="query1">
+            <select name="query1" id="query1">
+                <option selected value="" >선택해주세요</option>
+                <option value="제품번호">제품번호</option>
+                <option value="제품이름">제품이름</option>
+            </select>
+            <select name="query2">
                 <option selected value="카테고리타입" >카테고리타입</option>
                 <option value="노래방">노래방</option>
                 <option value="도서관">도서관</option>
@@ -38,7 +50,7 @@
                 <option value="헬스장">헬스장</option>
                 <option value="pc방">pc방</option>
             </select>
-            <select name="query2">
+            <select name="query3">
                 <option selected value="제품타입" >제품타입</option>
                 <option value="기타">기타</option>
                 <option value="책상">책상</option>
@@ -46,8 +58,8 @@
                 <option value="옷장">옷장</option>
                 <option value="침대">침대</option>
             </select>
-            <input type="text" name="search">
-            <button>검색</button>
+            <input type="text" name="search" id="search">
+            <button onclick="searchBtn()">검색</button>
             <button onclick="registProduct()">등록</button>
         </div>
         <br><br>

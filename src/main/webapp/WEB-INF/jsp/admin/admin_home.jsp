@@ -21,6 +21,7 @@
     <a href="/admin_member">회원관리페이지</a>
     <a href="/admin_product">상품관리페이지</a>
     <a href="/admin_order">주문관리페이지</a>
+    <a href="/admin_qna">문의관리페이지</a>
 </c:if>
 </body>
 </html>

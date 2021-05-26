@@ -1,13 +1,7 @@
 package com.ssangyong.redhome.controller;
 
-import com.ssangyong.redhome.bean.Admin;
-import com.ssangyong.redhome.bean.Member;
-import com.ssangyong.redhome.bean.Product;
-import com.ssangyong.redhome.bean.Shopping_order;
-import com.ssangyong.redhome.service.AdminService;
-import com.ssangyong.redhome.service.MemberService;
-import com.ssangyong.redhome.service.OrderService;
-import com.ssangyong.redhome.service.ProductService;
+import com.ssangyong.redhome.bean.*;
+import com.ssangyong.redhome.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,6 +30,9 @@ public class AdminController {
     @Resource(name = "orderservice")
     OrderService orderService;
 
+    @Resource(name = "boardservice")
+    BoardService boardService;
+
     //관리자 홈
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String adminHome(){
@@ -62,29 +59,6 @@ public class AdminController {
         return "redirect:/admin";
     }
 
-    /*//회원관리페이지 & 회원검색
-    @RequestMapping(value = "/admin_member", method = RequestMethod.GET)
-    public String viewMembers(Model model,
-                              @RequestParam(required = false) String query,
-                              @RequestParam(required = false) String data){
-        List<Member> members;
-        if(query != null && data != null){
-            System.out.println("query = " + query);
-            System.out.println("data = " + data);
-            Map<String,String> map = new HashMap<>();
-            String changedQuery = memberService.translateQuery(query);
-            map.put("query",changedQuery);
-            map.put("data",data);
-            System.out.println(map);
-            members = memberService.searchMember(map);
-            System.out.println(members);
-        }else {
-            members = memberService.selectAllMember();
-        }
-        model.addAttribute("members", members);
-        return "/admin/admin_member";
-    }*/
-
     //회원관리페이지 & 회원검색 & 페이징
     @RequestMapping(value = "/admin_member", method = RequestMethod.GET)
     public String viewMembers(Model model,
@@ -95,7 +69,10 @@ public class AdminController {
         int pageScale = 2;
         int currentPage = 1;
 
-        if(query != null && data != null){
+        if(query == null || query.equals("") || data == null || data.equals("")){
+            members = memberService.selectAllMember();
+        }
+        else if(query != null && data != null){
             System.out.println("query = " + query);
             System.out.println("data = " + data);
             Map<String,String> map = new HashMap<>();
@@ -144,9 +121,18 @@ public class AdminController {
 
     //상품관리페이지
     @RequestMapping(value = "/admin_product", method = RequestMethod.GET)
-    public String viewProducts(Model model){
+    public String viewProducts(Model model,
+                               @RequestParam(required = false) String query1,
+                               @RequestParam(required = false) String data){
+        Map<String, Object> map = new HashMap<>();
 
-        List<Product> products = productService.selectAllProduct();
+        if(query1 != null && data != null ) {
+            if(query1.equals("") || data.equals("")){query1 = null; data = null;}
+            System.out.println("query1 : " + query1 + ", data : " + data);
+            map.put("query1", query1);
+            map.put("data", data);
+        }
+        List<Product> products = productService.selectAllProduct(map);
         model.addAttribute("products",products);
         return "/admin/admin_product";
     }
@@ -196,11 +182,40 @@ public class AdminController {
 
     //주문관리페이지
     @RequestMapping(value = "/admin_order", method = RequestMethod.GET)
-    public String viewOrders(Model model){
+    public String viewOrders(Model model,
+                             @RequestParam(required = false) String query,
+                             @RequestParam(required = false) String data){
 
-        List<Shopping_order> orders = orderService.selectAllOrder();
+        Map<String, Object> map = new HashMap<>();
+        if(query != null && data != null ) {
+            if(query.equals("") || data.equals("")){query = null; data = null;}
+            System.out.println("query : " + query + ", data : " + data);
+            map.put("query", query);
+            map.put("data", data);
+        }
+        List<Shopping_order> orders = orderService.selectAllOrder(map);
         model.addAttribute("orders",orders);
         return "/admin/admin_order";
+    }
+
+    //문의관리페이지
+    @RequestMapping(value="/admin_qna", method = RequestMethod.GET)
+    public String viewQNA(Model model,
+                          @RequestParam(required = false) String query,
+                          @RequestParam(required = false) String query2,
+                          @RequestParam(required = false) String data){
+        Map<String, Object> map = new HashMap<>();
+        if(query2 == null || query2.equals("")){map.put("query2",null);}
+        if(query != null && data != null ) {
+            if(query.equals("") || data.equals("")){query = null; data = null;}
+            System.out.println("query : " + query + ", data : " + data);
+            map.put("query", query);
+            map.put("data", data);
+        }
+
+        List<Quest> quests = boardService.selectAllQna(map);
+        model.addAttribute("quests",quests);
+        return "/admin/admin_qna";
     }
 
 

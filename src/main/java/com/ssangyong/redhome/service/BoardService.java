@@ -7,6 +7,7 @@ import com.ssangyong.redhome.bean.paging.Criteria;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public interface BoardService {
 
@@ -22,5 +23,9 @@ public interface BoardService {
     int getTotalCnt(HashMap<String,Object> map);
 
     void deleteBoard(int quest_num);
+
+    List<Quest> selectAllQna(Map<String,Object> map);
+
+    Map<String,Object> translateQuery(Map<String,Object>map);
 
 }

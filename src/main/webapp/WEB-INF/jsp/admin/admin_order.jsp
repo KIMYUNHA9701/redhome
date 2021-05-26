@@ -9,21 +9,29 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function searchBtn(){
+            var query = document.getElementById("query").value;
+            var data = document.getElementById("search").value;
+            console.log("query : " + query + ", data = " + data);
+            location.href = "/admin_order?query=" + query + "&data=" + data;
+        }
+    </script>
 </head>
 <body>
     <div class="container">
     <h2>주문관리페이지</h2>
         <br>
         <div>
-            <select name="query">
+            <select name="query" id="query">
                 <option selected value="" >선택해주세요.</option>
                 <option value="주문번호">주문번호</option>
                 <option value="아이디">아이디</option>
                 <option value="주문날짜">주문날짜</option>
                 <option value="배송상태">배송상태</option>
             </select>
-            <input type="text" name="search">
-            <button>검색</button>
+            <input type="text" name="search" id="search">
+            <button onclick="searchBtn()">검색</button>
         </div>
         <br><br>
         <table class="table table-hover">

@@ -2,8 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssangyong.redhome.dao.ProductMapper">
 
-    <select id="selectAllProduct" resultType="com.ssangyong.redhome.bean.Product">
-        SELECT * FROM PRODUCT ORDER BY product_num
+    <select id="selectAllProduct" parameterType="java.util.Map" resultType="com.ssangyong.redhome.bean.Product">
+        SELECT * FROM PRODUCT
+        <if test="query1 != null and data != null">
+            WHERE ${query1} LIKE '%'||#{data}||'%'
+        </if>
+        ORDER BY product_num
     </select>
 
     <select id="selectCateProduct" parameterType="java.util.Map" resultType="com.ssangyong.redhome.bean.Product">

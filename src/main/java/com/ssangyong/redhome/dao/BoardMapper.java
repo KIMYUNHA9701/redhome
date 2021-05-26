@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface BoardMapper {
@@ -16,6 +17,9 @@ public interface BoardMapper {
 
     //특정 답변 가져오기
     Answer selectAnswer(int quest_num);
+
+    //문의 전체 가져오기
+    List<Quest> selectAllQna(Map<String,Object> map);
 
 
     //문의 전체 또는 답변대기 중의 문의만 가져오기 -> 최신순 정렬
@@ -29,6 +33,7 @@ public interface BoardMapper {
 
     //문의 글 삭제
     void deleteBoard(int quest_num);
+
 
 
 }

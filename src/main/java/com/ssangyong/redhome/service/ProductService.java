@@ -7,7 +7,9 @@ import java.util.Map;
 
 public interface ProductService {
 
-    List<Product> selectAllProduct();
+    List<Product> selectAllProduct(Map<String,Object> map);
+
+    Map<String, Object> translateQuery(Map<String,Object> map);
 
     List<Product> selectCateProduct(Map<String,Object> map);
 

@@ -15,8 +15,27 @@ public class ProductServiceImpl implements ProductService{
     ProductMapper productRepository;
 
     @Override
-    public List<Product> selectAllProduct() {
-        return productRepository.selectAllProduct();
+    public List<Product> selectAllProduct(Map<String,Object> map) {
+        map = translateQuery(map);
+        return productRepository.selectAllProduct(map);
+    }
+
+    @Override
+    public Map<String, Object> translateQuery(Map<String, Object> map) {
+        String query1 = (String)map.get("query1");
+        if(query1 == null) return map;
+
+        switch (query1){
+            case "제품번호":
+                query1 = "product_num";
+                break;
+            case "제품이름":
+                query1 = "product_name";
+                break;
+        }
+        map.put("query1",query1);
+
+        return map;
     }
 
     @Override
