@@ -35,16 +35,6 @@ public class MainController {
         return "banner";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String viewLogin() {
-        return "login";
-    }
-
-    @RequestMapping(value = "/signup", method = RequestMethod.GET)
-    public String viewSignup() {
-        return "signup";
-    }
-
     @RequestMapping(value = "/cart", method = RequestMethod.GET)
     public String viewCart() {
         return "cart";

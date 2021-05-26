@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title><link rel="stylesheet" type="text/css" href="/css/top.css">
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%@ taglib prefix="functions" uri="http://java.sun.com/jsp/jstl/functions" %>
 </head>
 <body>
@@ -49,18 +49,18 @@
 						</div>
 					</div>
 					<div class="layout-navigation-bar-login">
-						<a class="layout-navigation-bar-login__item noDeco" href="/login">
-							로그인
-						</a>
-						<a class="layout-navigation-bar-login__item noDeco" href="/signup">
-							회원가입
-						</a>
-					</div>
-					<div class="drop-down layout-navigation-bar-upload-button">
-						<button class="layout-navigation-bar-upload-button__button">
-							마이페이지
-						</button>
-					</div>
+                        <a class="layout-navigation-bar-login__item noDeco" href="/login">
+                            로그인
+                        </a>
+                        <a class="layout-navigation-bar-login__item noDeco" href="/signup">
+                            회원가입
+                        </a>
+                    </div>
+                    <div class="drop-down layout-navigation-bar-upload-button">
+                        <button class="layout-navigation-bar-upload-button__button">
+                            마이페이지
+                        </button>
+                    </div>
 				</div>
 			</div>
 		</div>

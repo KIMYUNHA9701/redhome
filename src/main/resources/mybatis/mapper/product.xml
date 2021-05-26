@@ -10,12 +10,18 @@
         SELECT * FROM PRODUCT
         <if test="c_num != null or p_name != null">
             WHERE
-            <if test="c_num != null and c_num != 0">
+            <choose>
+            <when test="c_num != null and p_name != null">
                 PRODUCT_CATEGORY_NUM = #{c_num}
-            </if>
-            <if test="p_name != null">
+                AND PRODUCT_NAME LIKE '%${p_name}%'
+            </when>
+            <when test="c_num != null and c_num != 0 and p == null" >
+                PRODUCT_CATEGORY_NUM = #{c_num}
+            </when>
+            <when test="p_name != null and c == null">
                 PRODUCT_NAME LIKE '%${p_name}%'
-            </if>
+            </when>
+            </choose>
         </if>
 
         <if test="sort != null">

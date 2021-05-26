@@ -10,7 +10,14 @@
 </head>
 <body>
    <div class="layout">
-		<jsp:include page="top.jsp" flush="false" />
+        <c:choose>
+            <c:when test="${member == null}">
+                <jsp:include page="top.jsp" flush="false" />
+            </c:when>
+            <c:otherwise>
+                <jsp:include page="top2.jsp" flush="false" />
+            </c:otherwise>
+        </c:choose>
 		<div class="production-selling">
 			<div class="production-selling-overview container">
 				<nav class="commerce-category-breadcrumb-wrap production-selling-overview__category">
