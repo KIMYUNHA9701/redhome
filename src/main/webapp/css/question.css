@@ -268,9 +268,6 @@ p {
 }
 
 
-
-
-
 @media (min-width: 768px){
     .question-form__body__content__input{
         padding-right: 135px;
@@ -279,7 +276,6 @@ p {
     .question-form__body__content__input{
         width: 100%;
         min-height: 250px;
-
         box-sizing: border-box;
         font-size: 15px;
         line-height: 1.87;
@@ -290,7 +286,12 @@ p {
         border: solid 1px #dbdbdb;
         background-color: #ffffff;
 
+
     }
+
+
+
+
 
 .question-form__body__content__placeholder__cs {
     font-size: 13px;

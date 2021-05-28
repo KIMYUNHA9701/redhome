@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
@@ -69,6 +70,24 @@ public class BoardController {
 
         return "redirect:/board";
 
+    }
+
+    @GetMapping(value = "/faq")
+    public String viewFaq(@RequestParam String questionType) {
+        if(questionType.equals("delivery")){
+            return "faq_delivery";
+        }
+        if(questionType.equals("order")){
+            return "faq_order";
+        }
+        if(questionType.equals("cancel")){
+            return "faq_cancel";
+        }
+        if(questionType.equals("exchange")){
+            return "faq_exchange";
+        }
+
+          return "faq_all";
     }
 
 

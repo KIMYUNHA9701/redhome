@@ -30,7 +30,7 @@
 
 <header id="simplified-gnb" class="simplified-gnb">
     <div class="container simplified-gnb__container">
-        <a class="simplified-gnb__logo" href="https://ohou.se/"> <span
+        <a class="simplified-gnb__logo" href="/top"> <span
                 class="icon icon-etc-brand-icon-n-bi-md" aria-hidden="true"></span>
         </a>
     </div>
@@ -39,16 +39,17 @@
 
 <main role="main">
     <div class="question-form container">
-        <form id="question-form" class="new_question" action="/questions"
+        <form id="question-form" class="new_question" action="/board/insert"
               accept-charset="UTF-8" method="post">
-            <input name="utf8" type="hidden" value="✓"><input
-                type="hidden" name="authenticity_token"
+            <input name="utf8" type="hidden" value="✓">
+            <input type="hidden" name="authenticity_token"
                 value="h5kq955vmS3REp8nbOs0Dnt+o1h/n3oj7Tw+U2I/B/hki35l2kEeTosUIYLQVLJ3bCzM7S8RK04XoD0y6nU8wQ==">
+
             <header class="question-form__header">
                 <h2 class="question-form__header__heading text-black bold">질문하기</h2>
                 <div class="question-form__cs">
                     상품구매, 배송 관련 문의가 필요하시다면 <a class="question-form__cs__link"
-                                              href="/contact_us">문의하러 가기</a>
+                                              href="/board">질문과 답변 바로가기</a>
                 </div>
                 <div class="question-form__header__title form-group">
                         <select id="questionCategory_filters"  name="questionCategory"  onchange="">
@@ -60,33 +61,38 @@
                             <option class="filter-select__list__entry" value="order_pay">주문/결제</option>
                         </select>
                     <input placeholder="제목을 적어주세요." class="form-control" maxlength="61"
-                           size="1" type="text" name="question[title]" id="question_title" >
-                    <p class="error">제목을 7자 이상으로 적어주세요.</p>
+                           size="1" type="text" name="quest_title" id="question_title" />
                 </div>
-
             </header>
-            <div class="question-form__meta">
-                <div class="question-form__meta__content"></div>
-                <input class="keywords" type="hidden" name="question[keywords]"
-                       id="question_keywords">
-            </div>
+
             <section class="question-form__body">
                 <div class="question-form__body__content form-group">
                     <div class="question-form__body__content__wrap">
-                            <input placeholder="내용을 적어주세요." class="question-form__body__content__input" maxlength="61"
-                                   size="1" type="text" name="question[title]" id="question_content" >
+                        <textarea class="question-form__body__content__input" name="quest_contents" id="quest_contents" rows="10" cols="50">✔︎아래 정보를 기재 후 문의사항을 남겨주세요.
+✔︎정보를 기재하지 않을 시 답변 처리가 지연됩니다.
 
-                        <div class="question-form__body__content__delete hide">
-                            <button class="question-form__body__content__delete__button">
-                                <span class="icon icon-pointer-x-white"></span>
-                            </button>
-                        </div>
+-주문번호:
+-주문자명:
+-연락처:
+-문의사항:
+
+--------------------------------------------------------------------------
+✔︎교환 및 반품 문의는 아래의 양식에 맞춰 작성 부탁드리겠습니다.
+✔︎제품 불량건의 경우 사진첨부가 필수입니다.
+✔︎상품 불량의 상태를 적어주시면 확인이 편리합니다.
+
+-주문번호 :
+-주문자명 :
+-연락처 :
+-교환/반품 사유 :
+-교환 색상 및 사이즈 :
+-교환/반품 배송비 입금여부 :
+-환불계좌 정보 (무통장입금의 경우) :
+                        </textarea>
                     </div>
-                    <p class="error">궁금한 내용을 텍스트로 적어주세요.</p>
+
                 </div>
             </section>
-
-
             <section id="question-form__floating" class="floating-bar static sticky-bottom">
                 <div class="floating-bar__content sticky-content question-form__floating">
                     <div class="question-form__floating__buttons">

@@ -19,7 +19,14 @@
 </head>
 <body>
 
-<jsp:include page="top.jsp" flush="false"/>
+<c:choose>
+    <c:when test="${member == null}">
+        <jsp:include page="top.jsp" flush="false" />
+    </c:when>
+    <c:otherwise>
+        <jsp:include page="top2.jsp" flush="false" />
+    </c:otherwise>
+</c:choose>
 
 <main class="qna-detail">
     <article class="qna-detail__container container">

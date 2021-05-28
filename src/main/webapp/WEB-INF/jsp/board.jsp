@@ -66,7 +66,9 @@
 </head>
 <body>
 
-  <jsp:include page="top.jsp" flush="false"/>
+
+<jsp:include page="top.jsp" flush="false" />
+
 
 <div id="questions-index-page">
     <section id="questions-header">
@@ -155,18 +157,13 @@
 <section id="questions-notice-list" class="container">
     <ol class="questions-notice-list__list">
         <li class="questions-notice-list__list__entry">
-            <a href="/questions/2378" style="text-decoration: none;">
-                <span class="title text-body-1" >📢 &nbsp 레드홈 인테리어 멘토를 만나보세요</span>
+            <a href="#" style="text-decoration: none;">
+                <span class="title text-body-1" >📢 &nbsp 레드홈 공지사항</span>
             </a>
         </li>
         <li class="questions-notice-list__list__entry">
-            <a href="/questions/3703" style="text-decoration: none;">
-                <span class="title text-body-1"  >📢 &nbsp 이벤트 안내 및 활동 주의사항 </span>
-            </a>
-        </li>
-        <li class="questions-notice-list__list__entry">
-            <a href="/questions/12549" style="text-decoration: none;" >
-                <span class="title text-body-1"  > 📢 &nbsp 빠르고 정확한 인테리어 답변을 받는 방법은?</span>
+            <a href="/faq?questionType=all" style="text-decoration: none;">
+                <span class="title text-body-1"  >📢 &nbsp FAQ&nbsp(자주 묻는 질문) </span>
             </a>
         </li>
     </ol>
@@ -305,6 +302,7 @@
             var  targetReply = $(this).attr("href");
             actionForm.find("input[name='reply']").val(targetReply);
             actionForm.find("input[name='orderType']").val("newQuestion");
+            actionForm.find("input[name='pageNum']").val(1);
             actionForm.submit();
 
 
