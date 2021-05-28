@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service("boardservice")
 public class BoardServiceImpl implements BoardService {
@@ -57,4 +58,40 @@ public class BoardServiceImpl implements BoardService {
         boardRepository.deleteBoard(quest_num);
     }
 
+    @Override
+    public List<Quest> selectAllQna(Map<String,Object> map) {
+        map = translateQuery(map);
+        return boardRepository.selectAllQna(map);
+    }
+
+    @Override
+    public Map<String, Object> translateQuery(Map<String, Object> map) {
+
+        String query = (String)map.get("query");
+        if(query == null) return map;
+
+        switch (query){
+            case "문의번호":
+                query = "quest_num";
+                break;
+            case "제목":
+                query = "quest_title";
+                break;
+            case "내용":
+                query = "quest_contents";
+                break;
+            case "문의날짜":
+                query = "quest_date";
+                break;
+            case "문의카테고리번호":
+                query = "quest_category_num";
+                break;
+            case "아이디":
+                query = "member_id";
+                break;
+        }
+        map.put("query",query);
+
+        return map;
+    }
 }

@@ -10,7 +10,7 @@ import java.util.Map;
 public interface ProductMapper {
 
     //상품전체 가져오기
-    List<Product> selectAllProduct();
+    List<Product> selectAllProduct(Map<String,Object> map);
 
     //카테고리별전체 가져오기
     List<Product> selectCateProduct(Map<String,Object> map);

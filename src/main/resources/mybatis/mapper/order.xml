@@ -2,7 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssangyong.redhome.dao.OrderMapper">
 
-    <select id="selectAllOrder" resultType="com.ssangyong.redhome.bean.Shopping_order">
+    <select id="selectAllOrder" parameterType="java.util.Map" resultType="com.ssangyong.redhome.bean.Shopping_order">
         SELECT * FROM SHOPPING_ORDER
+        <if test="query != null and data != null">
+            WHERE ${query} LIKE '%'||#{data}||'%'
+        </if>
+        ORDER BY order_num
     </select>
 </mapper>

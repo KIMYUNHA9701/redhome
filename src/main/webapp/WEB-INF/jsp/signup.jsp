@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,16 +81,21 @@
             frm.submit();
         }
 
-        function idcheck(){
+        function idcheck(duplicated){
+            if(duplicated == 'false'){
+                alert("false!")
+                return false;
+            }else if(duplicated == 'true'){
+                document.frm.id.style = "border-color:red;";
+            }
+
             var id = document.frm.id.value;
             if(id==null || id == ''){
-                document.frm.id.focus();
+                // document.frm.id.focus();
                 return false;
             }
             var url = "/idcheck/" + id;
-            var name = "popup test";
-            var option = "width = 400, height = 250, top = 100, left = 200, location = no"
-            window.open(url, name, option);
+            location.href = url;
         }
     </script>
 </head>
@@ -116,8 +121,15 @@
                         <div class="user-sign-up-form__form-group__label">아이디</div>
                         <div class="user-sign-up-form__form-group__description">다른 유저와 겹치지 않는 아이디 입력해주세요.</div>
                         <div class="user-sign-up-form__form-group__input">
-                            <input type="text" placeholder="아이디" class="form-control" value="" name="id" onfocusout="idcheck()">
-                            <input type="hidden" class="form-control" value="" name="duplicated">
+                            <c:choose>
+                                <c:when test="${duplicated eq true}">
+                                    <input type="text" placeholder="아이디" class="form-control" style="border-color: red;" value="" name="id" onfocusout="idcheck(${duplicated})">
+                                </c:when>
+                                <c:otherwise>
+                                    <input type="text" placeholder="아이디" class="form-control" value="${id}" name="id" onfocusout="idcheck(${duplicated})">
+                                </c:otherwise>
+                            </c:choose>
+                            <%--<input type="text" class="form-control" value="${duplicated}" name="duplicated">--%>
                         </div>
                     </div>
                     <div class="user-sign-up-form__form-group">

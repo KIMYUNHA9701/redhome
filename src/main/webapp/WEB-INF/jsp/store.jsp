@@ -14,7 +14,7 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </head>
 <body>
-	<jsp:include page="top.jsp" flush="false" />
+    <jsp:include page="top.jsp" flush="false" />
 	<jsp:include page="banner.jsp" flush="false" />
 	<div class="store">
 		<div class="today_sale">

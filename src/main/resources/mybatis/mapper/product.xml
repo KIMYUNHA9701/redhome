@@ -2,20 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssangyong.redhome.dao.ProductMapper">
 
-    <select id="selectAllProduct" resultType="com.ssangyong.redhome.bean.Product">
-        SELECT * FROM PRODUCT ORDER BY product_num
+    <select id="selectAllProduct" parameterType="java.util.Map" resultType="com.ssangyong.redhome.bean.Product">
+        SELECT * FROM PRODUCT
+        <if test="query1 != null and data != null">
+            WHERE ${query1} LIKE '%'||#{data}||'%'
+        </if>
+        ORDER BY product_num
     </select>
 
     <select id="selectCateProduct" parameterType="java.util.Map" resultType="com.ssangyong.redhome.bean.Product">
         SELECT * FROM PRODUCT
         <if test="c_num != null or p_name != null">
             WHERE
-            <if test="c_num != null and c_num != 0">
+            <choose>
+            <when test="c_num != null and p_name != null">
                 PRODUCT_CATEGORY_NUM = #{c_num}
-            </if>
-            <if test="p_name != null">
+                AND PRODUCT_NAME LIKE '%${p_name}%'
+            </when>
+            <when test="c_num != null and c_num != 0 and p == null" >
+                PRODUCT_CATEGORY_NUM = #{c_num}
+            </when>
+            <when test="p_name != null and c == null">
                 PRODUCT_NAME LIKE '%${p_name}%'
-            </if>
+            </when>
+            </choose>
         </if>
 
         <if test="sort != null">

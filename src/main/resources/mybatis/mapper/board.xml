@@ -130,6 +130,19 @@
 
     </delete>
 
+    <select id="selectAllQna" resultType="com.ssangyong.redhome.bean.Quest" parameterType="java.util.Map">
+        SELECT QUEST_NUM,QUEST_TITLE,QUEST_CONTENTS,QUEST_IMG,QUEST_PWD, TO_CHAR(QUEST_DATE,'YYYY"년" MM"월" dd"일" HH24:MI') As QUEST_DATE,
+               QUEST_STATE,QUEST_CATEGORY_NUM, MEMBER_ID
+        FROM quest
+        <if test="query != null and data != null">
+            WHERE ${query} LIKE '%'||#{data}||'%'
+        </if>
+        <if test="query2 != null">
+            AND QUEST_STATE = ${query2}
+        </if>
+        ORDER BY QUEST_NUM
+    </select>
+
 
 
 

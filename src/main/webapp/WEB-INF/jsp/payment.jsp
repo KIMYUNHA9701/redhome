@@ -27,8 +27,6 @@
             }
         }
 
-
-
         .layout, .page, body, html {
             height: 100%;
         }
@@ -1394,7 +1392,14 @@
 </head>
 <body>
     <div class="layout">
-    <jsp:include page="top.jsp" flush="false" />
+        <c:choose>
+            <c:when test="${member == null}">
+                <jsp:include page="top.jsp" flush="false" />
+            </c:when>
+            <c:otherwise>
+                <jsp:include page="top2.jsp" flush="false" />
+            </c:otherwise>
+    	</c:choose>
     <main class="_3z82S">
         <div class="p0PrG">
             <header class="_3pPzh">주문/결제</header>
